@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandunguea – Escuela de Baile</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ── VARIABLES ────────────────────────────────────────── */
+    :root {
+      --indigo-50: #eef2ff;
+      --indigo-100: #e0e7ff;
+      --indigo-200: #c7d2fe;
+      --indigo-400: #818cf8;
+      --indigo-500: #6366f1;
+      --indigo-600: #4f46e5;
+      --indigo-700: #4338ca;
+      --indigo-900: #312e81;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --cream: #fdf8f0;
+      --dark: #1e1b2e;
+      --mid: #4b4869;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ─────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--indigo-900);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.2rem;
+      height: 60px;
+      box-shadow: 0 2px 20px rgba(49, 46, 129, .45);
+    }
+
+    .nav-logo {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.8rem;
+      color: #fff;
+      letter-spacing: .02em;
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--amber);
+    }
+
+    /* mobile: links hidden by default */
+    .nav-links {
+      display: none;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--indigo-200);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .nav-cta {
+      background: var(--amber);
+      color: var(--dark) !important;
+      padding: .45rem 1.2rem;
+      border-radius: 99px;
+      font-weight: 600 !important;
+      transition: background .2s, transform .15s !important;
+    }
+
+    .nav-cta:hover {
+      background: #fbbf24;
+      transform: scale(1.04);
+    }
+
+    /* hamburger button */
+    .nav-burger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 6px;
+    }
+
+    .nav-burger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--indigo-200);
+      border-radius: 2px;
+      transition: all .25s;
+    }
+
+    /* mobile dropdown menu */
+    .nav-mobile-menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background: var(--indigo-900);
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      z-index: 99;
+      padding: 1rem 1.5rem 1.5rem;
+      flex-direction: column;
+      gap: .2rem;
+    }
+
+    .nav-mobile-menu.open {
+      display: flex;
+    }
+
+    .nav-mobile-menu a {
+      color: var(--indigo-200);
+      text-decoration: none;
+      font-size: .95rem;
+      font-weight: 500;
+      padding: .6rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+      transition: color .2s;
+    }
+
+    .nav-mobile-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .nav-mobile-menu a:hover {
+      color: #fff;
+    }
+
+    .nav-mobile-menu .mob-cta {
+      margin-top: .8rem;
+      background: var(--amber);
+      color: var(--dark) !important;
+      text-align: center;
+      padding: .7rem 1rem;
+      border-radius: 99px;
+      font-weight: 700;
+      border: none;
+    }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--indigo-900) 0%, #1a1040 55%, #2d1b4e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: 60px;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(99, 102, 241, .25) 0%, transparent 70%);
+      top: -80px;
+      right: -80px;
+      animation: pulse 6s ease-in-out infinite;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(244, 63, 94, .15) 0%, transparent 70%);
+      bottom: -60px;
+      left: -60px;
+      animation: pulse 8s ease-in-out infinite reverse;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: .8;
+      }
+
+      50% {
+        transform: scale(1.12);
+        opacity: 1;
+      }
+    }
+
+    .notes {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .note {
+      position: absolute;
+      font-size: 1.4rem;
+      opacity: .10;
+      animation: float 10s ease-in-out infinite;
+    }
+
+    .note:nth-child(1) {
+      left: 8%;
+      top: 20%;
+      animation-delay: 0s;
+    }
+
+    .note:nth-child(2) {
+      left: 85%;
+      top: 15%;
+      animation-delay: 2s;
+    }
+
+    .note:nth-child(3) {
+      left: 72%;
+      top: 73%;
+      animation-delay: 4s;
+    }
+
+    .note:nth-child(4) {
+      left: 16%;
+      top: 78%;
+      animation-delay: 6s;
+    }
+
+    .note:nth-child(5) {
+      left: 48%;
+      top: 10%;
+      animation-delay: 1s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(-10deg);
+      }
+
+      50% {
+        transform: translateY(-22px) rotate(10deg);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2.5rem 1.2rem;
+      max-width: 780px;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(245, 158, 11, .18);
+      border: 1px solid rgba(245, 158, 11, .4);
+      color: var(--amber);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .4rem 1rem;
+      border-radius: 99px;
+      margin-bottom: 1.4rem;
+      animation: fadeUp .8s .1s both;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 8vw, 5.5rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: .6rem;
+      animation: fadeUp .8s .25s both;
+    }
+
+    .hero-title em {
+      font-family: 'Dancing Script', cursive;
+      font-style: normal;
+      color: var(--amber);
+      font-size: 1.1em;
+      display: block;
+    }
+
+    .hero-sub {
+      color: var(--indigo-200);
+      font-size: clamp(.95rem, 3.5vw, 1.2rem);
+      font-weight: 300;
+      max-width: 540px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+      animation: fadeUp .8s .4s both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: .8rem;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeUp .8s .55s both;
+    }
+
+    .btn-primary {
+      background: var(--amber);
+      color: var(--dark);
+      font-weight: 700;
+      font-size: .95rem;
+      padding: .85rem 2rem;
+      border-radius: 99px;
+      text-decoration: none;
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 24px rgba(245, 158, 11, .4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(245, 158, 11, .5);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--indigo-400);
+      color: #fff;
+      font-weight: 500;
+      font-size: .95rem;
+      padding: .83rem 2rem;
+      border-radius: 99px;
+      text-decoration: none;
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+      transition: background .2s, transform .2s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(99, 102, 241, .2);
+      transform: translateY(-3px);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .4rem;
+      color: var(--indigo-200);
+      font-size: .7rem;
+      letter-spacing: .1em;
+      animation: bounce 2s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    .scroll-hint span {
+      font-size: 1.2rem;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(8px);
+      }
+    }
+
+    /* ── SECTION SHARED ──────────────────────────────────── */
+    section {
+      padding: 4rem 1.2rem;
+    }
+
+    .section-label {
+      text-align: center;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--indigo-500);
+      margin-bottom: .6rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 5vw, 2.9rem);
+      font-weight: 700;
+      text-align: center;
+      color: var(--dark);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--mid);
+      max-width: 540px;
+      margin: 0 auto 2.8rem;
+      line-height: 1.7;
+      font-size: .98rem;
+    }
+
+    /* ── WHY SANDUNGUEA ──────────────────────────────────── */
+    #why {
+      background: #fff;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* mobile: 1 col */
+      gap: 1.2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .why-card {
+      background: var(--cream);
+      border: 1px solid var(--indigo-100);
+      border-radius: 1.2rem;
+      padding: 1.6rem 1.4rem;
+      transition: transform .25s, box-shadow .25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--indigo-500), var(--amber));
+      border-radius: 4px 4px 0 0;
+    }
+
+    .why-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 36px rgba(99, 102, 241, .12);
+    }
+
+    .why-icon {
+      font-size: 2.2rem;
+      margin-bottom: .9rem;
+    }
+
+    .why-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: .5rem;
+    }
+
+    .why-card p {
+      color: var(--mid);
+      font-size: .9rem;
+      line-height: 1.6;
+    }
+
+    /* ── BENEFITS ────────────────────────────────────────── */
+    #benefits {
+      background: var(--cream);
+    }
+
+    .benefits-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      /* mobile: 1 col */
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    /* visual hidden on mobile, revealed at larger breakpoint */
+    .benefits-visual {
+      display: none;
+    }
+
+    .benefits-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+    }
+
+    .benefits-list li {
+      display: flex;
+      gap: .9rem;
+      align-items: flex-start;
+    }
+
+    .benefit-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      background: var(--indigo-50);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .benefit-text h4 {
+      font-weight: 600;
+      font-size: .95rem;
+      color: var(--dark);
+      margin-bottom: .2rem;
+    }
+
+    .benefit-text p {
+      color: var(--mid);
+      font-size: .88rem;
+      line-height: 1.55;
+    }
+
+    /* ── CLASES / HORARIOS ───────────────────────────────── */
+    #clases {
+      background: #fff;
+    }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* mobile: 1 col */
+      gap: 1.4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .day-card {
+      border-radius: 1.4rem;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .07);
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .day-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 36px rgba(99, 102, 241, .13);
+    }
+
+    .day-header {
+      background: var(--indigo-700);
+      color: #fff;
+      padding: 1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+    }
+
+    .day-header .day-icon {
+      font-size: 1.4rem;
+    }
+
+    .day-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .day-body {
+      background: var(--cream);
+      padding: 1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: .9rem;
+    }
+
+    .class-slot {
+      display: flex;
+      gap: .9rem;
+      align-items: flex-start;
+      padding: .85rem .9rem;
+      background: #fff;
+      border-radius: .85rem;
+      border-left: 4px solid var(--indigo-400);
+    }
+
+    .class-slot.cumbia {
+      border-left-color: var(--rose);
+    }
+
+    .class-slot.casino {
+      border-left-color: var(--amber);
+    }
+
+    .class-slot.bachata {
+      border-left-color: #10b981;
+    }
+
+    .class-slot.salsa {
+      border-left-color: var(--indigo-400);
+    }
+
+    .slot-time {
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--mid);
+      white-space: nowrap;
+      padding-top: .15rem;
+      min-width: 52px;
+    }
+
+    .slot-info strong {
+      display: block;
+      font-size: .92rem;
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    .slot-info span {
+      font-size: .8rem;
+      color: var(--mid);
+    }
+
+    .teacher-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      margin-top: .3rem;
+      background: var(--indigo-50);
+      color: var(--indigo-600);
+      font-size: .75rem;
+      font-weight: 600;
+      padding: .2rem .65rem;
+      border-radius: 99px;
+    }
+
+    /* ── PROFESORES ──────────────────────────────────────── */
+    #profesores {
+      background: var(--cream);
+    }
+
+    .teachers-grid {
+      display: flex;
+      flex-direction: column;
+      /* mobile: stacked */
+      gap: 1.5rem;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .teacher-card {
+      background: #fff;
+      border-radius: 1.4rem;
+      padding: 2rem 1.6rem;
+      text-align: center;
+      width: 100%;
+      max-width: 300px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .07);
+      transition: transform .25s;
+    }
+
+    .teacher-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .teacher-avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin: 0 auto 1.1rem;
+      background: linear-gradient(135deg, var(--indigo-600), var(--indigo-900));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.6rem;
+      box-shadow: 0 6px 20px rgba(79, 70, 229, .3);
+    }
+
+    .teacher-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: .4rem;
+    }
+
+    .teacher-card p {
+      color: var(--mid);
+      font-size: .88rem;
+      line-height: 1.6;
+    }
+
+    .teacher-styles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      justify-content: center;
+      margin-top: .85rem;
+    }
+
+    .style-tag {
+      font-size: .76rem;
+      font-weight: 600;
+      padding: .22rem .75rem;
+      border-radius: 99px;
+      background: var(--indigo-50);
+      color: var(--indigo-600);
+    }
+
+    .style-tag.rose {
+      background: #fff1f2;
+      color: var(--rose);
+    }
+
+    .style-tag.amber {
+      background: #fffbeb;
+      color: #b45309;
+    }
+
+    .style-tag.green {
+      background: #ecfdf5;
+      color: #059669;
+    }
+
+    /* ── COMUNIDAD ───────────────────────────────────────── */
+    #comunidad {
+      background: linear-gradient(135deg, var(--indigo-900) 0%, #1a1040 100%);
+      color: #fff;
+      text-align: center;
+    }
+
+    #comunidad .section-title {
+      color: #fff;
+    }
+
+    #comunidad .section-label {
+      color: var(--amber);
+    }
+
+    #comunidad .section-sub {
+      color: var(--indigo-200);
+    }
+
+    .community-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      /* mobile: 1 col */
+      gap: 1.1rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .comm-card {
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .12);
+      backdrop-filter: blur(10px);
+      border-radius: 1.2rem;
+      padding: 1.6rem 1.3rem;
+      text-align: left;
+      transition: background .25s, transform .25s;
+    }
+
+    .comm-card:hover {
+      background: rgba(255, 255, 255, .12);
+      transform: translateY(-3px);
+    }
+
+    .comm-card .icon {
+      font-size: 2.2rem;
+      margin-bottom: .8rem;
+    }
+
+    .comm-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: .4rem;
+    }
+
+    .comm-card p {
+      font-size: .88rem;
+      color: var(--indigo-200);
+      line-height: 1.6;
+    }
+
+    /* ── UBICACIÓN ───────────────────────────────────────── */
+    #ubicacion {
+      background: #fff;
+    }
+
+    .location-wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      /* mobile: 1 col */
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .location-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 1.1rem;
+    }
+
+    .location-detail {
+      display: flex;
+      gap: .9rem;
+      align-items: flex-start;
+      margin-bottom: 1.1rem;
+    }
+
+    .loc-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--indigo-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .loc-text strong {
+      display: block;
+      font-weight: 600;
+      color: var(--dark);
+      font-size: .9rem;
+    }
+
+    .loc-text span {
+      color: var(--mid);
+      font-size: .85rem;
+      line-height: 1.5;
+    }
+
+    .map-placeholder {
+      border-radius: 1.4rem;
+      overflow: hidden;
+      box-shadow: 0 10px 36px rgba(0, 0, 0, .1);
+      height: 240px;
+      background: var(--indigo-50);
+      border: 2px solid var(--indigo-100);
+    }
+
+    .map-placeholder iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    /* ── CTA WHATSAPP ────────────────────────────────────── */
+    #contacto {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--indigo-600), var(--indigo-900));
+      border-radius: 1.6rem;
+      padding: 3rem 1.4rem;
+      max-width: 700px;
+      margin: 0 auto;
+      box-shadow: 0 18px 54px rgba(79, 70, 229, .3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(245, 158, 11, .12);
+    }
+
+    .cta-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 5vw, 2.6rem);
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: .7rem;
+    }
+
+    .cta-box p {
+      color: var(--indigo-200);
+      font-size: .98rem;
+      margin-bottom: 1.8rem;
+      line-height: 1.6;
+    }
+
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      background: #25d366;
+      color: #fff;
+      font-weight: 700;
+      font-size: .98rem;
+      padding: .9rem 2.2rem;
+      border-radius: 99px;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, .4);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .btn-wa:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(37, 211, 102, .5);
+    }
+
+    .btn-wa svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
+      flex-shrink: 0;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: var(--indigo-900);
+      color: var(--indigo-200);
+      text-align: center;
+      padding: 2.2rem 1.2rem;
+    }
+
+    footer .footer-logo {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.9rem;
+      color: #fff;
+      margin-bottom: .5rem;
+    }
+
+    footer p {
+      font-size: .84rem;
+      opacity: .7;
+    }
+
+    /* ── WHATSAPP FLOAT ──────────────────────────────────── */
+    .wa-float {
+      position: fixed;
+      bottom: 1.4rem;
+      right: 1.4rem;
+      z-index: 200;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #25d366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, .5);
+      text-decoration: none;
+      transition: transform .2s;
+      animation: waPop 1s 1.5s both;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.1);
+    }
+
+    .wa-float svg {
+      width: 28px;
+      height: 28px;
+      fill: #fff;
+    }
+
+    @keyframes waPop {
+      from {
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+
+    /* ══════════════════════════════════════════════════════
+       RESPONSIVE — MOBILE-FIRST
+       Breakpoint sm  → 480px
+       Breakpoint md  → 768px
+       Breakpoint lg  → 1024px
+    ══════════════════════════════════════════════════════ */
+
+    /* ── sm: 480px+ ─────────────────────────────────────── */
+    @media (min-width: 480px) {
+      nav {
+        padding: 0 1.6rem;
+      }
+
+      .nav-logo {
+        font-size: 2rem;
+      }
+
+      .hero-btns {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: auto;
+        max-width: none;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .schedule-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .community-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .teachers-grid {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .map-placeholder {
+        height: 280px;
+      }
+    }
+
+    /* ── md: 768px+ ─────────────────────────────────────── */
+    @media (min-width: 768px) {
+      nav {
+        padding: 0 2.5rem;
+        height: 64px;
+      }
+
+      .nav-logo {
+        font-size: 2.2rem;
+      }
+
+      /* show desktop links, hide burger */
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-burger {
+        display: none;
+      }
+
+      .nav-mobile-menu {
+        display: none !important;
+      }
+
+      section {
+        padding: 5rem 2rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2.8rem, 7vw, 5.5rem);
+      }
+
+      #hero::before {
+        width: 500px;
+        height: 500px;
+        top: -120px;
+        right: -130px;
+      }
+
+      #hero::after {
+        width: 380px;
+        height: 380px;
+        bottom: -80px;
+        left: -90px;
+      }
+
+      .note {
+        font-size: 1.6rem;
+        opacity: .12;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.6rem;
+      }
+
+      .schedule-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.6rem;
+      }
+
+      /* show benefits visual */
+      .benefits-wrap {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+
+      .benefits-visual {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .benefits-circle {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--indigo-600), var(--indigo-900));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 7rem;
+        box-shadow: 0 20px 60px rgba(79, 70, 229, .35);
+        animation: slowPulse 4s ease-in-out infinite;
+      }
+
+      @keyframes slowPulse {
+
+        0%,
+        100% {
+          box-shadow: 0 20px 60px rgba(79, 70, 229, .35);
+        }
+
+        50% {
+          box-shadow: 0 20px 60px rgba(79, 70, 229, .35), 0 0 0 20px rgba(245, 158, 11, .06);
+        }
+      }
+
+      .benefits-pill {
+        position: absolute;
+        background: #fff;
+        border-radius: 99px;
+        padding: .55rem 1.1rem;
+        font-weight: 600;
+        font-size: .82rem;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, .1);
+        color: var(--dark);
+        white-space: nowrap;
+      }
+
+      .pill-1 {
+        top: 10%;
+        left: -8%;
+      }
+
+      .pill-2 {
+        bottom: 18%;
+        left: -12%;
+      }
+
+      .pill-3 {
+        top: 30%;
+        right: -16%;
+      }
+
+      .pill-4 {
+        bottom: 10%;
+        right: -8%;
+      }
+
+      .location-wrap {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+      }
+
+      .map-placeholder {
+        height: auto;
+        aspect-ratio: 4/3;
+      }
+
+      .community-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cta-box {
+        padding: 3.5rem 2.5rem;
+      }
+
+      .wa-float {
+        width: 58px;
+        height: 58px;
+        bottom: 1.8rem;
+        right: 1.8rem;
+      }
+
+      .wa-float svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    /* ── lg: 1024px+ ─────────────────────────────────────── */
+    @media (min-width: 1024px) {
+      section {
+        padding: 5.5rem 2rem;
+      }
+
+      #hero::before {
+        width: 700px;
+        height: 700px;
+        top: -150px;
+        right: -180px;
+      }
+
+      #hero::after {
+        width: 500px;
+        height: 500px;
+        bottom: -100px;
+        left: -120px;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.8rem;
+      }
+
+      .benefits-circle {
+        width: 360px;
+        height: 360px;
+        font-size: 9rem;
+      }
+
+      .community-cards {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .teachers-grid {
+        gap: 2.5rem;
+      }
+
+      .teacher-card {
+        padding: 2.4rem 2rem;
+      }
+
+      .cta-box {
+        padding: 4rem 3rem;
+        border-radius: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a class="nav-logo" href="#hero">San<span>dunguea</span></a>
+
+    <ul class="nav-links">
+      <li><a href="#why">¿Por qué?</a></li>
+      <li><a href="#benefits">Beneficios</a></li>
+      <li><a href="#clases">Horarios</a></li>
+      <li><a href="#profesores">Maestros</a></li>
+      <li><a href="#comunidad">Comunidad</a></li>
+      <li><a href="#contacto" class="nav-cta">¡Inscríbete!</a></li>
+    </ul>
+
+    <button class="nav-burger" onclick="document.getElementById('navMob').classList.toggle('open')" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-mobile-menu" id="navMob">
+    <a href="#why" onclick="document.getElementById('navMob').classList.remove('open')">¿Por qué?</a>
+    <a href="#benefits" onclick="document.getElementById('navMob').classList.remove('open')">Beneficios</a>
+    <a href="#clases" onclick="document.getElementById('navMob').classList.remove('open')">Horarios</a>
+    <a href="#profesores" onclick="document.getElementById('navMob').classList.remove('open')">Maestros</a>
+    <a href="#comunidad" onclick="document.getElementById('navMob').classList.remove('open')">Comunidad</a>
+    <a href="#contacto" onclick="document.getElementById('navMob').classList.remove('open')"
+      class="mob-cta">¡Inscríbete!</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="notes">
+      <div class="note">🎵</div>
+      <div class="note">💃</div>
+      <div class="note">🎶</div>
+      <div class="note">🕺</div>
+      <div class="note">🎼</div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">🎉 ¡Nuevas clases disponibles!</div>
+      <h1 class="hero-title">
+        Mueve el alma,<br>
+        vive el ritmo<br>
+        <em>Sandunguea</em>
+      </h1>
+      <p class="hero-sub">
+        La escuela de baile más vibrante de Coyoacán. Salsa, cumbia, bachata y más — para todos los niveles, en un
+        ambiente lleno de alegría y comunidad.
+      </p>
+      <div class="hero-btns">
+        <a href="#contacto" class="btn-primary">🎶 Quiero bailar ya</a>
+        <a href="#clases" class="btn-secondary">Ver horarios</a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>↓</span>
+      <small>DESCUBRE MÁS</small>
+    </div>
+  </section>
+
+  <!-- POR QUÉ SANDUNGUEA -->
+  <section id="why">
+    <p class="section-label">¿Por qué elegirnos?</p>
+    <h2 class="section-title">Bailar aquí es diferente</h2>
+    <p class="section-sub">No somos solo una escuela, somos una familia que crece al ritmo de la música.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🏡</div>
+        <h3>Espacio cultural único</h3>
+        <p>Ubicados en la <strong>Casa Cultural Colibrí</strong>, un espacio lleno de arte, historia y vida comunitaria
+          en el corazón de Coyoacán.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎓</div>
+        <h3>Maestros apasionados</h3>
+        <p>Max y Silvia son bailarines con años de experiencia en escena y enseñanza. Su energía es contagiosa y su
+          método, efectivo.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌈</div>
+        <h3>Ambiente inclusivo</h3>
+        <p>Todas las edades, todos los cuerpos, todos los niveles. Aquí no existe el "no puedo" — solo el primer paso.
+        </p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💸</div>
+        <h3>Precios accesibles</h3>
+        <p>Creemos que bailar es un derecho. Nuestros precios están pensados para que nadie se quede sin moverse.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🗓️</div>
+        <h3>Horarios flexibles</h3>
+        <p>Clases en horario nocturno, pensadas para quienes trabajan o estudian durante el día. ¡Llega y disfruta!</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤝</div>
+        <h3>Comunidad real</h3>
+        <p>Cada clase es una oportunidad para hacer amistades genuinas. Nuestros alumnos se convierten en familia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section id="benefits">
+    <p class="section-label">Beneficios del baile</p>
+    <h2 class="section-title">Tu cuerpo y mente te lo agradecerán</h2>
+    <p class="section-sub">Bailar no es solo diversión — transforma tu vida de formas que no imaginas.</p>
+    <div class="benefits-wrap">
+      <div class="benefits-visual">
+        <div class="benefits-circle">💃</div>
+        <div class="benefits-pill pill-1">❤️ Salud física</div>
+        <div class="benefits-pill pill-2">😊 Bienestar mental</div>
+        <div class="benefits-pill pill-3">🤝 Conexión social</div>
+        <div class="benefits-pill pill-4">✨ Confianza</div>
+      </div>
+      <ul class="benefits-list">
+        <li>
+          <div class="benefit-icon">❤️</div>
+          <div class="benefit-text">
+            <h4>Mejora tu salud cardiovascular</h4>
+            <p>Bailar durante 1 hora equivale a correr 5 km. Tu corazón se fortalece mientras te diviertes.</p>
+          </div>
+        </li>
+        <li>
+          <div class="benefit-icon">🧠</div>
+          <div class="benefit-text">
+            <h4>Potencia tu memoria y coordinación</h4>
+            <p>Aprender pasos activa ambos hemisferios cerebrales y mejora la memoria a largo plazo.</p>
+          </div>
+        </li>
+        <li>
+          <div class="benefit-icon">😌</div>
+          <div class="benefit-text">
+            <h4>Reduce el estrés</h4>
+            <p>La música y el movimiento liberan endorfinas. Llegas estresado y sales sonriendo — garantizado.</p>
+          </div>
+        </li>
+        <li>
+          <div class="benefit-icon">💪</div>
+          <div class="benefit-text">
+            <h4>Gana confianza y expresión</h4>
+            <p>Cada clase te conecta más con tu cuerpo y tu forma de expresarte ante el mundo.</p>
+          </div>
+        </li>
+        <li>
+          <div class="benefit-icon">🧘</div>
+          <div class="benefit-text">
+            <h4>Mejora tu postura y equilibrio</h4>
+            <p>Los ritmos latinos trabajan el core, la postura y el equilibrio de forma natural y divertida.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HORARIOS -->
+  <section id="clases">
+    <p class="section-label">Horarios</p>
+    <h2 class="section-title">Encuentra tu clase</h2>
+    <p class="section-sub">Tres días a la semana llenos de ritmo. Elige tu favorita o ven a todas.</p>
+    <div class="schedule-grid">
+
+      <!-- Lunes -->
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-icon">🌙</span>
+          <h3>Lunes</h3>
+        </div>
+        <div class="day-body">
+          <div class="class-slot salsa">
+            <div class="slot-time">7–8 pm</div>
+            <div class="slot-info">
+              <strong>Salsa en Línea</strong>
+              <span>Nivel abierto</span><br>
+              <span class="teacher-tag">👨‍🏫 Profe Max</span>
+            </div>
+          </div>
+          <div class="class-slot cumbia">
+            <div class="slot-time">8–9 pm</div>
+            <div class="slot-info">
+              <strong>Cumbia</strong>
+              <span>Nivel abierto</span><br>
+              <span class="teacher-tag">👩‍🏫 Profa Silvia</span>
+            </div>
+          </div>
+          <div class="class-slot casino">
+            <div class="slot-time">9–10 pm</div>
+            <div class="slot-info">
+              <strong>Salsa Casino</strong>
+              <span>Nivel abierto</span><br>
+              <span class="teacher-tag">👩‍🏫 Profa Silvia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Miércoles -->
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-icon">⭐</span>
+          <h3>Miércoles</h3>
+        </div>
+        <div class="day-body">
+          <div class="class-slot cumbia">
+            <div class="slot-time">8–9 pm</div>
+            <div class="slot-info">
+              <strong>Cumbia</strong>
+              <span>Nivel abierto</span><br>
+              <span class="teacher-tag">👩‍🏫 Profa Silvia</span>
+            </div>
+          </div>
+          <div class="class-slot casino">
+            <div class="slot-time">9–10 pm</div>
+            <div class="slot-info">
+              <strong>Salsa Casino</strong>
+              <span>Nivel abierto</span><br>
+              <span class="teacher-tag">👩‍🏫 Profa Silvia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jueves -->
+      <div class="day-card">
+        <div class="day-header">
+          <span class="day-icon">🔥</span>
+          <h3>Jueves</h3>
+        </div>
+        <div class="day-body">
+          <div class="class-slot bachata">
+            <div class="slot-time">8–9 pm</div>
+            <div class="slot-info">
+              <strong>Bachata</strong>
+              <span>Nivel abierto</span><br>
+              <span class="teacher-tag">👨‍🏫 Profe Max</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROFESORES -->
+  <section id="profesores">
+    <p class="section-label">Nuestros maestros</p>
+    <h2 class="section-title">Aprende de los mejores</h2>
+    <p class="section-sub">Bailarines con vocación de enseñanza y amor por la danza.</p>
+    <div class="teachers-grid">
+      <div class="teacher-card">
+        <div class="teacher-avatar">🕺</div>
+        <h3>Profe Max</h3>
+        <p>Especialista en ritmos urbanos y cubanos, Max transforma cada clase en una experiencia llena de energía y
+          técnica.</p>
+        <div class="teacher-styles">
+          <span class="style-tag">Salsa en Línea</span>
+          <span class="style-tag green">Bachata</span>
+        </div>
+      </div>
+      <div class="teacher-card">
+        <div class="teacher-avatar">💃</div>
+        <h3>Profa Silvia</h3>
+        <p>Con una sensibilidad única para el ritmo y el movimiento, Silvia crea un espacio seguro y alegre para
+          aprender a bailar.</p>
+        <div class="teacher-styles">
+          <span class="style-tag rose">Cumbia</span>
+          <span class="style-tag amber">Salsa Casino</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMUNIDAD -->
+  <section id="comunidad">
+    <p class="section-label">Más que baile</p>
+    <h2 class="section-title">Una comunidad que te abraza</h2>
+    <p class="section-sub">En Sandunguea encontrarás mucho más que pasos de baile.</p>
+    <div class="community-cards">
+      <div class="comm-card">
+        <div class="icon">💛</div>
+        <h4>Amistades para toda la vida</h4>
+        <p>Nuestros alumnos vienen solos y salen con compañeros de vida. El baile crea lazos únicos.</p>
+      </div>
+      <div class="comm-card">
+        <div class="icon">🌟</div>
+        <h4>Superación personal</h4>
+        <p>Cada nuevo paso aprendido es una victoria. Aquí celebramos cada logro, por pequeño que sea.</p>
+      </div>
+      <div class="comm-card">
+        <div class="icon">🎊</div>
+        <h4>Eventos y presentaciones</h4>
+        <p>Participarás en eventos comunitarios, fiestas y presentaciones que harán brillar tu talento.</p>
+      </div>
+      <div class="comm-card">
+        <div class="icon">🤗</div>
+        <h4>Sin juicios, solo alegría</h4>
+        <p>Aquí no importa si tienes "dos pies izquierdos". Lo que importa es venir con ganas y sonrisa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section id="ubicacion">
+    <p class="section-label">¿Dónde estamos?</p>
+    <h2 class="section-title">Ven a visitarnos</h2>
+    <p class="section-sub">Te esperamos en un espacio lleno de historia y cultura en Coyoacán.</p>
+    <div class="location-wrap">
+      <div class="location-info">
+        <h3>Casa Cultural Colibrí</h3>
+        <div class="location-detail">
+          <div class="loc-icon">📍</div>
+          <div class="loc-text">
+            <strong>Dirección</strong>
+            <span>Cda. Huitzitzilin 31, Pedregal de Santo Domingo<br>Coyoacán, CP 04369, CDMX, México</span>
+          </div>
+        </div>
+        <div class="location-detail">
+          <div class="loc-icon">🚇</div>
+          <div class="loc-text">
+            <strong>Transporte</strong>
+            <span>Metro Copilco (L3) + 10 min en combi<br>Metrobús disponible en la zona</span>
+          </div>
+        </div>
+        <div class="location-detail">
+          <div class="loc-icon">🕐</div>
+          <div class="loc-text">
+            <strong>Horarios de clases</strong>
+            <span>Lunes, Miércoles y Jueves<br>7:00 pm – 10:00 pm</span>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=Cda.+Huitzitzilin+31,+Pedregal+de+Santo+Domingo,+Coyoacán,+CDMX"
+          target="_blank" class="btn-primary" style="display:inline-block;margin-top:1.2rem;max-width:260px;">
+          📍 Ver en Google Maps
+        </a>
+      </div>
+      <div class="map-placeholder">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.1!2d-99.1575!3d19.3085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce001d8c0a7f67%3A0x0!2zUGVkcmVnYWwgZGUgU2FudG8gRG9taW5nbywgQ295b2Fjw6Fu!5e0!3m2!1ses!2smx!4v1700000000000"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA CONTACTO -->
+  <section id="contacto">
+    <div class="cta-box">
+      <h2>¿Lista/o para dar el primer paso?</h2>
+      <p>Escríbenos por WhatsApp y con gusto te damos toda la información sobre precios, inscripciones y horarios.</p>
+      <a href="https://wa.me/5215500000000?text=Hola!%20Me%20interesa%20información%20sobre%20las%20clases%20de%20Sandunguea%20%F0%9F%92%83"
+        target="_blank" class="btn-wa">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+          <path
+            d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.1 1.522 5.82L0 24l6.343-1.485A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.79 9.79 0 01-5.012-1.374l-.36-.214-3.732.875.944-3.641-.234-.374A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.389 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z" />
+        </svg>
+        Escríbenos por WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo"><em>Sandunguea</em></div>
+    <p>Casa Cultural Colibrí · Pedregal de Santo Domingo, Coyoacán, CDMX</p>
+    <p style="margin-top:.4rem;">Hecho con 💃 y mucho ritmo · 2025</p>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/5215500000000?text=Hola!%20Me%20interesa%20información%20sobre%20las%20clases%20de%20Sandunguea%20%F0%9F%92%83"
+    target="_blank" class="wa-float" title="Contáctanos por WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+      <path
+        d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.1 1.522 5.82L0 24l6.343-1.485A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.79 9.79 0 01-5.012-1.374l-.36-.214-3.732.875.944-3.641-.234-.374A9.789 9.789 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.389 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z" />
+    </svg>
+  </a>
+
+</body>
+
+</html>
