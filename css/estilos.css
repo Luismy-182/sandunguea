@@ -213,7 +213,7 @@ img {
 .fondo-blanco {
     background-color: var(--indigo-900);
     position: fixed;
-    width: 85%;
+    width: 67%;
     height: 100vh;
     top: 0;
     right: 0;
