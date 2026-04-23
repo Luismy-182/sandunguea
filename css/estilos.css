@@ -30,6 +30,11 @@ html {
     scroll-behavior: smooth;
 }
 
+body> :first-child {
+    margin-top: 6rem;
+    /* El primer elemento después del body tendrá margen */
+}
+
 
 /*estilos generales del body*/
 body {
@@ -159,9 +164,9 @@ img {
 .nav-cta {
     background: var(--amber);
     color: var(--dark) !important;
-    padding: .45rem 1.2rem;
+    padding: .45rem 1.8rem;
     border-radius: 99px;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
     transition: background .2s, transform .15s !important;
 }
 
@@ -195,9 +200,9 @@ img {
     bottom: 0;
     left: 0;
     z-index: 110;
-    background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(.8rem);
-    -webkit-backdrop-filter: blur(.8rem);
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0rem);
+    -webkit-backdrop-filter: blur(0rem);
     width: 100%;
     height: 100vh;
     visibility: hidden;
@@ -274,6 +279,266 @@ img {
 }
 
 
+/***************************** HERO ******************************************/
+/* ── HERO ────────────────────────────────────────────── */
+.hero {
+    min-height: calc(100vh - 6rem);
+    background: linear-gradient(135deg, var(--indigo-900) 0%, #1a1040 55%, #2d1b4e 100%);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 4rem;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99, 102, 241, .25) 0%, transparent 70%);
+    top: -80px;
+    right: -80px;
+    animation: pulse 6s ease-in-out infinite;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(244, 63, 94, .15) 0%, transparent 70%);
+    bottom: -60px;
+    left: -60px;
+    animation: pulse 8s ease-in-out infinite reverse;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: .8;
+    }
+
+    50% {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+}
+
+.notes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.note {
+    position: absolute;
+    font-size: 1.4rem;
+    opacity: .10;
+    animation: float 10s ease-in-out infinite;
+}
+
+.note:nth-child(1) {
+    left: 8%;
+    top: 20%;
+    animation-delay: 0s;
+}
+
+.note:nth-child(2) {
+    left: 85%;
+    top: 15%;
+    animation-delay: 2s;
+}
+
+.note:nth-child(3) {
+    left: 72%;
+    top: 73%;
+    animation-delay: 4s;
+}
+
+.note:nth-child(4) {
+    left: 16%;
+    top: 78%;
+    animation-delay: 6s;
+}
+
+.note:nth-child(5) {
+    left: 48%;
+    top: 10%;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-10deg);
+    }
+
+    50% {
+        transform: translateY(-22px) rotate(10deg);
+    }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 78rem;
+    width: 100%;
+    padding: 3.5rem 2rem;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(245, 158, 11, .18);
+    border: 1px solid rgba(245, 158, 11, .4);
+    color: var(--amber);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    padding: .9rem 1.6rem;
+    border-radius: 99px;
+    margin-bottom: 1.4rem;
+    animation: fadeUp .8s .1s both;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.7rem, 8vw, 5.5rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 1.2rem;
+    animation: fadeUp .8s .25s both;
+}
+
+.hero-title em {
+    font-family: 'Dancing Script', cursive;
+    font-style: normal;
+    color: var(--amber);
+    display: block;
+    font-size: 0.85em;
+    opacity: .9;
+}
+
+.hero-sub {
+    color: var(--indigo-200);
+    font-size: clamp(1.8rem, 3.5vw, 1.8rem);
+    font-weight: 300;
+    max-width: 540px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+    animation: fadeUp .8s .4s both;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeUp .8s .55s both;
+}
+
+.btn-primary {
+    background: var(--amber);
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 1.6rem;
+    padding: 1.5rem 3.2rem;
+    border-radius: 99px;
+    text-decoration: none;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 4px 24px rgba(245, 158, 11, .4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(245, 158, 11, .5);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--indigo-400);
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 1.36rem 3.2rem;
+    border-radius: 99px;
+    text-decoration: none;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    transition: background .2s, transform .2s;
+}
+
+.btn-secondary:hover {
+    background: rgba(99, 102, 241, .2);
+    transform: translateY(-3px);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-hint {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .4rem;
+    color: var(--indigo-200);
+    font-size: .7rem;
+    letter-spacing: .1em;
+    animation: bounce 2s ease-in-out infinite;
+    z-index: 2;
+}
+
+.scroll-hint span {
+    font-size: 1.2rem;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(8px);
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -283,8 +548,8 @@ img {
     background: var(--indigo-900);
     color: var(--indigo-200);
     text-align: center;
-    padding: 3.7rem 2rem;
-    margin-top: calc(100vh - 6.4rem);
+    padding: 3rem 2rem;
+
 }
 
 .footer-logo {
