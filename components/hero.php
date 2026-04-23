@@ -5,7 +5,7 @@
          <div class="note">💃</div>
 
          <div class="note">🕺</div>
-        
+
      </div>
      <div class="hero-content">
          <div class="hero-badge">💃 ¡Primera clase GRATIS!</div>
@@ -15,10 +15,10 @@
              <em>sin pena y a tu ritmo</em>
          </h1>
          <p class="hero-sub">
-             Sin niveles. Sin juicios. Aprende a tu ritmo desde el primer día.
+             Empieza desde cero en un ambiente donde todos te apoyan.
          </p>
          <div class="hero-btns">
-             <a href="#contacto" class="btn-primary">Quiero mi clase gratis</a>
+             <a href="#contacto" class="btn-primary">Reservar mi clase gratis</a>
              <!-- <a href="#clases" class="btn-secondary">Ver horarios</a> -->
          </div>
      </div>
