@@ -3,16 +3,14 @@
 
 
         <a class="nav-logo" href="#hero">
-            <em>Sandun<span class="text-gold">guea<span></em>
+            <em>Sandun<span class="text-gold">guea</span></em>
         </a>
 
         <ul class="nav-links">
-            <li><a href="#why">¿Por qué?</a></li>
-            <li><a href="#benefits">Beneficios</a></li>
-            <li><a href="#clases">Horarios</a></li>
-            <li><a href="#profesores">Maestros</a></li>
-            <li><a href="#comunidad">Comunidad</a></li>
-            <li><a href="#contacto" class="nav-cta">¡Inscríbete!</a></li>
+            <li><a href="#clases">Clases</a></li>
+            <li><a href="#horarios">Horarios</a></li>
+            <li><a href="#opiniones">Opiniones</a></li>
+            <li><a href="#contacto" class="nav-cta">Clase gratis</a></li>
         </ul>
 
         <div class="hamburguesa" id="hamburguesa">
@@ -28,12 +26,11 @@
     <div class="overlay-hamburguesa" id="overlay-hamburguesa">
         <div class="fondo-blanco" id="movil-links">
             <ul class="movil-links">
-                <li><a href="#why">¿Por qué?</a></li>
-                <li><a href="#benefits">Beneficios</a></li>
-                <li><a href="#clases">Horarios</a></li>
-                <li><a href="#profesores">Maestros</a></li>
-                <li><a href="#comunidad">Comunidad</a></li>
-                <li><a href="#contacto" class="nav-cta">¡Inscríbete!</a></li>
+                <li><a href="#clases">Clases</a></li>
+                <li><a href="#horarios">Horarios</a></li>
+                <li><a href="#opiniones">Opiniones</a></li>
+                <li><a href="#contacto" class="nav-cta">Clase gratis</a></li>
+
             </ul>
         </div>
 

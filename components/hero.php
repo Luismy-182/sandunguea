@@ -8,10 +8,9 @@
 
      </div>
      <div class="hero-content">
-         <div class="hero-badge">💃 ¡Primera clase GRATIS!</div>
+         <div class="hero-badge">💃¡Primera clase GRATIS!</div>
          <h1 class="hero-title">
-             No necesitas experiencia
-             para empezar a bailar
+             Empieza a bailar desde cero
              <em>sin pena y a tu ritmo</em>
          </h1>
          <p class="hero-sub">
