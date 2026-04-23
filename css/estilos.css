@@ -7,6 +7,7 @@
     --indigo-600: #4f46e5;
     --indigo-700: #4338ca;
     --indigo-900: #312e81;
+    --indigo-950: #272568;
     --amber: #f59e0b;
     --rose: #f43f5e;
     --cream: #fdf8f0;
@@ -199,11 +200,16 @@ img {
     -webkit-backdrop-filter: blur(.8rem);
     width: 100%;
     height: 100vh;
-    display: none;
+    visibility: hidden;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, visibility 0.3s;
+
 }
 
 .mostrar {
-    display: block;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(0.8rem);
+    -webkit-backdrop-filter: blur(0.8rem);
+    visibility: visible;
 }
 
 .body-movil {
@@ -217,7 +223,15 @@ img {
     height: 100vh;
     top: 0;
     right: 0;
+    transform: translateX(100%);
+    /* Empieza fuera de la pantalla */
+    transition: transform 0.3s ease-in-out;
 
+}
+
+.overlay-hamburguesa.mostrar .fondo-blanco {
+    transform: translateX(0);
+    /* Entra desde la derecha */
 }
 
 @media(min-width:768px) {
@@ -230,13 +244,19 @@ img {
     list-style: none;
     display: flex;
     flex-direction: column;
-    margin-top: 5rem;
+
+
 }
 
 .movil-links li {
     list-style: none;
     letter-spacing: 0.5em;
-    padding: 2rem;
+    padding: 2rem 2.5rem;
+
+}
+
+.movil-links li:hover {
+    background-color: var(--indigo-950);
 
 }
 
