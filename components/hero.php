@@ -11,8 +11,11 @@
          <div class="hero-badge">💃¡Primera clase GRATIS!</div>
          <h1 class="hero-title">
              Empieza a bailar desde cero
-             <em>sin pena y a tu ritmo</em>
+             <em class="neon-text">sin pena y <span class="underline-gold"> a tu ritmo</span></em>
+
+
          </h1>
+
          <p class="hero-sub">
              Empieza desde cero en un ambiente donde todos te apoyan.
          </p>

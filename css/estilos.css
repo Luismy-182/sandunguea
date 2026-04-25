@@ -1,20 +1,28 @@
+/*Variables*/
+
 :root {
-    --indigo-50: #eef2ff;
-    --indigo-100: #e0e7ff;
-    --indigo-200: #c7d2fe;
-    --indigo-400: #818cf8;
-    --indigo-500: #6366f1;
-    --indigo-600: #4f46e5;
-    --indigo-700: #4338ca;
-    --indigo-900: #312e81;
-    --indigo-950: #272568;
+    /* 🔵 BASE AZUL (reemplaza indigo) */
+    --indigo-50: #eef1ff;
+    --indigo-100: #dbe0ff;
+    --indigo-200: #bfc6ff;
+    --indigo-400: #6f7df0;
+    --indigo-500: #3f4fd9;
+    --indigo-600: #2c3bb8;
+    --indigo-700: #1f2c9e;
+    --indigo-900: #12229C;
+    /* SU color */
+    --indigo-950: #0b157a;
+
+    /* 🟡 ACENTOS (se mantienen) */
     --amber: #f59e0b;
     --rose: #f43f5e;
+
+    /* ⚪ NEUTROS */
     --cream: #fdf8f0;
     --dark: #1e1b2e;
+    /* NO lo cambies */
     --mid: #4b4869;
 }
-
 
 /*Border box para manejar medidas correctas*/
 *,
@@ -28,7 +36,7 @@
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
-    
+
 }
 
 
@@ -45,9 +53,100 @@ body {
 
 }
 
-/*utilidades*/
-.text-gold {
-    color: var(--amber);
+/* color: var(--amber); */
+
+
+
+.text-neon {
+    color: #fff3d1;
+
+    text-shadow:
+        0 0 4px rgba(255, 255, 255, 0.6),
+        0 0 8px rgba(255, 200, 100, 0.5),
+        0 0 16px rgba(255, 170, 60, 0.4),
+        0 0 24px rgba(255, 140, 0, 0.3);
+}
+
+.logo-glow {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: #fff3d1;
+
+    text-shadow:
+        0 0 30px rgba(255, 200, 100, 0.6),
+        0 0 10px rgba(255, 170, 60, 0.6),
+        0 0 10px rgba(255, 201, 100, 0.642),
+        0 0 10px rgba(255, 200, 100, 0.6),
+        0 0 10px rgba(255, 200, 100, 0.6),
+        0 0 10px rgba(255, 200, 100, 0.6),
+        0 0 10px rgba(255, 200, 100, 0.6),
+        0 0 10px rgba(255, 170, 60, 0.6);
+}
+
+
+/* Mantenemos el estilo neón igual */
+.neon-text {
+    color: #fff9c4;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 0 0 5px #fff, 0 0 10px #ffeb3b, 0 0 20px #ffeb3b, 0 0 40px #ff9800, 0 0 80px #ff9800;
+}
+
+/* El span contenedor */
+.underline-gold {
+    position: relative;
+    /* Necesario para que el subrayado se posicione respecto a este texto */
+    display: inline-block;
+}
+
+/* El subrayado estilo pincel */
+/* El subrayado estilo pincel CURVADO y ESTILIZADO */
+.underline-gold::after {
+    content: '';
+    position: absolute;
+    left: 0;
+
+    /* 1. Ajuste de Posición Vertical (Sube/Baja) */
+    /* bottom controla dónde se engancha. -2px es un buen inicio. */
+    bottom: 0px;
+
+    /* 2. Ajuste de Tamaño (Ancho y Alto) */
+    /* width controla cuánto cubre de izquierda a derecha. */
+    width: 100%;
+
+    /* height controla el grosor total del trazo. */
+    height: 4px;
+
+    z-index: -1;
+
+    /* 3. El Efecto de Trazado de Pincel (Lo Clave) */
+    background: radial-gradient(
+            /* La elipse es el 'cuerpo' de la línea */
+            ellipse
+            /* 3.1. Control del grosor central y de la punta final. */
+            /* '100% 120%' significa: 
+           - 100% (radio horizontal): Se estira por todo el ancho.
+           - 120% (radio vertical): Es un poco más gordo arriba y abajo que el 'height' total,
+                                      esto lo hace "gordito" al inicio (izquierda). */
+            90% 120%
+            /* 3.2. Control de la posición y la curvatura (U Invertida). */
+            /* '50% 100%' significa: 
+           - 50% (horizontal): El centro de la elipse está en el medio del texto.
+           - 100% (vertical): El centro está abajo del todo del 'height'. 
+                             Como la elipse es más alta que el 'height', solo vemos la parte de ARRIBA, 
+                             creando la forma de U INVERTIDA. */
+            at 0% 100%,
+
+            /* Color principal */
+            #ffb300 10%,
+
+            /* 3.3. Control de la "punta" y desvanecimiento. */
+            /* Al 80%, el color principal empieza a desvanecerse. Al 100%, es transparente. 
+           Esto crea la punta de pluma hacia la derecha. */
+            #ffb300 60%,
+            transparent 100%);
+
+    /* Mantenemos una ligera rotación orgánica */
+    transform: rotate(-3deg);
 }
 
 .text-center {
@@ -86,7 +185,10 @@ img {
     left: 0;
     right: 0;
     z-index: 100;
-    background: var(--indigo-900);
+    background: linear-gradient(to bottom,
+            rgba(18, 34, 156, 0.95),
+            rgba(18, 34, 156, 0.75));
+    backdrop-filter: blur(8px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -285,9 +387,14 @@ img {
 
 /***************************** HERO ******************************************/
 /* ── HERO ────────────────────────────────────────────── */
+/* ── HERO ────────────────────────────────────────────── */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, var(--indigo-900) 0%, #1a1040 55%, #2d1b4e 100%);
+
+    background: linear-gradient(135deg,
+            #1e1b2e 0%,
+            #0f1b3d 35%,
+            #12229C 100%);
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -303,36 +410,214 @@ img {
     }
 }
 
+
 @media(min-width:992px) {
     .hero {
         padding-top: 0rem;
-        align-items: center;
+
     }
 }
+
 
 .hero::before {
     content: '';
     position: absolute;
-    width: 340px;
-    height: 340px;
+    width: 380px;
+    height: 380px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(99, 102, 241, .25) 0%, transparent 70%);
-    top: -80px;
-    right: -80px;
+    background: radial-gradient(circle, rgba(18, 34, 156, .25) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
     animation: pulse 6s ease-in-out infinite;
 }
 
 .hero::after {
     content: '';
     position: absolute;
-    width: 260px;
-    height: 260px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(244, 63, 94, .15) 0%, transparent 70%);
-    bottom: -60px;
-    left: -60px;
+    background: radial-gradient(circle, rgba(245, 158, 11, .12) 0%, transparent 70%);
+    bottom: -80px;
+    left: -80px;
     animation: pulse 8s ease-in-out infinite reverse;
 }
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 72rem;
+    width: 100%;
+    padding: 4.5rem 2rem;
+}
+
+/* BADGE */
+.hero-badge {
+    display: inline-block;
+    background: rgba(245, 158, 11, .15);
+    border: 1px solid rgba(245, 158, 11, .35);
+    color: var(--amber);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    padding: 1rem 1.8rem;
+    border-radius: 99px;
+    margin-bottom: 2.4rem;
+}
+
+/* TITULO */
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(4rem, 8vw, 6.2rem);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 1.8rem;
+
+    text-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(18, 34, 156, 0.35);
+}
+
+/* SANDUNGUEA */
+.hero-title em {
+    font-family: 'Dancing Script', cursive;
+    font-style: normal;
+    display: block;
+    font-size: 0.95em;
+    margin-top: .5rem;
+
+    color: #fff3d1;
+
+    text-shadow:
+        0 0 8px rgba(255, 220, 120, 0.8),
+        0 0 18px rgba(255, 180, 60, 0.6),
+        0 0 32px rgba(255, 140, 0, 0.45);
+}
+
+
+@media(min-width:768px) {
+    .hero-content {
+        padding: 3.5rem 2rem;
+    }
+}
+
+
+
+@media(min-width:768px) {
+    .hero-badge {
+        font-size: 1.4rem;
+    }
+}
+
+/* SUBTEXTO */
+.hero-sub {
+    color: rgba(191, 198, 255, 0.9);
+    font-size: clamp(1.6rem, 2.5vw, 2rem);
+    font-weight: 300;
+    max-width: 520px;
+    margin: 0 auto 3rem;
+    line-height: 1.75;
+}
+
+@media(min-width:768px) {
+    .hero-title {
+        font-size: clamp(5.2rem, 7vw, 8.2rem);
+        margin-top: 1rem;
+    }
+
+    .hero-title em {
+        font-size: 1em;
+    }
+
+    .hero-sub {
+        font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+    }
+}
+
+
+
+
+/* BOTONES */
+.hero-btns {
+    display: flex;
+    gap: 1.6rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-primary {
+    background: var(--amber);
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 1.6rem;
+    padding: 1.6rem 3.4rem;
+    border-radius: 999px;
+    text-decoration: none;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+
+    box-shadow:
+        0 6px 24px rgba(245, 158, 11, .35),
+        0 0 12px rgba(245, 158, 11, .25);
+
+    transition: all .25s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 10px 32px rgba(245, 158, 11, .45),
+        0 0 16px rgba(245, 158, 11, .35);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 1.4rem 3.2rem;
+    border-radius: 999px;
+    text-decoration: none;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+
+    backdrop-filter: blur(6px);
+    transition: all .25s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-3px);
+}
+
+/* SCROLL */
+.scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    color: rgba(191, 198, 255, 0.7);
+    font-size: .9rem;
+    letter-spacing: .12em;
+}
+
+.scroll-hint span {
+    font-size: 1.4rem;
+}
+
+
+
 
 @keyframes pulse {
 
@@ -403,138 +688,8 @@ img {
     }
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: 78rem;
-    width: 100%;
-    padding: 3.5rem 2rem;
-}
-
-@media(min-width:768px) {
-    .hero-content {
-        padding: 3.5rem 2rem;
-    }
-}
-
-.hero-badge {
-    display: inline-block;
-    background: rgba(245, 158, 11, .18);
-    border: 1px solid rgba(245, 158, 11, .4);
-    color: var(--amber);
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    padding: .9rem 1.6rem;
-    border-radius: 99px;
-    margin-bottom: 2rem;
-    animation: fadeUp .8s .1s both;
-}
-
-@media(min-width:768px) {
-    .hero-badge {
-        font-size: 1.4rem;
-    }
-}
-
-.hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3.7rem, 8vw, 5.5rem);
-    font-weight: 700;
-    color: #fff;
-    line-height: 1.1;
-    margin-bottom: 1.2rem;
-    animation: fadeUp .8s .25s both;
-}
 
 
-.hero-title em {
-    font-family: 'Dancing Script', cursive;
-    font-style: normal;
-    color: var(--amber);
-    display: block;
-    font-size: 0.85em;
-    opacity: .9;
-}
-
-
-
-
-.hero-sub {
-    color: var(--indigo-200);
-    font-size: clamp(1.8rem, 3.5vw, 1.8rem);
-    font-weight: 300;
-    max-width: 540px;
-    margin: 0 auto 2rem;
-    line-height: 1.7;
-    animation: fadeUp .8s .4s both;
-}
-
-@media(min-width:768px) {
-    .hero-title {
-        font-size: clamp(5.2rem, 7vw, 8.2rem);
-        margin-top: 1rem;
-    }
-
-    .hero-title em {
-        font-size: 1em;
-    }
-
-    .hero-sub {
-        font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-    }
-}
-
-.hero-btns {
-    display: flex;
-    gap: 1.25rem;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    animation: fadeUp .8s .55s both;
-}
-
-.btn-primary {
-    background: var(--amber);
-    color: var(--dark);
-    font-weight: 700;
-    font-size: 1.6rem;
-    padding: 1.5rem 3.2rem;
-    border-radius: 99px;
-    text-decoration: none;
-    width: 100%;
-    max-width: 280px;
-    text-align: center;
-    transition: transform .2s, box-shadow .2s;
-    box-shadow: 0 4px 24px rgba(245, 158, 11, .4);
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 32px rgba(245, 158, 11, .5);
-}
-
-.btn-secondary {
-    background: transparent;
-    border: 2px solid var(--indigo-400);
-    color: #fff;
-    font-weight: 500;
-    font-size: 1.5rem;
-    padding: 1.36rem 3.2rem;
-    border-radius: 99px;
-    text-decoration: none;
-    width: 100%;
-    max-width: 280px;
-    text-align: center;
-    transition: background .2s, transform .2s;
-}
-
-.btn-secondary:hover {
-    background: rgba(99, 102, 241, .2);
-    transform: translateY(-3px);
-}
 
 @keyframes fadeUp {
     from {
@@ -548,25 +703,7 @@ img {
     }
 }
 
-.scroll-hint {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: .4rem;
-    color: var(--indigo-200);
-    font-size: .7rem;
-    letter-spacing: .1em;
-    animation: bounce 2s ease-in-out infinite;
-    z-index: 2;
-}
 
-.scroll-hint span {
-    font-size: 1.2rem;
-}
 
 @keyframes bounce {
 
@@ -579,6 +716,9 @@ img {
         transform: translateX(-50%) translateY(8px);
     }
 }
+
+
+
 
 
 
@@ -612,4 +752,50 @@ img {
 .footer p {
     font-size: 1.4rem;
     opacity: .7;
+}
+
+
+
+/*ICONO WHATSAPP FLOTANTE */
+
+.wa-float {
+    position: fixed;
+    bottom: 1.8rem;
+    right: 1.8rem;
+    z-index: 200;
+    width: 5.8rem;
+    height: 5.8rem;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 24px rgba(37, 211, 102, .5);
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+    animation: pulse-green 3s infinite;
+}
+
+.wa-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 32px rgba(37, 211, 102, .6);
+    animation: none;
+}
+
+.wa-float svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+}
+
+@keyframes pulse-green {
+
+    0%,
+    100% {
+        box-shadow: 0 6px 24px rgba(37, 211, 102, .5);
+    }
+
+    50% {
+        box-shadow: 0 6px 36px rgba(37, 211, 102, .75), 0 0 0 10px rgba(37, 211, 102, .1);
+    }
 }
