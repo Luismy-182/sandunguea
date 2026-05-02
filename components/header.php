@@ -1,5 +1,5 @@
 <header>
-    <nav class="nav">
+    <nav class="nav" id="nav">
 
 
         <a class="nav-logo logo-glow" href="#hero">

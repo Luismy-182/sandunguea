@@ -1,6 +1,8 @@
-import {menuResponsive} from '../js/nav/responsive.js';
-import { waFlotante } from './whatsApp/whatsApp.js';
-document.addEventListener('DOMContentLoaded', ()=>{
+import { menuResponsive } from '../js/nav/responsive.js';
+import { whatsApp } from './whatsApp/whatsApp.js';
+import { menuSticky } from '../js/nav/menuSticky.js';
+document.addEventListener('DOMContentLoaded', () => {
     menuResponsive();
-    waFlotante();
+    menuSticky();
+    whatsApp();
 });

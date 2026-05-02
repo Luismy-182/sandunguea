@@ -1,30 +1,27 @@
-function waFlotante() {
+function whatsApp() {
     //número de la Miss
     const numeroSilvia = 525648546082;
-    //mensaje predeterminado en whatsApp flotante
-    const mensaje = 'Hola Miss Silvia! Me interesa tomar clase en sandunguea, puede darme más información?';
+    //seleccionamos todos los botones de whatsApp
+    const btnsWhatsApp = document.querySelectorAll('[data-mensaje]');
 
-    // nos apoyamos de URLSearchParams para manejar el encoding automáticamente
-    const params = new URLSearchParams({
-        text: mensaje
+    //un evento por cada btn
+    btnsWhatsApp.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Obtenemos el mensaje específico de este botón
+            const mensaje = btn.getAttribute('data-mensaje');
+            // Construimos la URL usando encodeURIComponent para que no falle con acentos o espacios
+            const url = `https://wa.me/${numeroSilvia}?text=${encodeURIComponent(mensaje)}`;
+
+            window.open(url, '_blank');
+        });
     });
 
-    //Url a enviar
-    const url = `https://wa.me/${numeroSilvia}?${params.toString()}`;
 
-
-
-    const waFloat = document.querySelector('#wa-float');
-    waFloat.addEventListener('click', e => {
-        e.preventDefault();
-        //abrimos el enlace
-        window.open(url, '_blank');
-
-    });
 
 }
 
 
 export {
-    waFlotante
+    whatsApp
 }
