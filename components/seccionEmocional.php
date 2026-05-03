@@ -28,6 +28,38 @@
             <p>Un espacio donde puedes soltarte sin miedo al qué dirán.</p>
         </div>
     </div>
+    <!---puente-->
+    <p class="confianza-text confianza-bridge">
+        Y cuando te das la oportunidad… te das cuenta de que sí puedes.
+    </p>
+
+    <div class="confianza-grid confianza-grid-extra">
+
+        <div class="confianza-card">
+            <span>😌</span>
+            <h3>Te empiezas a soltar</h3>
+            <p>
+                Poco a poco dejas los nervios… y empiezas a disfrutar el momento.
+            </p>
+        </div>
+
+        <div class="confianza-card">
+            <span>✨</span>
+            <h3>Ganas confianza</h3>
+            <p>
+                Tu cuerpo responde mejor y te sientes más seguro con cada clase.
+            </p>
+        </div>
+
+        <div class="confianza-card">
+            <span>🎶</span>
+            <h3>Conectas con otros</h3>
+            <p>
+                Te das cuenta que todos están en lo mismo… y eso te hace sentir cómodo.
+            </p>
+        </div>
+
+    </div>
 
     <p class="confianza-final">
         No tienes que estar listo.

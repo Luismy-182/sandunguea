@@ -19,7 +19,7 @@
     <?php require_once __DIR__ . '/components/seccionEmocional.php' ?>
     <?php require_once __DIR__ . '/components/footer.php' ?>
 
-    <script src="/js/app.js" type="module"></script>
+    <script src="/js/app.js?v=1.0.3" type="module"></script>
 </body>
 
 </html>
