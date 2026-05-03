@@ -13,7 +13,7 @@
         <div class="confianza-card">
             <span>🤝</span>
             <h3>Sin niveles</h3>
-            <p>Todos comienzan juntos, sin presión ni comparaciones.</p>
+            <p>Todos avanzamos juntos, sin presión ni comparaciones.</p>
         </div>
 
         <div class="confianza-card">
@@ -55,7 +55,7 @@
             <span>🎶</span>
             <h3>Conectas con otros</h3>
             <p>
-                Te das cuenta que todos están en lo mismo… y eso te hace sentir cómodo.
+                Te das cuenta que todos están en la misma sintonía... y eso te hace sentir cómodo
             </p>
         </div>
 
