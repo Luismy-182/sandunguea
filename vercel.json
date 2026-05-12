@@ -9,6 +9,10 @@
             "src": "/assets/fonts/(.*)",
             "dest": "/assets/fonts/$1"
         },
+             {
+            "src": "/assets/videos/(.*)",
+            "dest": "/assets/videos/$1"
+        },
         {
             "src": "/assets/css/(.*)",
             "dest": "/assets/css/$1"
