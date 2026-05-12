@@ -2,8 +2,8 @@
     <nav class="nav" id="nav">
 
 
-        <a class="nav-logo logo-glow" href="#hero">
-            <em>Sandunguea</em>
+        <a class="nav-logo logo-glow " href="#hero">
+            <em class="sandunguea-letter">Sandunguea</em>
         </a>
 
         <ul class="nav-links">

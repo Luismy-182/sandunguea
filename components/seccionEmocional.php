@@ -63,7 +63,7 @@
 
     <p class="confianza-final">
         No tienes que estar listo.
-        <span>Solo necesitas atreverte.</span>
+        <span class="sandunguea-letter">Solo necesitas atreverte.</span>
     </p>
 
     <div class="emocional-btn">
