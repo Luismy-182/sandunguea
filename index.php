@@ -20,7 +20,7 @@
     <?php require_once __DIR__ . '/components/sandunguea.php' ?>
     <?php require_once __DIR__ . '/components/footer.php' ?>
 
-    <script src="/assets/js/app.js?v=1.0.5" type="module"></script>
+    <script src="/assets/js/app.js?v=1.0.6" type="module"></script>
 </body>
 
 </html>

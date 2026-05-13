@@ -107,7 +107,7 @@
 
     <div class="emocional-btn">
 
-        <a href="#contacto" class="btn-primary" data-mensaje="Hola, me interesa empezar a bailar 😅 ¿Me das información?">
+        <a href="#contacto" class="btn-primary" data-mensaje="Hola 😊 Vi el ambiente de Sandunguea y me dieron ganas de empezar 💃 ¿Me das información?">
             Quiero vivir esto →
 
         </a>
