@@ -1,19 +1,38 @@
 const reproduccion = async () => {
     const videos = document.querySelectorAll('.video-interactivo');
     videos.forEach(video => {
+
+
         //activa/desactiva sonido con un click
         video.addEventListener('click', () => {
+
+
+            const card = video.closest('.video-card');
+
+            const volumeIcon = card.querySelector('.volume-icon');
+            const mutedIcon = card.querySelector('.muted-icon');
+            // guardamos el estado actual
+            const estabaMuteado = video.muted;
+
+            videos.forEach(v => {
+
+                v.muted = true;
+
+                const vCard = v.closest('.video-card');
+
+                vCard.querySelector('.volume-icon').style.display = "none";
+                vCard.querySelector('.muted-icon').style.display = "block";
+            });
             //evalua si el video está mudo
-            if (video.muted) {
-                //si está mudo activa el sonido
+            // si estaba muteado -> activamos sonido
+            if (estabaMuteado) {
+
                 video.muted = false;
 
-            } else {
-                //si no está mudo mutea el sonido
-                video.muted = true;
-            };
+                mutedIcon.style.display = "none";
+                volumeIcon.style.display = "block";
 
-            video.play();
+            }
         });
 
 
@@ -22,10 +41,21 @@ const reproduccion = async () => {
 
         video.addEventListener('dblclick', async () => {
             try {
+                const card = video.closest('.video-card');
+
                 if (document.fullscreenElement) {
                     await document.exitFullscreen();
                 } else {
-                    await video.requestFullscreen();
+
+                    // Navegadores normales
+                    if (card.requestFullscreen) {
+                        await card.requestFullscreen();
+
+                        // Safari iPhone
+                    } else if (video.webkitEnterFullscreen) {
+                        video.webkitEnterFullscreen();
+                    }
+
                 }
             } catch (error) {
                 console.log(error);
@@ -35,7 +65,7 @@ const reproduccion = async () => {
         });
 
 
-        
+
     })
 
 }

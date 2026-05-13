@@ -24,7 +24,7 @@
     </nav>
     <!-- Fondo negro overlay -->
     <div class="overlay-hamburguesa" id="overlay-hamburguesa">
-        <div class="fondo-blanco" id="movil-links">
+        <div class="fondo-azul" id="movil-links">
             <ul class="movil-links">
                 <li><a href="#clases">Clases</a></li>
                 <li><a href="#horarios">Horarios</a></li>
