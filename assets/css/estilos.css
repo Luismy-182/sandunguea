@@ -70,7 +70,16 @@ body {
     overflow-x: hidden;
 }
 
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', sans-serif;
+}
 
+p {
+    color: var(--mid);
+}
 
 .section {
     padding: 6.4rem 2rem;
@@ -833,6 +842,7 @@ img {
 .footer p {
     font-size: 1.4rem;
     opacity: .7;
+    color: var(--blanco);
 }
 
 .sandunguea-footer em {
@@ -1225,17 +1235,21 @@ img {
             #ffffff 100%);
 }
 
-.sandunguea .head-section h2 {
+.head-section h2 {
     font-size: clamp(3.5rem, 5vw, 4.8rem);
     color: var(--dark);
     line-height: 1.2;
     margin-top: 1rem;
     text-align: center;
+
+    
 }
 
 .head-section h2 span {
     color: var(--azul-700);
     font-size: 3.8rem;
+
+    
 
 }
 
@@ -1251,6 +1265,17 @@ img {
     font-size: clamp(1.6rem, 2.5vw, 2.1rem);
     color: var(--mid);
     max-width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.section-lead-no-max {
+    margin-top: 1.5rem;
+    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+    text-align: center;
+    color: var(--mid);
+    max-width: 160rem;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
@@ -1571,4 +1596,148 @@ img {
 .pill-fb {
     background: #1877f2;
     color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+/*Tu camino en sandunguea*/
+
+/* ===== CAMINO ===== */
+.camino-section {
+    background:
+        linear-gradient(180deg,
+            #f5f7ff 0%,
+            #e9eeff 50%,
+            #dde5ff 100%);
+    padding-bottom: 8rem;
+}
+
+.camino-section h2 em {
+    font-style: normal;
+    color: var(--azul-700);
+    text-shadow: 0 4px 18px rgba(18, 34, 156, 0.10);
+}
+
+.camino-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 3.2rem;
+    margin-top: 6.5rem;
+    position: relative;
+}
+
+@media(min-width:1024px) {
+    .camino-grid {
+        padding: 0 6.4rem;
+    }
+}
+
+.camino-step {
+    text-align: center;
+    position: relative;
+    background: rgba(255, 255, 255, .62);
+    backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(255, 255, 255, .5);
+
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+.step-num {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--azul-950), var(--azul-700));
+    color: #fff;
+    font-size: 2.4rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    box-shadow: 0 6px 20px rgba(18, 34, 156, 0.25);
+    position: relative;
+    z-index: 1;
+    box-shadow:
+        0 8px 24px rgba(18, 34, 156, .22),
+        0 0 18px rgba(245, 158, 11, .18);
+}
+
+.step-icon {
+    font-size: 2.8rem;
+    display: block;
+    margin-bottom: 2rem;
+
+}
+
+.camino-step h3 {
+
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+
+
+.camino-step p {
+    font-size: clamp(1.2rem, 4vw, 1.7rem);
+    color: var(--mid);
+    line-height: 1.6;
+}
+
+@media(min-width:1024px) {
+
+    .camino-grid::before {
+
+
+
+        content: '';
+        position: absolute;
+        top: 2.8rem;
+        left: 12%;
+        width: 76%;
+        height: 3px;
+
+        opacity: .9;
+
+
+
+        background: linear-gradient(90deg,
+                rgba(255, 200, 100, 0),
+                rgba(255, 210, 120, .45),
+                rgba(255, 179, 0, .95),
+                rgba(255, 210, 120, .45),
+                rgba(255, 200, 100, 0));
+
+        box-shadow:
+            0 0 10px rgba(255, 179, 0, .35),
+            0 0 20px rgba(255, 179, 0, .18);
+
+        border-radius: 999px;
+
+        z-index: 0;
+
+        filter: blur(.2px);
+    }
+
+}
+
+@media(min-width:768px) {
+    .camino-step {
+        transition: transform .25s ease;
+    }
+
+    .camino-step:hover {
+
+        transform: translateY(-8px) scale(1.01);
+        box-shadow: 0 18px 40px rgba(18, 34, 156, .12);
+    }
 }
