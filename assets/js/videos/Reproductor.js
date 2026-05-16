@@ -75,28 +75,6 @@ export default class Reproductor {
         });
     }
 
-    //función para pausar video
-    pause() {
-        this.videos.forEach(video => {
-            video.pause();
-
-
-        });
-
-    }
-
-    //función para play video
-    play() {
-        this.videos.forEach(video => {
-            video.play().catch((error)=>{
-                console.log(error);
-                
-            });
-
-        });
-
-    }
-
 
 
 }
