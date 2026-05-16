@@ -14,8 +14,8 @@
         <div class="camino-step reveal">
             <div class="step-num">1</div>
             <span class="step-icon">📲</span>
-            <h3>Escribes para venir</h3>
-            <p>Te ayudamos a encontrar un horario donde te sientas cómodo para empezar.
+            <h3>Agendas tu clase</h3>
+            <p>Eliges el horario y la clase que más te interese para comenzar a tu ritmo.
             </p>
         </div>
         <div class="camino-step reveal reveal-delay-1">
