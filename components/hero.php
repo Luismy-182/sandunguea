@@ -19,9 +19,9 @@
          <p class="hero-sub">
              Empieza desde cero en un ambiente donde todos te apoyan.
          </p>
-         <div class="hero-btns">
+         <div class="flex-col-center hero-btns">
              <a href="#contacto" class="btn-primary" data-mensaje="Hola!, vi su página y quiero agendar mi clase gratis. ¿Qué horarios tienen disponibles?😊">Reservar mi clase gratis</a>
-             <!-- <a href="#clases" class="btn-secondary">Ver horarios</a> -->
+             <a href="#clases" class="btn-secondary">Ver horarios</a>
          </div>
      </div>
      <!-- <div class="scroll-hint">

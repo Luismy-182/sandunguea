@@ -8,21 +8,21 @@
         Es más común de lo que crees.
         Aquí nadie llega sabiendo… y eso está bien.
     </p>
-    <div class="confianza-grid">
+    <div class="confianza-grid flex-col-center">
 
-        <div class="confianza-card">
+        <div class="confianza-card flex-col-center">
             <span>🤝</span>
             <h3>Sin niveles</h3>
             <p>Todos avanzamos juntos, sin presión ni comparaciones.</p>
         </div>
 
-        <div class="confianza-card">
+        <div class="confianza-card flex-col-center">
             <span>🌱</span>
             <h3>Respetamos tu proceso</h3>
             <p>Cada persona aprende a su ritmo, ganando confianza poco a poco.</p>
         </div>
 
-        <div class="confianza-card">
+        <div class="confianza-card flex-col-center">
             <span>💃</span>
             <h3>Ambiente seguro</h3>
             <p>Un espacio donde puedes soltarte sin miedo al qué dirán.</p>
@@ -33,9 +33,9 @@
         Y cuando te das la oportunidad… te das cuenta de que sí puedes.
     </p>
 
-    <div class="confianza-grid confianza-grid-extra">
+    <div class="confianza-grid confianza-grid-extra flex-col-center">
 
-        <div class="confianza-card">
+        <div class="confianza-card flex-col-center">
             <span>😌</span>
             <h3>Te empiezas a soltar</h3>
             <p>
@@ -43,7 +43,7 @@
             </p>
         </div>
 
-        <div class="confianza-card">
+        <div class="confianza-card flex-col-center">
             <span>✨</span>
             <h3>Ganas confianza</h3>
             <p>
@@ -51,7 +51,7 @@
             </p>
         </div>
 
-        <div class="confianza-card">
+        <div class="confianza-card flex-col-center">
             <span>🎶</span>
             <h3>Conectas con otros</h3>
             <p>

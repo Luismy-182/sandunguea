@@ -4,6 +4,7 @@
     src: url('/assets/fonts/MoonTime-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 :root {
@@ -22,7 +23,7 @@
     /* 🟡 ACENTOS (se mantienen) */
     --amber: #f59e0b;
     --rose: #f43f5e;
-
+    --vino: #b23a48;
     /* ⚪ NEUTROS */
     --cream: #fdf8f0;
     --dark: #1e1b2e;
@@ -51,7 +52,7 @@ html {
 
 
 .sandunguea-letter {
-    font-family: var(--Sandunguea);
+    font-family: var(--Sandunguea), cursive;
     /* font-family: 'Dancing Script', cursive; */
     font-weight: 900;
 
@@ -94,7 +95,18 @@ p {
 
 /* color: var(--amber); */
 
+/*utilidades*/
+.flex-col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .text-neon {
     color: #fff3d1;
@@ -132,6 +144,48 @@ p {
 
     text-shadow: 0 0 5px #fff, 0 0 10px #ffeb3b, 0 0 20px #ffeb3b, 0 0 40px #ff9800, 0 0 80px #ff9800;
 }
+
+.btn-help {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
+    padding-inline: 3rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+    padding: 1.6rem 3.4rem;
+    border-radius: 999px;
+    text-decoration: none;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    background: linear-gradient(135deg,
+            var(--azul-700),
+            var(--azul-950));
+
+    color: white;
+    border: 1px solid rgba(255, 255, 255, .12);
+    transition:
+        transform .3s ease,
+        filter .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+.btn-help:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(255, 255, 255, .22);
+
+    filter: brightness(1.04);
+
+    box-shadow:
+        0 14px 34px rgba(18, 34, 156, .32),
+        0 0 18px rgba(111, 125, 240, .18);
+
+}
+
 
 /* El span contenedor */
 .underline-gold {
@@ -208,9 +262,9 @@ img {
 
 .logo {
     display: flex;
-    gap: 1rem;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
 
 
@@ -440,10 +494,10 @@ img {
 }
 
 .movil-links {
-    list-style: none;
     display: flex;
     flex-direction: column;
 
+    list-style: none;
 
 }
 
@@ -632,11 +686,14 @@ img {
 
 /* BOTONES */
 .hero-btns {
-    display: flex;
-    gap: 1.6rem;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    gap: 2.3rem;
+}
+
+@media(min-width:768px) {
+    .hero-btns {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 
 .btn-primary {
@@ -666,25 +723,69 @@ img {
 }
 
 .btn-secondary {
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.25);
-    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    color: rgba(255, 255, 255, 0.92);
+
     font-weight: 500;
     font-size: 1.5rem;
+
     padding: 1.4rem 3.2rem;
+
     border-radius: 999px;
+
     text-decoration: none;
+
     width: 100%;
     max-width: 300px;
+
     text-align: center;
 
-    backdrop-filter: blur(6px);
-    transition: all .25s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .08),
+        0 8px 24px rgba(0, 0, 0, .12);
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.10);
+
+    border-color: rgba(255, 255, 255, 0.32);
+
     transform: translateY(-3px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .12),
+        0 12px 30px rgba(18, 34, 156, .22);
+}
+
+@media(min-width:768px) {
+
+    .btn-primary,
+    .btn-secondary {
+
+        width: auto;
+
+        padding: 1.4rem 2.6rem;
+
+        font-size: 1.5rem;
+
+        max-width: none;
+    }
+
+    .hero-btns {
+        gap: 1.4rem;
+    }
 }
 
 /* SCROLL */
@@ -1013,9 +1114,7 @@ img {
 }
 
 .confianza-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
     margin-top: 5rem;
     gap: 3.5rem;
     padding: 0;
@@ -1093,9 +1192,6 @@ img {
 
 
 .confianza-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -1242,14 +1338,14 @@ img {
     margin-top: 1rem;
     text-align: center;
 
-    
+
 }
 
 .head-section h2 span {
     color: var(--azul-700);
     font-size: 3.8rem;
 
-    
+
 
 }
 
@@ -1739,5 +1835,538 @@ img {
 
         transform: translateY(-8px) scale(1.01);
         box-shadow: 0 18px 40px rgba(18, 34, 156, .12);
+    }
+}
+
+
+
+
+/*-----------CLASES-------------*/
+
+
+.clases {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(135deg,
+            #0f172a 0%,
+            #12229C 55%,
+            #1e1b2e 100%);
+}
+
+/* glow decorativo */
+.clases::before {
+    content: '';
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(245, 158, 11, .10) 0%,
+            transparent 70%);
+
+    top: -120px;
+    right: -120px;
+
+    pointer-events: none;
+}
+
+.clases .label-section {
+    color: var(--amber);
+}
+
+.clases .head-section-white {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clases .head-section-white h2 {
+    text-align: center;
+    color: var(--blanco);
+
+    font-size: clamp(3.6rem, 7vw, 5rem);
+    line-height: 1.15;
+
+    max-width: 70rem;
+}
+
+.section-lead-white {
+    margin-top: 1.6rem;
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, .78);
+
+    font-size: clamp(1.6rem, 4vw, 2rem);
+
+    line-height: 1.7;
+
+    max-width: 58rem;
+}
+
+/* ===============================
+   GRID
+=================================*/
+.clases-grid {
+    margin-top: 5rem;
+
+    display: grid;
+    gap: 1.8rem;
+}
+
+/* ===============================
+   CARD
+=================================*/
+.clase {
+    position: relative;
+
+    padding: 2.4rem 2rem;
+
+    border-radius: 2rem;
+
+    background:
+        rgba(255, 255, 255, .06);
+
+    border:
+        1px solid rgba(255, 255, 255, .12);
+
+    backdrop-filter: blur(10px);
+
+    overflow: hidden;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+/* línea glow superior */
+.clase::before {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 3px;
+
+    background:
+        linear-gradient(90deg,
+            var(--amber),
+            rgba(255, 255, 255, .15));
+}
+
+.clases::after {
+    content: '';
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(255, 255, 255, .05) 0%,
+            transparent 70%);
+
+    bottom: -120px;
+    left: -120px;
+
+    pointer-events: none;
+}
+
+/* hover */
+.clase:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(245, 158, 11, .45);
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, .22),
+        0 0 24px rgba(245, 158, 11, .10);
+}
+
+/* emoji */
+.clase span {
+    display: inline-block;
+
+    font-size: 3.6rem;
+
+    margin-bottom: 1.6rem;
+}
+
+/* titulo */
+.clase h3 {
+    color: var(--blanco);
+
+    font-size: clamp(2.4rem, 5vw, 3rem);
+
+    margin-bottom: .8rem;
+
+    line-height: 1.2;
+}
+
+/* mini tag */
+.clase-tag {
+    color:
+        rgba(191, 198, 255, .78);
+
+    font-size: 1.3rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
+
+    margin-bottom: 1.6rem;
+}
+
+/* descripción */
+.clase p:last-child {
+    color:
+        rgba(255, 255, 255, .82);
+
+    font-size: 1.6rem;
+
+    line-height: 1.7;
+}
+
+/* ===============================
+   TABLET
+=================================*/
+@media(min-width:768px) {
+
+    .clases-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 2.2rem;
+    }
+
+    .clase {
+        padding: 3rem 2.6rem;
+    }
+}
+
+/* ===============================
+   DESKTOP
+=================================*/
+@media(min-width:1024px) {
+
+    .clases-grid {
+        grid-template-columns: repeat(4, 1fr);
+
+        padding: 0 6.4rem;
+    }
+
+    .clase {
+        min-height: 100%;
+    }
+}
+
+.clases-bridge {
+    margin-top: 5.5rem;
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, .78);
+
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+
+    line-height: 1.7;
+
+    max-width: 60rem;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    opacity: .92;
+}
+
+/* pequeño glow elegante */
+.clases-bridge span {
+    color: var(--amber);
+
+    text-shadow:
+        0 0 10px rgba(245, 158, 11, .35);
+}
+
+
+
+
+/**********************************
+            HORARIOS
+        MOBILE FIRST
+**********************************/
+
+.horarios {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(180deg,
+            #f8faff 0%,
+            #eef3ff 100%);
+}
+
+/* glow decorativo suave */
+.horarios::before {
+    content: '';
+
+    position: absolute;
+
+    top: -120px;
+    right: -120px;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(18, 34, 156, .06) 0%,
+            transparent 70%);
+
+    pointer-events: none;
+}
+
+.horarios .head-section h2 em {
+    color: var(--azul-700);
+    font-style: normal;
+}
+
+/**********************************
+            GRID
+**********************************/
+
+.horarios-grid {
+    margin-top: 5rem;
+
+    display: grid;
+    gap: 2rem;
+}
+
+.dia-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 2rem;
+    background:
+        rgba(255, 255, 255, .88);
+    border:
+        1px solid var(--azul-100);
+    box-shadow:
+        0 12px 30px rgba(18, 34, 156, .08);
+
+    backdrop-filter: blur(6px);
+
+    overflow: hidden;
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+/**********************************
+            CARD
+**********************************/
+
+.dia-card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(18, 34, 156, .18);
+
+    box-shadow:
+        0 20px 45px rgba(18, 34, 156, .12);
+}
+
+/**********************************
+              DÍA
+**********************************/
+
+.dia {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem 2rem;
+    background:
+        linear-gradient(135deg,
+            var(--azul-700),
+            var(--azul-900));
+    border-bottom:
+        1px solid rgba(255, 255, 255, .08);
+    border-radius: 2rem 2rem 0 0;
+}
+
+.dia h3 {
+    color: var(--blanco);
+
+    font-size: 2.2rem;
+
+    font-weight: 700;
+}
+
+.dia span {
+    font-size: 2.4rem;
+}
+
+.dia-card:hover .dia {
+    filter: brightness(1.05);
+}
+
+/**********************************
+            MATERIA
+**********************************/
+
+.materia {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 1.4rem;
+
+    padding: 1.5rem 0;
+
+    border-bottom:
+        1px solid rgba(18, 34, 156, .08);
+    position: relative;
+    padding-left: 1.6rem;
+}
+
+.materia::before {
+    content: '';
+
+    position: absolute;
+
+    left: 0;
+    top: 1.7rem;
+
+    width: 4px;
+    height: 4.2rem;
+
+    border-radius: 999px;
+
+    background: var(--amber);
+}
+
+.materia.cumbia::before {
+    background: var(--amber);
+}
+
+.materia.linea::before {
+    background: #4ecdc4;
+}
+
+.materia.casino::before {
+    background: var(--azul-950);
+}
+
+.materia.bachata::before {
+    background: var(--vino);
+}
+
+.materia:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/**********************************
+             BAILE
+**********************************/
+
+
+.baile h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.baile p {
+    font-size: 1.6rem;
+    opacity: .8;
+}
+
+/**********************************
+           PROFESOR
+**********************************/
+.profesor {
+    padding-top: .2rem;
+}
+
+.profesor p {
+    white-space: nowrap;
+
+    font-size: 1.2rem;
+
+    color: var(--mid);
+
+    background:
+        rgba(18, 34, 156, .05);
+
+    padding: .7rem 1.2rem;
+
+    border-radius: 999px;
+}
+
+/**********************************
+         TEXTO FINAL
+**********************************/
+.horario-card {
+    padding: 2rem;
+}
+
+.horarios>p:last-of-type {
+    margin-top: 4rem;
+
+    text-align: center;
+
+    font-size: clamp(1.6rem, 4vw, 2rem);
+
+    color: var(--dark);
+
+    line-height: 1.7;
+
+    opacity: .9;
+}
+
+/**********************************
+            TABLET
+**********************************/
+
+@media(min-width:768px) {
+
+    .horarios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .horario-card {
+        padding: 3rem 2.6rem;
+    }
+}
+
+/**********************************
+            DESKTOP
+**********************************/
+
+@media(min-width:1024px) {
+
+    .horarios-grid {
+        grid-template-columns: repeat(3, 1fr);
+
+        padding: 0 6.4rem;
+    }
+
+    .horario-card {
+        height: 100%;
     }
 }
