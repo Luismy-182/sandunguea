@@ -3,7 +3,7 @@
     <div class="head-section">
         <h2>
             Aprende con quienes
-            aman lo que enseñan.
+            <span class="text-azul-700">aman</span> lo que enseñan.
         </h2>
     </div>
     <p class="section-lead-no-max">Cada profesor está para ayudarte a disfrutar el proceso, incluso si nunca has bailado antes.</p>

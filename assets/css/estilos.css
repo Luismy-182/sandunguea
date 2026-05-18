@@ -58,7 +58,9 @@ html {
 
 }
 
-
+.text-azul-700{
+    color: var(--azul-700);
+}
 section {
     scroll-margin-top: 6.4rem;
 }
@@ -1341,20 +1343,7 @@ img {
 
 }
 
-.head-section h2 span {
-    color: var(--azul-700);
-    font-size: 3.8rem;
 
-
-
-}
-
-@media(min-width:768px) {
-    .head-section h2 span {
-        font-size: 4.5rem;
-    }
-
-}
 
 .section-lead {
     margin-top: 1.5rem;

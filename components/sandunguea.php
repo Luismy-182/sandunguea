@@ -7,7 +7,7 @@
 
         <h2>
             Lo que se vive en
-            <span class="underline-gold">Sandunguea</span>
+            <span class="text-azul-700">Sandunguea</span>
         </h2>
 
         <p class="section-lead">
