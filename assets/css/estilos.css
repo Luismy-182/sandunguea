@@ -58,9 +58,10 @@ html {
 
 }
 
-.text-azul-700{
+.text-azul-700 {
     color: var(--azul-700);
 }
+
 section {
     scroll-margin-top: 6.4rem;
 }
@@ -1073,7 +1074,7 @@ img {
 .confianza-text {
     margin-top: 2rem;
     text-align: center;
-    font-size: clamp(1.7rem, 5vw, 2.9rem);
+    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
     color: var(--dark);
     line-height: 1.7;
 
@@ -1085,7 +1086,7 @@ img {
 .confianza-final {
     margin-top: 2rem;
     text-align: center;
-    font-size: clamp(1.7rem, 5vw, 2.9rem);
+    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
     color: var(--dark);
     line-height: 1.7;
 
@@ -2628,5 +2629,260 @@ img {
     .profesor-card:hover {
         transform:
             translateY(-8px) scale(1.01);
+    }
+}
+
+
+
+
+/**********************************
+            TESTIMONIOS
+        MOBILE FIRST
+**********************************/
+
+.testimonios {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(180deg,
+            #eef3ff 0%,
+            #f7f9ff 45%,
+            #ffffff 100%);
+}
+
+/* glow decorativo */
+.testimonios::before {
+    content: '';
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(18, 34, 156, .06) 0%,
+            transparent 70%);
+
+    top: -120px;
+    left: -120px;
+
+    pointer-events: none;
+}
+
+.testimonios-grid {
+    margin-top: 5rem;
+
+    display: grid;
+    gap: 2rem;
+}
+
+/**********************************
+              CARD
+**********************************/
+
+.testimonio-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 100%;
+
+    padding: 2.4rem 2.2rem;
+
+    border-radius: 2.2rem;
+
+    background:
+        rgba(255, 255, 255, .72);
+
+    backdrop-filter: blur(12px);
+
+    border:
+        1px solid rgba(18, 34, 156, .08);
+
+    overflow: hidden;
+
+    box-shadow:
+        0 14px 35px rgba(18, 34, 156, .08);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+/* glow line */
+.testimonio-card::before {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 3px;
+
+    background:
+        linear-gradient(90deg,
+            var(--amber),
+            var(--azul-500));
+}
+
+/* quote decorativa */
+.testimonio-card::after {
+    content: '“';
+
+    position: absolute;
+
+    top: 1.2rem;
+    right: 1.8rem;
+
+    font-family: 'Playfair Display', serif;
+
+    font-size: 7rem;
+
+    line-height: 1;
+
+    color:
+        rgba(18, 34, 156, .06);
+
+    pointer-events: none;
+}
+
+.testimonio-card:hover {
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(245, 158, 11, .24);
+
+    box-shadow:
+        0 22px 45px rgba(18, 34, 156, .12),
+        0 0 18px rgba(245, 158, 11, .06);
+}
+
+/**********************************
+              TEXTO
+**********************************/
+
+.testimonio-texto {
+    position: relative;
+    z-index: 2;
+
+    font-size: 1.65rem;
+
+    line-height: 1.9;
+
+    color: var(--mid);
+
+    margin-bottom: 2.4rem;
+}
+
+/**********************************
+             FOOTER
+**********************************/
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+/**********************************
+             AVATAR
+**********************************/
+
+.foto-card {
+    width: 5rem;
+    height: 5rem;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background:
+        linear-gradient(135deg,
+            var(--azul-700),
+            var(--azul-950));
+
+    box-shadow:
+        0 10px 24px rgba(18, 34, 156, .20),
+        0 0 14px rgba(245, 158, 11, .10);
+
+    border:
+        2px solid rgba(255, 255, 255, .7);
+}
+
+.foto-card span {
+    font-size: 2rem;
+}
+
+/**********************************
+              DATOS
+**********************************/
+
+.datos-card h4 {
+    font-size: 1.8rem;
+
+    color: var(--dark);
+
+    margin-bottom: .4rem;
+}
+
+.datos-card p {
+    font-size: 1.35rem;
+
+    color: var(--azul-700);
+
+    font-weight: 600;
+}
+
+/**********************************
+             TABLET
+**********************************/
+
+@media(min-width:768px) {
+
+    .testimonios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonio-card {
+        padding: 2.8rem 2.6rem;
+    }
+
+    .testimonio-texto {
+        font-size: 1.7rem;
+    }
+}
+
+/**********************************
+             DESKTOP
+**********************************/
+
+@media(min-width:1024px) {
+
+    .testimonios-grid {
+
+        grid-template-columns: repeat(3, 1fr);
+
+        padding: 0 6.4rem;
+
+        gap: 2.6rem;
+    }
+
+    .testimonio-card:hover {
+        transform:
+            translateY(-10px) scale(1.01);
     }
 }
