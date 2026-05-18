@@ -2370,3 +2370,274 @@ img {
         height: 100%;
     }
 }
+
+
+
+/*********Profesores**********/
+
+/**********************************
+            PROFESORES
+        MOBILE FIRST
+**********************************/
+
+.profesores {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(180deg,
+            #ffffff 0%,
+            #f5f8ff 45%,
+            #eef3ff 100%);
+}
+
+/* glow decorativo */
+.profesores::before {
+    content: '';
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(18, 34, 156, .06) 0%,
+            transparent 70%);
+
+    top: -120px;
+    right: -120px;
+
+    pointer-events: none;
+}
+
+/**********************************
+              GRID
+**********************************/
+
+.profesores-grid {
+    margin-top: 5rem;
+
+    display: grid;
+    gap: 2rem;
+}
+
+/**********************************
+              CARD
+**********************************/
+
+.profesor-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background:
+        rgba(255, 255, 255, .72);
+
+    backdrop-filter: blur(12px);
+
+    border:
+        1px solid rgba(18, 34, 156, .08);
+
+    border-radius: 2.4rem;
+
+    padding: 2.4rem 2rem;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 14px 35px rgba(18, 34, 156, .08);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+/* línea glow superior */
+.profesor-card::before {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 3px;
+
+    background:
+        linear-gradient(90deg,
+            var(--amber),
+            var(--azul-500));
+}
+
+.profesor-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(245, 158, 11, .24);
+
+    box-shadow:
+        0 18px 38px rgba(18, 34, 156, .10),
+        0 0 18px rgba(245, 158, 11, .06);
+}
+
+/**********************************
+               TAG
+**********************************/
+
+.profesor-tag {
+    display: inline-flex;
+    align-items: center;
+
+    width: fit-content;
+
+    margin-bottom: 1.4rem;
+
+    padding: .8rem 1.4rem;
+
+    border-radius: 999px;
+
+    background:
+        rgba(245, 158, 11, .10);
+
+    border:
+        1px solid rgba(245, 158, 11, .18);
+
+    color: var(--amber);
+
+    font-size: 1.2rem;
+    font-weight: 700;
+
+    letter-spacing: .04em;
+}
+
+/**********************************
+             FOTO
+**********************************/
+
+.profesor-foto {
+    width: 9rem;
+    height: 9rem;
+
+    margin: 0 auto 2rem;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(135deg,
+            var(--azul-700),
+            var(--azul-950));
+
+    box-shadow:
+        0 10px 28px rgba(18, 34, 156, .20),
+        0 0 18px rgba(245, 158, 11, .12);
+
+    border:
+        3px solid rgba(255, 255, 255, .7);
+
+    overflow: hidden;
+}
+
+.profesor-foto span {
+    font-size: 4rem;
+}
+
+/* cuando metas imágenes reales */
+.profesor-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/**********************************
+              INFO
+**********************************/
+
+.profesor-info {
+    text-align: center;
+}
+
+.profesor-info h3 {
+    font-size: clamp(2.3rem, 5vw, 2.8rem);
+
+    color: var(--dark);
+
+    margin-bottom: .8rem;
+}
+
+.profesor-clase {
+    color: var(--azul-700);
+
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    margin-bottom: 1.6rem;
+
+    letter-spacing: .03em;
+}
+
+.profesor-descripcion {
+    font-size: 1.6rem;
+
+    line-height: 1.7;
+
+    color: var(--mid);
+
+    opacity: .95;
+}
+
+/**********************************
+             TABLET
+**********************************/
+
+@media(min-width:768px) {
+
+    .profesores-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 2.4rem;
+    }
+
+    .profesor-card {
+        padding: 3rem 2.6rem;
+    }
+
+    .profesor-foto {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .profesor-foto span {
+        font-size: 4.6rem;
+    }
+}
+
+/**********************************
+             DESKTOP
+**********************************/
+
+@media(min-width:1024px) {
+
+    .profesores-grid {
+
+        padding: 0 6.4rem;
+
+        gap: 3rem;
+    }
+
+    .profesor-card {
+        height: 100%;
+    }
+
+    .profesor-card:hover {
+        transform:
+            translateY(-8px) scale(1.01);
+    }
+}

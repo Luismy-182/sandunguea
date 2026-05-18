@@ -1,6 +1,5 @@
 <!-- TU CAMINO EN SANDUNGUEA -->
 <section class="section camino-section" id="camino">
-
     <p class="label-section">TU PROCESO</p>
     <div class="head-section">
 
@@ -36,8 +35,7 @@
             <div class="step-num">4</div>
             <span class="step-icon">✨</span>
             <h3>Te dan ganas de volver</h3>
-            <p>Porque más allá de bailar… te la pasas bien.</p>
+            <p>Aprendes a bailar y descubres un ambiente seguro al que quieres volver.</p>
         </div>
     </div>
-
 </section>

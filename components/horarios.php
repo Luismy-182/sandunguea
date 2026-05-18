@@ -38,7 +38,7 @@
                 </div>
                 <div class="materia casino">
                     <div class="baile">
-                        <h4>Salsa Casino</h4>
+                        <h4>Salsa Cubana</h4>
                         <p>9:00 - 10:00pm</p>
                     </div>
                     <div class="profesor">
@@ -68,7 +68,7 @@
                 </div>
                 <div class="materia casino">
                     <div class="baile">
-                        <h4>Salsa Casino</h4>
+                        <h4>Salsa Cubana</h4>
                         <p>9:00 - 10:00pm</p>
                     </div>
                     <div class="profesor">
