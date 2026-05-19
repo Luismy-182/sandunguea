@@ -12,7 +12,7 @@
         <div class="profesor-card">
             <p class="profesor-tag">Ideal si vas empezando</p>
             <div class="profesor-foto">
-                <img loading="lazy" src="/assets/img/profesores/silvia4.webp" alt="imagen-silvia">
+                <img loading="lazy" src="/assets/img/profesores/silvia1.webp" alt="imagen-silvia">
             </div>
             <div class="profesor-info">
 

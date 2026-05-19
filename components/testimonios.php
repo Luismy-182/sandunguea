@@ -16,7 +16,7 @@
 
         <article class="testimonio-card">
             <p class="testimonio-texto">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse rem sunt optiipisicing elit. Esse rem sunt optio.
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse rem sunt optiipisicing elit. Esse rem sunt optio."
             </p>
 
             <div class="info-card">
@@ -33,7 +33,7 @@
 
         <article class="testimonio-card">
             <p class="testimonio-texto">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse rem sunt optdipisicing elit. Esse rem sunt optio.
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse rem sunt optdipisicing elit. Esse rem sunt optio."
             </p>
 
             <div class="info-card">
@@ -50,7 +50,7 @@
 
         <article class="testimonio-card">
             <p class="testimonio-texto">
-                Lorem ipsum dolor sit amet consecterem ipsum dolor sit amet consectetur adipisicing elit. Esse rem sunt opttur adipisicing elit. Esse rem sunt optio.
+                "Lorem ipsum dolor sit amet consecterem ipsum dolor sit amet consectetur adipisicing elit. Esse rem sunt opttur adipisicing elit. Esse rem sunt optio."
             </p>
 
             <div class="info-card">

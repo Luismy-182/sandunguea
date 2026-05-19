@@ -29,6 +29,8 @@
     <?php require_once __DIR__ . '/components/clases.php' ?>
     <?php require_once __DIR__ . '/components/horarios.php' ?>
     <?php require_once __DIR__ . '/components/profesores.php' ?>
+    <?php require_once __DIR__ . '/components/testimonios.php' ?>
+    
    
     
 
