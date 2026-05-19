@@ -9,7 +9,7 @@
         <ul class="nav-links">
             <li><a href="#clases">Clases</a></li>
             <li><a href="#horarios">Horarios</a></li>
-            <li><a href="#opiniones">Opiniones</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
             <li><a href="#contacto" class="nav-cta">Clase gratis</a></li>
         </ul>
 
@@ -28,7 +28,7 @@
             <ul class="movil-links">
                 <li><a href="#clases">Clases</a></li>
                 <li><a href="#horarios">Horarios</a></li>
-                <li><a href="#opiniones">Opiniones</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
                 <li><a href="#contacto" class="nav-cta">Clase gratis</a></li>
 
             </ul>
