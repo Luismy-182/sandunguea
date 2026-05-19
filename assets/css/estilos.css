@@ -2788,12 +2788,6 @@ img {
              FOOTER
 **********************************/
 
-.info-card {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-}
-
 /**********************************
              AVATAR
 **********************************/
@@ -2887,7 +2881,7 @@ img {
     }
 }
 
-.testimonio-texto{
+.testimonio-texto {
     font-style: italic;
 }
 
@@ -2896,3 +2890,392 @@ img {
 
 /*****************************Agendar Clase Muestra************************************/
 
+.agendar {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(160deg,
+            #0b1026 0%,
+            #12229C 45%,
+            #1b1740 100%);
+}
+
+/* glow decorativo */
+.agendar::before {
+    content: '';
+
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(245, 158, 11, .10) 0%,
+            transparent 70%);
+
+    top: -120px;
+    right: -120px;
+
+    pointer-events: none;
+}
+
+.agendar::after {
+    content: '';
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(255, 255, 255, .05) 0%,
+            transparent 70%);
+
+    bottom: -120px;
+    left: -120px;
+
+    pointer-events: none;
+}
+
+/**********************************
+            HEAD
+**********************************/
+
+.agendar .label-section {
+    color: var(--amber);
+}
+
+.agendar .head-section h2 {
+    color: var(--blanco);
+}
+
+.agendar .section-lead-no-max {
+    color: rgba(255, 255, 255, .78);
+
+    max-width: 72rem;
+
+    margin-top: 1.8rem;
+}
+
+/**********************************
+            CENTER
+**********************************/
+
+.agendar-center {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 5rem;
+
+    position: relative;
+    z-index: 2;
+}
+
+/**********************************
+            CARD
+**********************************/
+
+.agendar-card {
+    width: 100%;
+    max-width: 70rem;
+
+    padding: 2.8rem 1.8rem;
+
+    border-radius: 2.4rem;
+
+    background:
+        rgba(255, 255, 255, .06);
+
+    border:
+        1px solid rgba(255, 255, 255, .12);
+
+    backdrop-filter: blur(14px);
+
+    overflow: hidden;
+
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, .22);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+
+    position: relative;
+}
+
+/* línea glow */
+.agendar-card::before {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 3px;
+
+    background:
+        linear-gradient(90deg,
+            var(--amber),
+            rgba(255, 255, 255, .12));
+}
+
+.agendar-card:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(245, 158, 11, .28);
+
+    box-shadow:
+        0 24px 50px rgba(0, 0, 0, .28),
+        0 0 24px rgba(245, 158, 11, .08);
+}
+
+/**********************************
+            FORM
+**********************************/
+
+.agendar-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/**********************************
+            GRID
+**********************************/
+
+.grid-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+}
+
+/**********************************
+            CAMPOS
+**********************************/
+
+.grid-form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-form label {
+    margin-bottom: .9rem;
+
+    color: rgba(255, 255, 255, .92);
+
+    font-size: 1.45rem;
+
+    font-weight: 600;
+
+    letter-spacing: .01em;
+}
+
+/**********************************
+        INPUTS + SELECT
+**********************************/
+
+.grid-form input,
+.grid-form select {
+    width: 100%;
+
+    border: 1px solid rgba(255, 255, 255, .12);
+
+    background:
+        rgba(255, 255, 255, .06);
+
+    color: var(--blanco);
+
+    border-radius: 1.4rem;
+
+    padding: 1.5rem 1.6rem;
+
+    font-size: 1.55rem;
+
+    font-family: inherit;
+
+    outline: none;
+
+    backdrop-filter: blur(6px);
+
+    transition:
+        border-color .2s ease,
+        background .2s ease,
+        box-shadow .2s ease,
+        transform .2s ease;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* placeholders */
+.grid-form input::placeholder {
+    color: rgba(255, 255, 255, .45);
+}
+
+/* select options */
+
+/* focus */
+.grid-form input:focus,
+.grid-form select:focus {
+
+    border-color:
+        rgba(245, 158, 11, .65);
+
+    background:
+        rgba(255, 255, 255, .09);
+
+    box-shadow:
+        0 0 0 4px rgba(245, 158, 11, .10);
+
+    transform: translateY(-1px);
+}
+
+/**********************************
+            DATE ICON
+**********************************/
+
+.grid-form input[type="date"] {
+    color-scheme: dark;
+}
+
+/**********************************
+            BUTTON
+**********************************/
+
+.agendar-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
+    margin-top: 3rem;
+
+    border: none;
+
+    cursor: pointer;
+
+    background: linear-gradient(135deg,
+            var(--amber),
+            #ffb703);
+
+    color: var(--dark);
+
+    font-weight: 800;
+
+    font-size: 1.6rem;
+
+    padding: 1.6rem 2rem;
+
+    border-radius: 999px;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        filter .25s ease;
+
+    box-shadow:
+        0 10px 28px rgba(245, 158, 11, .30),
+        0 0 14px rgba(245, 158, 11, .18);
+}
+
+.agendar-btn:hover {
+    transform: translateY(-3px);
+
+    filter: brightness(1.03);
+
+    box-shadow:
+        0 16px 34px rgba(245, 158, 11, .38),
+        0 0 18px rgba(245, 158, 11, .24);
+
+}
+
+.agendar-btn svg {
+    width: 2.2rem;
+    flex-shrink: 0;
+}
+
+/**********************************
+            FOOT NOTE
+**********************************/
+
+.cta-agendar {
+    margin-top: 1.8rem;
+
+    text-align: center;
+
+    color:
+        rgba(255, 255, 255, .62);
+
+    line-height: 1.6;
+
+    font-size: 1.7rem;
+    letter-spacing: .01em;
+}
+
+/**********************************
+            TABLET
+**********************************/
+
+@media(min-width:768px) {
+
+    .agendar-card {
+        padding: 3.4rem;
+    }
+
+    .grid-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ritmo */
+    .ritmo {
+        grid-column: span 2;
+    }
+
+    /* experiencia */
+    .experiencia {
+        grid-column: span 2;
+    }
+}
+
+/**********************************
+            DESKTOP
+**********************************/
+
+@media(min-width:1024px) {
+
+    .agendar-card {
+        padding: 4rem;
+    }
+
+    .grid-form {
+        gap: 2rem;
+    }
+
+    .agendar-btn {
+        align-self: center;
+
+        min-width: 320px;
+        min-height: 6rem;
+        padding-inline: 3rem;
+    }
+
+    .fecha {
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+}
+
+.grid-form input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: .75;
+    cursor: pointer;
+}
