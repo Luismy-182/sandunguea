@@ -1,6 +1,6 @@
 function whatsApp() {
     //número de la Miss
-    const numeroSilvia = 525648546082;
+    const numeroSandunguea = 525648546082;
     //seleccionamos todos los botones de whatsApp
     const btnsWhatsApp = document.querySelectorAll('[data-mensaje]');
 
@@ -11,7 +11,7 @@ function whatsApp() {
             // Obtenemos el mensaje específico de este botón
             const mensaje = btn.getAttribute('data-mensaje');
             // Construimos la URL usando encodeURIComponent para que no falle con acentos o espacios
-            const url = `https://wa.me/${numeroSilvia}?text=${encodeURIComponent(mensaje)}`;
+            const url = `https://wa.me/${numeroSandunguea}?text=${encodeURIComponent(mensaje)}`;
 
             window.open(url, '_blank');
         });

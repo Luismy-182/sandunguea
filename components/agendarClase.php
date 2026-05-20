@@ -1,28 +1,31 @@
 <section class="section agendar">
+    <div class="dance-particles" aria-hidden="true">
+        <span>🎉</span>
+        <span>✨</span>
+        <span>🕺</span>
+        <span>🪘</span>
+        <span>💃</span>
+    </div>
+
     <p class="label-section">Tu primer paso</p>
     <div class="head-section">
         <h2>Estamos listos para conocerte ✨</h2>
     </div>
-    <p class="section-lead-no-max">Completa el formulario y agenda tu clase muestra por WhatsApp ✨</p>
+    <p class="section-lead-no-max">Completa el formulario y agenda tu clase muestra por WhatsApp 💃</p>
     <div class="agendar-center">
         <div class="agendar-card">
 
             <form id="agendar-form" class="agendar-form">
                 <div class="grid-form">
-
-                    <div class="">
-                        <label for="nombre">Tu nombre</label>
-                        <input type="text" id="nombre" placeholder="Ej. Evelin Santos">
-                    </div>
                     <div class="ritmo">
-                        <label for="ritmo">¿Qué ritmo te interesa?</label>
-                        <select name="ritmo" id="ritmo">
-                            <option value="" selected disabled>Selecciona un ritmo...</option>
+                        <label for="ritmo">¿Qué clase te interesa?</label>
+                        <select name="clase" id="clase">
+                            <option value="" selected disabled>Selecciona un clase...</option>
                             <option value="Salsa en línea - Lunes 7:00 PM a 8:00 PM"> Salsa en línea · Lunes 7:00 – 8:00 PM</option>
                             <option value="Cumbia - Lunes y miércoles 8:00 PM a 9:00 PM"> Cumbia · Lunes y miércoles 8:00 – 9:00 PM</option>
                             <option value="Salsa Cubana - Lunes y miércoles 9:00 PM a 10:00 PM"> Salsa Cubana · Lunes y miércoles 9:00 – 10:00 PM</option>
                             <option value="Bachata - Jueves 8:00 PM a 9:00 PM"> Bachata · Jueves 8:00 – 9:00 PM</option>
-                            <option value="Quiero información de todas las clases"> ✨ Quiero conocer todas las clases</option>
+
                         </select>
                     </div>
                     <div class="experiencia">
@@ -36,10 +39,19 @@
                             </option>
                         </select>
                     </div>
+                    <div class="">
+                        <label for="nombre">Tu nombre</label>
+                        <input type="text" id="nombre" placeholder="Ej. Evelin Santos">
+                    </div>
+
                     <div class="fecha">
                         <label for="fecha">¿Cuándo te gustaría venir?</label>
-                        <input type="date" name="fecha" id="fecha">
+                        <input type="text" name="fecha" id="fecha" placeholder="Selecciona una fecha">
                     </div>
+
+                </div>
+
+                <div class="mostrar-alertas">
 
                 </div>
                 <button type="submit" class="agendar-btn">Agendar por WhatsApp

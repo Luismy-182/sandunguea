@@ -16,16 +16,16 @@
 
         <article class="testimonio-card">
             <p class="testimonio-texto">
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse rem sunt optiipisicing elit. Esse rem sunt optio."
+                "Para mí, Sandunguea es un espacio donde aprendes a bailar de forma relajada, libre y divertida. Además, siempre encuentras personas increíbles que hacen cada clase todavía más especial 💙"
             </p>
 
             <div class="info-card">
                 <div class="foto-card">
-                    <span>Ⓜ️</span>
+                    <img src="/assets/img/testimonios/rox.webp" alt="testimonio-rox">
                 </div>
 
                 <div class="datos-card">
-                    <h4>María</h4>
+                    <h4>Rox</h4>
                     <p>Alumna de Cumbia</p>
                 </div>
             </div>
@@ -33,38 +33,39 @@
 
         <article class="testimonio-card">
             <p class="testimonio-texto">
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse rem sunt optdipisicing elit. Esse rem sunt optio."
+                "Sandunguea cambió por completo nuestra forma de disfrutar el baile y las fiestas. Como pareja, también nos ayudó a conectar y comunicarnos mejor.
+                Además del baile, encontramos un lugar seguro, lleno de amigos, energía y momentos increíbles ✨”
             </p>
-
             <div class="info-card">
                 <div class="foto-card">
-                    <span>Ⓜ️</span>
+                    <img src="/assets/img/testimonios/pilyErnesto.webp" alt="testimonios-pareja">
                 </div>
 
                 <div class="datos-card">
-                    <h4>Martha</h4>
-                    <p>Alumna de Salsa en Línea</p>
+                    <h4>Pily y Ernesto</h4>
+                    <p>Pareja y alumnos de Cumbia</p>
                 </div>
             </div>
         </article>
 
         <article class="testimonio-card">
             <p class="testimonio-texto">
-                "Lorem ipsum dolor sit amet consecterem ipsum dolor sit amet consectetur adipisicing elit. Esse rem sunt opttur adipisicing elit. Esse rem sunt optio."
+                “Sandunguea se ha convertido en mi lugar seguro ✨
+                Es mi escape de lo cotidiano, donde siempre la paso bien, conozco personas con buena vibra y comparto momentos muy agradables.
+                Además, la maestra es súper paciente y transmite una energía muy linda en cada clase 💃”
             </p>
 
             <div class="info-card">
                 <div class="foto-card">
-                    <span>Ⓜ️</span>
+                    <img src="/assets/img/testimonios/liz.webp" alt="testimonio-liz">
                 </div>
 
                 <div class="datos-card">
-                    <h4>Miguel</h4>
-                    <p>Alumno de Salsa Cubana</p>
+                    <h4>Liz</h4>
+                    <p>Alumna de Cumbia</p>
                 </div>
             </div>
         </article>
-
     </div>
 
 

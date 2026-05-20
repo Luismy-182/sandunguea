@@ -27,7 +27,7 @@
         <div class="profesor-card">
             <p class="profesor-tag">🔥 Energía y atención personalizada</p>
             <div class="profesor-foto">
-                <span>🕺</span>
+                <img loading="lazy" src="/assets/img/profesores/max.webp" alt="imagen-max">
             </div>
             <div class="profesor-info">
 
