@@ -3368,7 +3368,7 @@ img {
         padding-inline: 3rem;
     }
 
- 
+
 }
 
 .grid-form input[type="date"]::-webkit-calendar-picker-indicator {
@@ -3482,4 +3482,31 @@ img {
     .dance-particles span:nth-child(4) {
         display: none;
     }
+}
+
+.agendar-btn:disabled {
+    opacity: .7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.enviado {
+    background: linear-gradient(135deg,
+            #25D366,
+            #1ebe5d);
+
+    color: white;
+
+    box-shadow:
+        0 12px 30px rgba(37, 211, 102, .35);
+}
+
+.enviado:hover {
+    transform: translateY(-3px);
+
+    filter: brightness(1.03);
+
+    box-shadow:
+        0 16px 34px rgba(37, 211, 102, .42),
+        0 0 18px rgba(37, 211, 102, .22);
 }

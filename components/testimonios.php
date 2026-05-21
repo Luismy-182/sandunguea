@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="datos-card">
-                    <h4>Pily y Ernesto</h4>
+                    <h4>Ernesto y Pily</h4>
                     <p>Pareja y alumnos de Cumbia</p>
                 </div>
             </div>
