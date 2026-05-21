@@ -3257,7 +3257,7 @@ img {
     justify-content: center;
     align-items: center;
     gap: .8rem;
-    margin-top: 3rem;
+    margin-top: 1.8rem;
 
     border: none;
 
@@ -3285,6 +3285,13 @@ img {
     box-shadow:
         0 10px 28px rgba(245, 158, 11, .30),
         0 0 14px rgba(245, 158, 11, .18);
+}
+
+@media(min-width:768px) {
+
+    .agendar-btn {
+        margin-top: 3rem;
+    }
 }
 
 .agendar-btn:hover {
@@ -3510,3 +3517,4 @@ img {
         0 16px 34px rgba(37, 211, 102, .42),
         0 0 18px rgba(37, 211, 102, .22);
 }
+
