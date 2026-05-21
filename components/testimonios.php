@@ -70,9 +70,9 @@
 
 
     <p class="confianza-final">
-        Tu primera clase puede cambiar mucho más de lo que imaginas.
+        A veces solo necesitas una clase para descubrir que bailar también es para ti.
         <span class="sandunguea-letter">
-            Solo necesitas animarte a empezar.
+            Anímate a dar el primer paso 💃
         </span>
     </p>
 </section>
