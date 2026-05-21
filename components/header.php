@@ -10,7 +10,7 @@
             <li><a href="#clases">Clases</a></li>
             <li><a href="#horarios">Horarios</a></li>
             <li><a href="#testimonios">Testimonios</a></li>
-            <li><a href="#contacto" class="nav-cta">Clase gratis</a></li>
+            <li><a href="#agendar" class="nav-cta">Agendar clase gratis</a></li>
         </ul>
 
         <div class="hamburguesa" id="hamburguesa">
@@ -29,7 +29,7 @@
                 <li><a href="#clases">Clases</a></li>
                 <li><a href="#horarios">Horarios</a></li>
                 <li><a href="#testimonios">Testimonios</a></li>
-                <li><a href="#contacto" class="nav-cta">Clase gratis</a></li>
+                <li><a href="#agendar" class="nav-cta">Agendar clase gratis</a></li>
 
             </ul>
         </div>
