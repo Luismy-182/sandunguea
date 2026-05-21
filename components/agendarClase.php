@@ -11,7 +11,7 @@
     <div class="head-section">
         <h2>Estamos listos para conocerte ✨</h2>
     </div>
-    <p class="section-lead-no-max">Completa el formulario y agenda tu clase muestra por WhatsApp 💃</p>
+    <p class="section-lead-no-max">Completa el formulario y agenda tu clase muestra gratis por WhatsApp 💃</p>
     <div class="agendar-center">
         <div class="agendar-card">
 

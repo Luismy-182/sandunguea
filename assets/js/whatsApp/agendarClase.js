@@ -62,7 +62,7 @@ const agendarClase = () => {
         //     ? 'me gustaría conocer todas las clases'
         //     : `me interesa la clase de ${clase}`;
 
-        const mensaje = `Hola 😄 Mi nombre es ${nombre} y me interesa la clase de ${clase}.\n\nActualmente ${experiencia.toLowerCase()}.\n\nMe encantaría agendar una clase muestra para el ${formatearFecha(fecha)} 💃`;
+        const mensaje = `Hola 😄 Mi nombre es ${nombre} y me interesa la clase de ${clase}.\n\nActualmente ${experiencia.toLowerCase()}.\n\nMe encantaría agendar mi clase muestra gratis para el ${formatearFecha(fecha)} 💃`;
 
         //mandamos el mensaje
 
