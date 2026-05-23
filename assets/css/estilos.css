@@ -1542,6 +1542,11 @@ img {
 /* principal tipo cine */
 .video-main video {
     aspect-ratio: 4 / 5;
+    
+}
+
+.tercer-video{
+    object-position: 40% center;
 }
 
 @media(min-width:768px) {

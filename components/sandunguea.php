@@ -21,9 +21,9 @@
         <!-- VIDEO PRINCIPAL -->
         <div class="video-card video-main">
             <div class="video-placeholder">
-                <video autoplay muted loop playsinline preload="metadata" class="video-interactivo"
+                <video autoplay muted loop playsinline preload="metadata" class="video-interactivo primer-video"
                     webkit-playsinline>
-                    <source src="/assets/videos/videoHero.mp4" type="video/mp4">
+                    <source src="/assets/videos/hero2.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="vcard-info">
@@ -46,7 +46,7 @@
         <!-- SECUNDARIOS -->
         <div class="video-card">
             <div class="video-placeholder">
-                <video muted loop playsinline preload="metadata" class="video-interactivo"
+                <video muted loop playsinline preload="metadata" class="video-interactivo segundo-video"
                     webkit-playsinline>
                     <source src="/assets/videos/2.1.mp4" type="video/mp4">
                 </video>
@@ -70,9 +70,9 @@
 
         <div class="video-card">
             <div class="video-placeholder">
-                <video muted loop playsinline preload="metadata" class="video-interactivo"
+                <video muted loop playsinline preload="metadata" class="video-interactivo tercer-video"
                     webkit-playsinline>
-                    <source src="/assets/videos/complemento2.mp4" type="video/mp4">
+                    <source src="/assets/videos/tercer-video.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="vcard-info">
