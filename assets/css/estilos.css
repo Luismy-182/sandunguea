@@ -1011,10 +1011,16 @@ img {
 /*footer*/
 
 .footer {
-    background: var(--azul-900);
+    background:
+        linear-gradient(180deg,
+            #0b123d 0%,
+            #12229c 100%);
     color: var(--azul-200);
     text-align: center;
     padding: 3rem 2rem;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .05);
 
 }
 
@@ -1542,10 +1548,10 @@ img {
 /* principal tipo cine */
 .video-main video {
     aspect-ratio: 4 / 5;
-    
+
 }
 
-.tercer-video{
+.tercer-video {
     object-position: 40% center;
 }
 
@@ -3971,5 +3977,368 @@ img {
         box-shadow:
             0 22px 48px rgba(18, 34, 156, .14),
             0 0 20px rgba(245, 158, 11, .05);
+    }
+}
+
+
+
+/******************** final-cierre ***************/
+/******************** FINAL CTA ********************/
+
+
+.cierre {
+
+    position: relative;
+
+    min-height: 85svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    padding: 8rem 2rem;
+
+    background-image:
+
+        linear-gradient(to bottom,
+            rgba(8, 15, 55, .40),
+            rgba(8, 15, 55, .72),
+            rgba(8, 15, 55, .92)),
+
+        url('/assets/img/cierre-img.png');
+
+    background-size: cover;
+
+    background-position: 55% center;
+
+
+    background-repeat: no-repeat;
+}
+
+/**********************************
+        GOLD PARTICLES
+        MOBILE FIRST
+**********************************/
+
+.cierre-particles {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+/**********************************
+            PARTICULA
+**********************************/
+
+.cierre-particles span {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(255, 220, 120, .95) 0%,
+            rgba(255, 190, 70, .45) 45%,
+            rgba(255, 170, 60, 0) 75%);
+
+    box-shadow:
+        0 0 12px rgba(255, 190, 70, .35),
+        0 0 24px rgba(255, 170, 60, .18);
+
+    opacity: .65;
+
+    animation:
+        floatParticle 8s ease-in-out infinite;
+}
+
+/**********************************
+            POSICIONES
+**********************************/
+
+.cierre-particles span:nth-child(1) {
+
+    width: 10px;
+    height: 10px;
+
+    top: 18%;
+    left: 12%;
+
+    animation-delay: 0s;
+}
+
+.cierre-particles span:nth-child(2) {
+
+    width: 14px;
+    height: 14px;
+
+    top: 30%;
+    right: 14%;
+
+    animation-delay: 2s;
+    filter: blur(2px);
+    opacity: .35;
+}
+
+.cierre-particles span:nth-child(3) {
+
+    width: 8px;
+    height: 8px;
+
+    bottom: 24%;
+    left: 18%;
+
+    animation-delay: 4s;
+}
+
+.cierre-particles span:nth-child(4) {
+
+
+    bottom: 18%;
+    right: 20%;
+
+    animation-delay: 1s;
+    width: 28px;
+    height: 28px;
+    opacity: .18;
+}
+
+.cierre-particles span:nth-child(5) {
+
+    width: 12px;
+    height: 12px;
+
+    top: 52%;
+    left: 52%;
+
+    animation-delay: 3s;
+}
+
+/**********************************
+            ANIMACION
+**********************************/
+
+@keyframes floatParticle {
+
+    0% {
+
+        transform:
+            translateY(0px) scale(1);
+
+        opacity: .45;
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px) scale(1.08);
+
+        opacity: .9;
+    }
+
+    100% {
+
+        transform:
+            translateY(0px) scale(1);
+
+        opacity: .45;
+    }
+}
+
+/**********************************
+            TABLET+
+**********************************/
+
+@media(min-width:768px) {
+
+    .cierre-particles span {
+
+        filter: blur(.4px);
+    }
+
+    .cierre-particles span:nth-child(1) {
+
+        width: 14px;
+        height: 14px;
+    }
+
+    .cierre-particles span:nth-child(4) {
+
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.cierre-logo {
+    display: block;
+    font-size: clamp(6rem, 10vw, 8.8rem);
+    margin: 1rem 0 2rem;
+    color: #fff;
+    letter-spacing: .02em;
+    text-shadow: 0 0 30px rgba(255, 200, 100, 0.6), 0 0 10px rgba(255, 170, 60, 0.6), 0 0 10px rgba(255, 201, 100, 0.642), 0 0 10px rgba(255, 200, 100, 0.6), 0 0 10px rgba(255, 200, 100, 0.6), 0 0 10px rgba(255, 200, 100, 0.6), 0 0 10px rgba(255, 200, 100, 0.6), 0 0 10px rgba(255, 170, 60, 0.6);
+}
+
+/**********************************
+        CONTENIDO
+**********************************/
+
+.cierre-contenido {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 62rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/**********************************
+        TITULO
+**********************************/
+
+.cierre-titulo {
+
+    font-size: clamp(3.2rem, 9vw, 5.6rem);
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    color: var(--blanco);
+}
+
+.cierre-titulo .sandunguea-letter {
+
+    display: inline-block;
+
+    margin-top: .6rem;
+
+    color: white;
+}
+
+/**********************************
+        PÁRRAFO
+**********************************/
+
+.cierre-parrafo {
+
+
+    font-size: clamp(1.7rem, 4vw, 2rem);
+
+    line-height: 1.75;
+
+    color: rgba(255, 255, 255, .88);
+
+    max-width: 52rem;
+    margin-top: 1rem;
+
+}
+
+/**********************************
+        BOTÓN
+**********************************/
+
+.cierre-btn {
+
+    margin-top: 3rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    max-width: 32rem;
+
+    padding: 1.7rem 3rem;
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    background: var(--amber);
+
+    color: var(--dark);
+
+    font-size: 1.7rem;
+    font-weight: 800;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+    letter-spacing: .01em;
+}
+
+.cierre-btn:hover {
+
+    transform: translateY(-4px);
+
+
+    transform: translateY(-3px);
+    box-shadow: 0 10px 32px rgba(245, 158, 11, .45), 0 0 16px rgba(245, 158, 11, .35);
+}
+
+/**********************************
+        TABLET
+**********************************/
+
+@media(min-width:768px) {
+
+    .cierre {
+
+        padding: 10rem 4rem;
+
+        min-height: 90svh;
+    }
+
+    .cierre-btn {
+
+        width: fit-content;
+
+        min-width: 34rem;
+    }
+}
+
+/**********************************
+        DESKTOP
+**********************************/
+
+@media(min-width:1024px) {
+
+    .cierre {
+
+        padding: 12rem 6.4rem;
+
+        background-position: center 25%;
+    }
+
+    .cierre-titulo {
+
+        max-width: 90rem;
+    }
+
+    /* .cierre-parrafo {
+
+        margin-top: 2.4rem;
+    } */
+
+    .cierre-btn {
+
+        margin-top: 3.4rem;
     }
 }

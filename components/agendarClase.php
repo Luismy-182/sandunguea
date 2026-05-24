@@ -1,4 +1,4 @@
-<section class="section agendar" id="agendar">
+<section class="section agendar" id="agendar-clase">
     <div class="dance-particles" aria-hidden="true">
         <span>🎉</span>
         <span>✨</span>

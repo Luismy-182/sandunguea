@@ -35,6 +35,7 @@
     <?php require_once __DIR__ . '/components/testimonios.php' ?>
     <?php require_once __DIR__ . '/components/agendarClase.php' ?>
     <?php require_once __DIR__ . '/components/ubicacion.php' ?>
+    <?php require_once __DIR__ . '/components/cierre.php' ?>
     
 
 

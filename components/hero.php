@@ -20,7 +20,7 @@
              Empieza desde cero en un ambiente donde todos te apoyan.
          </p>
          <div class="flex-col-center hero-btns">
-             <a href="#agendar" class="btn-primary">Reservar mi clase gratis</a>
+             <a href="#agendar-clase" class="btn-primary">Agendar mi clase gratis</a>
              <a href="#clases" class="btn-secondary">Ver horarios</a>
          </div>
      </div>
