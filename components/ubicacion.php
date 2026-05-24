@@ -1,4 +1,4 @@
-<section class="section ubicacion">
+<section class="section ubicacion" id="ubicacion">
 
     <p class="label-section">¿Dónde estamos?</p>
 

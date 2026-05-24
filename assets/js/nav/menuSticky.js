@@ -1,25 +1,44 @@
-
 const menuSticky = () => {
+
     const nav = document.querySelector('#nav');
-    const emocional = document.querySelector('.emocional');
+
+    let ultimaPosicionScroll = window.scrollY;
+    const tolerancia = 12;
 
     window.addEventListener('scroll', () => {
-        const ubicacion = emocional.getBoundingClientRect();
 
+        const posicionActual = window.scrollY;
 
-        if (ubicacion.top < 100) {
-            if (!nav.classList.contains('minimizarNav')) {
-                nav.classList.add('minimizarNav');
-            }
+        // Estado visual del navbar
+        if (posicionActual > 40) {
+            nav.classList.add('scrolled');
         } else {
-            if (nav.classList.contains('minimizarNav')) {
-                nav.classList.remove('minimizarNav');
-            }
+            nav.classList.remove('scrolled');
+        }
+
+        // Ocultar al bajar
+        if (
+            posicionActual > ultimaPosicionScroll + tolerancia &&
+            posicionActual > 800
+        ) {
+
+            nav.classList.add('minimizarNav');
 
         }
-    });
-}
 
+        // Mostrar al subir
+        else if (
+            posicionActual < ultimaPosicionScroll - tolerancia
+        ) {
+
+            nav.classList.remove('minimizarNav');
+        }
+
+        ultimaPosicionScroll = posicionActual;
+
+    }, { passive: true });
+
+};
 
 export {
     menuSticky

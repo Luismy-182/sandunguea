@@ -1,37 +1,50 @@
-
 const menuResponsive = () => {
+
     const btnMenu = document.querySelector('#hamburguesa');
 
-    btnMenu.addEventListener('click', mostrarMenu);
-};
-
-const mostrarMenu = (e) => {
-    e.preventDefault();
-    console.log('mostrando overlay...');
-
-    //un selector a pantalla negra y otro al contenido de los links
     const overlay = document.querySelector('#overlay-hamburguesa');
-    const movilLinks=document.querySelector('#movil-links');
-    const bodyfreeze=document.querySelector('body');
-    
 
+    const movilLinks = document.querySelectorAll('.movil-link');
 
-    overlay.classList.add('mostrar');
-    bodyfreeze.classList.add('body-movil');
+    const bodyfreeze = document.body;
 
-    overlay.addEventListener('click', () => {
+    // ABRIR MENU
+    btnMenu.addEventListener('click', (e) => {
+
+        e.preventDefault();
+
+        overlay.classList.add('mostrar');
+
+        bodyfreeze.classList.add('body-movil');
+    });
+
+    // CERRAR CON CLICK EN FONDO NEGRO
+    overlay.addEventListener('click', (e) => {
+
+        if (e.target === overlay) {
+
+            cerrarMenu();
+        }
+    });
+
+    // CERRAR AL DAR CLICK EN LINKS
+    movilLinks.forEach(movilLink => {
+
+        movilLink.addEventListener('click', () => {
+
+            cerrarMenu();
+        });
+    });
+
+    // FUNCION REUTILIZABLE
+    const cerrarMenu = () => {
 
         overlay.classList.remove('mostrar');
-         bodyfreeze.classList.remove('body-movil');
-    });
-    
-    movilLinks.addEventListener('click', (e)=>{
-        e.stopPropagation();
-    });
 
-}
-
+        bodyfreeze.classList.remove('body-movil');
+    };
+};
 
 export {
     menuResponsive
-}
+};

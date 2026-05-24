@@ -1,4 +1,4 @@
-<section class="section profesores">
+<section class="section profesores" id="profesores">
     <p class="label-section">Profesores</p>
     <div class="head-section">
         <h2>
