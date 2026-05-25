@@ -1147,18 +1147,6 @@ img {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /*footer*/
 
 .footer {
@@ -1167,13 +1155,45 @@ img {
         linear-gradient(180deg,
             #0b123d 0%,
             #12229c 100%);
-    color: var(--azul-200);
+
     text-align: center;
-    padding: 3rem 2rem;
+
+    padding: 4rem 2rem 2.4rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1rem;
+
+    border-top:
+        1px solid rgba(255, 255, 255, .06);
 
     box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, .05);
+}
 
+.sandunguea-footer {
+    margin-bottom: .6rem;
+}
+
+.footer::before {
+    content: '';
+
+    position: absolute;
+    top: -100px;
+    left: 0;
+
+    width: 100%;
+    height: 100px;
+
+    background:
+        linear-gradient(to bottom,
+            rgba(11, 18, 61, 0),
+            rgba(11, 18, 61, .75),
+            #0b123d);
+
+    pointer-events: none;
 }
 
 .footer-logo {
@@ -1185,13 +1205,93 @@ img {
 }
 
 .footer p {
-    font-size: 1.4rem;
-    opacity: .7;
+    font-size: 1.2rem;
+    opacity: .55;
     color: var(--blanco);
 }
 
+
+
 .sandunguea-footer em {
-    font-size: 4.2rem;
+    font-size: 3.8rem;
+
+
+    color: #fffdf8;
+
+    opacity: 1;
+
+    text-shadow:
+        0 0 8px rgba(255, 215, 120, .10);
+}
+
+
+.footer p:last-child {
+    opacity: .42;
+    font-size: 1.15rem;
+}
+
+
+.footer-redes {
+
+
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+
+    margin-top: -1rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-top: 1.6rem;
+}
+
+.footer-redes::before {
+
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 12rem;
+    height: 1px;
+
+    background:
+        rgba(255, 255, 255, .08);
+}
+
+.footer-redes a {
+
+
+    color: rgba(255, 255, 255, .62);
+
+    text-decoration: none;
+
+    font-size: 1.25rem;
+
+    letter-spacing: .04em;
+
+    font-weight: 500;
+
+    transition:
+        color .25s ease,
+        transform .25s ease,
+        opacity .25s ease;
+}
+
+.footer-redes a:hover {
+
+    color: #fff;
+
+    opacity: 1;
+
+    transform: translateY(-2px);
+}
+
+.footer-redes span {
+    color: rgba(255, 255, 255, .25);
 }
 
 /*ICONO WHATSAPP FLOTANTE */
