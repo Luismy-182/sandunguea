@@ -28,7 +28,6 @@
     <?php require_once __DIR__ . '/components/whatsApp.php' ?>
     <?php require_once __DIR__ . '/components/seccionEmocional.php' ?>
     <?php require_once __DIR__ . '/components/sandunguea.php' ?>
-    
     <?php require_once __DIR__ . '/components/tuCamino.php' ?>
     <?php require_once __DIR__ . '/components/clases.php' ?>
     <?php require_once __DIR__ . '/components/horarios.php' ?>
