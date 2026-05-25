@@ -1,3 +1,4 @@
+import { bloqueandoNavbar } from './scrollTop.js';
 const menuSticky = () => {
 
     const nav = document.querySelector('#nav');
@@ -6,6 +7,8 @@ const menuSticky = () => {
     const tolerancia = 12;
 
     window.addEventListener('scroll', () => {
+        if (bloqueandoNavbar) return;
+
 
         const posicionActual = window.scrollY;
 
@@ -19,7 +22,7 @@ const menuSticky = () => {
         // Ocultar al bajar
         if (
             posicionActual > ultimaPosicionScroll + tolerancia &&
-            posicionActual > 800
+            posicionActual > 550
         ) {
 
             nav.classList.add('minimizarNav');

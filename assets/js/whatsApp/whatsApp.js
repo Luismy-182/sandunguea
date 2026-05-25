@@ -16,8 +16,30 @@ function whatsApp() {
             window.open(url, '_blank');
         });
     });
+    whatsAppFloat();
+
+}
 
 
+const whatsAppFloat = () => {
+    const btnWhatsApp = document.querySelector(".wa-float");
+    const footer = document.querySelector(".footer");
+    window.addEventListener('scroll', () => {
+
+        const footerRect = footer.getBoundingClientRect();
+
+        const overlap = window.innerHeight - footerRect.top;
+
+        if (overlap > 0) {
+
+            btnWhatsApp.style.bottom = `${overlap + 18}px`;
+
+        } else {
+
+            btnWhatsApp.style.bottom = `1.8rem`;
+        }
+
+    });
 
 }
 

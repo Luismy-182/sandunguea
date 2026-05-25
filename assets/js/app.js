@@ -4,6 +4,7 @@ import { menuSticky } from '../js/nav/menuSticky.js';
 import { autoPause } from './videos/autoPause.js';
 import { agendarClase } from './whatsApp/agendarClase.js';
 import { restringirCalendario } from './helpers/restringirCalendario.js';
+import { scrollTop } from './nav/scrollTop.js';
 document.addEventListener('DOMContentLoaded', () => {
     menuResponsive();
     menuSticky();
@@ -11,4 +12,5 @@ document.addEventListener('DOMContentLoaded', () => {
     autoPause();
     agendarClase();
     restringirCalendario();
+    scrollTop();
 });

@@ -67,7 +67,7 @@ html {
 }
 
 section {
-    scroll-margin-top: 6.4rem;
+    scroll-margin-top: 0;
 }
 
 /*estilos generales del body*/
@@ -558,6 +558,37 @@ img {
 
 }
 
+.movil-info {
+    margin-top: 3rem;
+    padding: 1rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.4rem;
+
+}
+
+.movil-info h3 {
+    font-size: 4.2rem;
+    color: var(--blanco);
+    line-height: 1;
+
+}
+
+.movil-info p {
+
+    color: var(--blanco);
+    text-align: center;
+    margin-top: 1rem;
+
+    text-transform: uppercase;
+    line-height: 1.5;
+
+    font-size: 1rem;
+    opacity: .72;
+    letter-spacing: .06em;
+}
+
 .fondo-azul {
     background-color: var(--azul-900);
     position: fixed;
@@ -574,6 +605,8 @@ img {
     overflow-y: scroll;
     box-shadow:
         -12px 0 40px rgba(0, 0, 0, .28);
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -592,7 +625,8 @@ img {
     display: flex;
     flex-direction: column;
     list-style: none;
-    margin-top: 5.4rem;
+
+
 
 }
 
@@ -600,11 +634,10 @@ img {
     list-style: none;
     letter-spacing: 0.5em;
     /* padding: 2rem 2.5rem; */
-    padding: 1.4rem 2.5rem;
+    padding: 1.3rem 2.5rem;
     transition:
         background-color .25s ease,
         transform .2s ease;
-
 }
 
 .movil-links li:active {
@@ -623,7 +656,7 @@ img {
 }
 
 .movil-links li:last-child {
-    margin-top: 1.2rem;
+    margin-top: 1.6rem;
 }
 
 .movil-links a {
@@ -673,8 +706,8 @@ img {
 /****************REDES SOCIALES***********/
 .redes-texto {
 
-    margin-top: 4rem;
-    margin-bottom: 1.6rem;
+    margin-top: 1.6rem;
+    margin-bottom: 1.3rem;
 
     text-align: center;
 
@@ -694,8 +727,8 @@ img {
     justify-content: center;
     align-items: center;
     gap: 2.2rem;
-    margin-top: 0;
-    overflow-y: scroll;
+    margin-top: 1.2rem;
+
 }
 
 .movil-redes a {
@@ -1129,6 +1162,7 @@ img {
 /*footer*/
 
 .footer {
+    position: relative;
     background:
         linear-gradient(180deg,
             #0b123d 0%,
@@ -1190,6 +1224,15 @@ img {
     width: 30px;
     height: 30px;
     fill: #fff;
+}
+
+.wa-float.stop-floating {
+
+    position: absolute;
+
+    bottom: 2rem;
+
+    right: 1.8rem;
 }
 
 @keyframes pulse-green {
