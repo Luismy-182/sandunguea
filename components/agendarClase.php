@@ -7,13 +7,13 @@
         <span>💃</span>
     </div>
 
-    <p class="label-section reveal">Tu primer paso</p>
-    <div class="head-section reveal">
+    <p class="label-section">Tu primer paso</p>
+    <div class="head-section">
         <h2>Estamos listos para conocerte ✨</h2>
     </div>
-    <p class="section-lead-no-max reveal">Completa el formulario y agenda tu clase muestra gratis por WhatsApp 💃</p>
+    <p class="section-lead-no-max">Completa el formulario y agenda tu clase muestra gratis por WhatsApp 💃</p>
     <div class="agendar-center">
-        <div class="agendar-card">
+        <div class="agendar-card reveal">
 
             <form id="agendar-form" class="agendar-form">
                 <div class="grid-form">
