@@ -5,6 +5,7 @@ import { autoPause } from './videos/autoPause.js';
 import { agendarClase } from './whatsApp/agendarClase.js';
 import { restringirCalendario } from './helpers/restringirCalendario.js';
 import { scrollTop } from './nav/scrollTop.js';
+import { scrollReveals } from './animations/scrollReveals.js';
 document.addEventListener('DOMContentLoaded', () => {
     menuResponsive();
     menuSticky();
@@ -13,4 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
     agendarClase();
     restringirCalendario();
     scrollTop();
+    scrollReveals();
 });

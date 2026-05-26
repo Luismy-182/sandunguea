@@ -36,7 +36,7 @@
                     </svg>
                 </div>
 
-                <div class="info-texto">
+                <div class="info-texto reveal">
                     <h4>Dirección</h4>
 
                     <p>
@@ -58,7 +58,7 @@
                     </svg>
                 </div>
 
-                <div class="info-texto">
+                <div class="info-texto reveal reveal-delay-1">
                     <h4>Transporte</h4>
 
                     <p>
@@ -79,7 +79,7 @@
                     </svg>
                 </div>
 
-                <div class="info-texto">
+                <div class="info-texto reveal reveal-delay-2">
                     <h4>Horarios de clases</h4>
 
                     <p>
@@ -96,7 +96,7 @@
             </p>
 
             <!-- Botón -->
-            <div class="emocional-btn">
+            <div class="emocional-btn reveal">
 
                 <a
                     href="https://maps.app.goo.gl/gkDqaLMWfqF9uw9G9"

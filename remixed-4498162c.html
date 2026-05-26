@@ -1,0 +1,1787 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sandunguea – Escuela de Baile Latino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #12229C;
+    --navy-dark: #0d1a7a;
+    --navy-light: #1a2fb5;
+    --indigo: #2535c4;
+    --gold: #F5A623;
+    --gold-light: #FFC24A;
+    --coral: #FF6B4A;
+    --cream: #FDF8F0;
+    --warm-white: #FEFCF8;
+    --text-dark: #1a1a2e;
+    --text-mid: #4a4a6a;
+    --text-light: #8888aa;
+    --border: rgba(18,34,156,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--navy);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    box-shadow: 0 2px 24px rgba(18,34,156,0.3);
+  }
+
+  .nav-logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #fff;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+
+  .nav-logo span {
+    color: var(--gold);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy) !important;
+    padding: 9px 20px;
+    border-radius: 50px;
+    font-weight: 600 !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+
+  .nav-cta:hover {
+    background: var(--gold-light) !important;
+    transform: translateY(-1px);
+    color: var(--navy) !important;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 45%, var(--indigo) 100%);
+    display: flex;
+    align-items: center;
+    padding: 100px 5% 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 70%);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: -60px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,107,74,0.10) 0%, transparent 70%);
+  }
+
+  /* Decorative music notes */
+  .deco-notes {
+    position: absolute;
+    font-size: 7rem;
+    opacity: 0.04;
+    pointer-events: none;
+    animation: float 6s ease-in-out infinite;
+  }
+  .deco-notes:nth-child(1) { top: 10%; right: 8%; animation-delay: 0s; }
+  .deco-notes:nth-child(2) { bottom: 15%; left: 5%; animation-delay: 2s; font-size: 5rem; }
+  .deco-notes:nth-child(3) { top: 50%; right: 25%; animation-delay: 4s; font-size: 4rem; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(245,166,35,0.15);
+    border: 1px solid rgba(245,166,35,0.4);
+    color: var(--gold);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    animation: fadeInUp 0.6s ease both;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 1.4rem;
+    animation: fadeInUp 0.6s ease 0.1s both;
+  }
+
+  .hero h1 em {
+    font-family: 'Dancing Script', cursive;
+    font-style: normal;
+    color: var(--gold);
+    display: block;
+    font-size: 1.15em;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 480px;
+    animation: fadeInUp 0.6s ease 0.2s both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.6s ease 0.3s both;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(245,166,35,0.4);
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(245,166,35,0.5);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: 1.5px solid rgba(255,255,255,0.35);
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  }
+
+  .btn-outline:hover {
+    border-color: #fff;
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-2px);
+  }
+
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: fadeInRight 0.8s ease 0.2s both;
+  }
+
+  .hero-card {
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 1.6rem 1.8rem;
+  }
+
+  .hero-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+
+  .rhythm-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+
+  .rhythm-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.9);
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+
+  .rhythm-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--coral);
+    flex-shrink: 0;
+  }
+
+  .rhythm-dot.gold { background: var(--gold); }
+  .rhythm-dot.teal { background: #4ECDC4; }
+  .rhythm-dot.pink { background: #FF6B9D; }
+
+  .hero-stat-row {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  .hero-stat {
+    flex: 1;
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 1.2rem;
+    text-align: center;
+  }
+
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .hero-stat-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.65);
+    font-weight: 500;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* ===== SECTION COMMONS ===== */
+  section { padding: 90px 5%; }
+
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+
+  .section-label {
+    display: inline-block;
+    color: var(--navy);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .section-label::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 22px; height: 2px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 900;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--navy);
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    max-width: 600px;
+  }
+
+  /* ===== FREE CLASS BANNER ===== */
+  .free-class-section {
+    background: linear-gradient(120deg, var(--navy) 0%, var(--indigo) 100%);
+    padding: 0;
+  }
+
+  .free-class-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 3rem;
+    padding: 60px 5%;
+  }
+
+  .free-class-text .tag {
+    display: inline-block;
+    background: rgba(245,166,35,0.2);
+    border: 1px solid rgba(245,166,35,0.5);
+    color: var(--gold);
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .free-class-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .free-class-text p {
+    color: rgba(255,255,255,0.75);
+    font-size: 1rem;
+    line-height: 1.65;
+    max-width: 500px;
+  }
+
+  /* ===== SCHEDULE ===== */
+  .schedule-section { background: var(--cream); }
+
+  .schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .day-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(18,34,156,0.07);
+    border: 1px solid var(--border);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .day-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(18,34,156,0.13);
+  }
+
+  .day-header {
+    background: var(--navy);
+    padding: 1.1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .day-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .day-emoji { font-size: 1.4rem; }
+
+  .class-list { padding: 0.6rem 0; }
+
+  .class-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(18,34,156,0.06);
+    transition: background 0.2s;
+  }
+
+  .class-item:last-child { border-bottom: none; }
+  .class-item:hover { background: rgba(18,34,156,0.03); }
+
+  .class-color {
+    width: 4px;
+    border-radius: 4px;
+    align-self: stretch;
+    min-height: 40px;
+    flex-shrink: 0;
+  }
+
+  .class-info { flex: 1; }
+
+  .class-rhythm {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 2px;
+  }
+
+  .class-time {
+    font-size: 0.82rem;
+    color: var(--text-light);
+  }
+
+  .class-teacher {
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    font-weight: 500;
+    text-align: right;
+  }
+
+  /* ===== CAMINO ===== */
+  .camino-section { background: var(--warm-white); }
+
+  .camino-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-top: 3.5rem;
+    position: relative;
+  }
+
+  .camino-step {
+    text-align: center;
+    position: relative;
+  }
+
+  .step-num {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--indigo));
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.2rem;
+    box-shadow: 0 6px 20px rgba(18,34,156,0.25);
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-icon {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .camino-step h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.6rem;
+  }
+
+  .camino-step p {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  /* ===== AMBIENTE ===== */
+  .ambiente-section { background: var(--cream); }
+
+  .ambiente-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    margin-bottom: 3rem;
+  }
+
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .video-card {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 9/16;
+    position: relative;
+    background: linear-gradient(135deg, var(--navy-dark), var(--indigo));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.25s;
+    border: 1px solid var(--border);
+  }
+
+  .video-card:hover { transform: scale(1.03); }
+
+  .video-card.tall {
+    grid-row: span 2;
+    aspect-ratio: auto;
+  }
+
+  .video-placeholder {
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .video-placeholder .play-icon {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: rgba(245,166,35,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.8rem;
+    font-size: 1.2rem;
+    color: var(--navy);
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .video-card:hover .play-icon {
+    background: var(--gold-light);
+    transform: scale(1.1);
+  }
+
+  .video-placeholder p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .video-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.6));
+    padding: 2rem 1rem 0.8rem;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  /* ===== PROFESSORS ===== */
+  .profesores-section { background: var(--warm-white); }
+
+  .prof-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .prof-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(18,34,156,0.06);
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .prof-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 36px rgba(18,34,156,0.1);
+  }
+
+  .prof-avatar {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--indigo));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    flex-shrink: 0;
+    border: 3px solid rgba(245,166,35,0.3);
+  }
+
+  .prof-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.3rem;
+  }
+
+  .prof-role {
+    font-size: 0.8rem;
+    color: var(--navy);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 0.7rem;
+  }
+
+  .prof-bio {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+
+  .prof-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tag-pill {
+    background: rgba(18,34,156,0.07);
+    color: var(--navy);
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  /* ===== DIFERENCIAL ===== */
+  .diferencial-section {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--indigo) 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .diferencial-section::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 700px; height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,166,35,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .dif-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .dif-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-style: italic;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 1.5rem;
+  }
+
+  .dif-quote::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--gold);
+    line-height: 0;
+    vertical-align: -0.4em;
+    margin-right: 0.1em;
+    font-style: normal;
+  }
+
+  .dif-author {
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  .dif-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+
+  .dif-feature {
+    display: flex;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .dif-icon {
+    width: 48px; height: 48px;
+    border-radius: 14px;
+    background: rgba(245,166,35,0.15);
+    border: 1px solid rgba(245,166,35,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  .dif-feature h4 {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #fff;
+    margin-bottom: 0.3rem;
+  }
+
+  .dif-feature p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+  }
+
+  /* ===== TESTIMONIOS ===== */
+  .testimonios-section { background: var(--cream); }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .testi-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(18,34,156,0.06);
+    position: relative;
+    transition: transform 0.25s;
+  }
+
+  .testi-card:hover { transform: translateY(-3px); }
+
+  .testi-card::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: rgba(18,34,156,0.08);
+    position: absolute;
+    top: 0.5rem; left: 1.2rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .testi-stars {
+    color: var(--gold);
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .testi-text {
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .testi-av {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--indigo));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .testi-name {
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--text-dark);
+  }
+
+  .testi-class {
+    font-size: 0.78rem;
+    color: var(--text-light);
+  }
+
+  /* ===== AGENDAR ===== */
+  .agendar-section {
+    background: var(--warm-white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .agendar-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .agendar-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  .ag-step {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .ag-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .ag-step h4 {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 0.2rem;
+  }
+
+  .ag-step p {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+
+  .agendar-card {
+    background: linear-gradient(135deg, var(--navy), var(--indigo));
+    border-radius: 28px;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(18,34,156,0.25);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .agendar-card::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,166,35,0.1) 0%, transparent 70%);
+  }
+
+  .agendar-card .emoji-big {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .agendar-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 0.6rem;
+  }
+
+  .agendar-card p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.8rem;
+  }
+
+  .btn-wa {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: #25D366;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.35);
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-wa:hover {
+    background: #1db954;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(37,211,102,0.45);
+  }
+
+  .btn-wa svg { width: 20px; height: 20px; fill: #fff; }
+
+  .agendar-note {
+    margin-top: 1rem;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* ===== UBICACION ===== */
+  .ubicacion-section { background: var(--cream); }
+
+  .ubicacion-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .ubicacion-info { padding-top: 1rem; }
+
+  .ubi-detail {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  .ubi-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: rgba(18,34,156,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .ubi-detail h4 {
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.3rem;
+  }
+
+  .ubi-detail p {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+  }
+
+  .map-embed {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(18,34,156,0.1);
+    border: 1px solid var(--border);
+  }
+
+  .map-embed iframe {
+    display: block;
+    width: 100%;
+    height: 380px;
+    border: none;
+  }
+
+  /* ===== FLOATING WA ===== */
+  .wa-float {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    z-index: 200;
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: pulse-wa 2.5s ease-in-out infinite;
+  }
+
+  .wa-float:hover {
+    transform: scale(1.12);
+    box-shadow: 0 10px 36px rgba(37,211,102,0.55);
+    animation: none;
+  }
+
+  .wa-float svg { width: 30px; height: 30px; fill: #fff; }
+
+  @keyframes pulse-wa {
+    0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.45); }
+    50% { box-shadow: 0 6px 40px rgba(37,211,102,0.7), 0 0 0 12px rgba(37,211,102,0.08); }
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--navy-dark);
+    color: rgba(255,255,255,0.7);
+    padding: 50px 5% 30px;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .footer-brand .logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    max-width: 280px;
+  }
+
+  .footer-col h4 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .footer-col a {
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+  }
+
+  .footer-logo-sm {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.1rem;
+    color: var(--gold);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .dif-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .agendar-inner { grid-template-columns: 1fr; }
+    .ubicacion-inner { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .ambiente-header { grid-template-columns: 1fr; gap: 2rem; }
+    .free-class-inner { grid-template-columns: 1fr; text-align: center; }
+  }
+
+  @media (max-width: 640px) {
+    nav { padding: 0 4%; }
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 68px; left: 0; right: 0;
+      background: var(--navy-dark);
+      padding: 1.5rem 4%;
+      gap: 1rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .hamburger { display: flex; }
+    section { padding: 60px 4%; }
+    .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+    .video-grid { grid-template-columns: 1fr 1fr; }
+    .video-card.tall { grid-row: auto; }
+    .hero-actions { flex-direction: column; }
+    .btn-primary, .btn-outline { text-align: center; justify-content: center; }
+    .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+
+  /* Scroll animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/521XXXXXXXXXX?text=Hola!%20Me%20interesa%20una%20clase%20muestra%20en%20Sandunguea%20🎶" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="nav-logo"><em>Sandunguea</em></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#horarios">Horarios</a></li>
+    <li><a href="#profesores">Profesores</a></li>
+    <li><a href="#camino">Tu camino</a></li>
+    <li><a href="#testimonios">Testimonios</a></li>
+    <li><a href="#ubicacion">Ubicación</a></li>
+    <li><a href="https://wa.me/521XXXXXXXXXX?text=Hola!%20Quiero%20agendar%20mi%20clase%20muestra%20gratuita%20🎶" target="_blank" class="nav-cta">Clase muestra gratis</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="deco-notes">♪</div>
+  <div class="deco-notes">♫</div>
+  <div class="deco-notes">♩</div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">🎶 Casa Cultural Colibrí · Coyoacán</div>
+      <h1>Baila con tu<br>propio estilo en<br><em>Sandunguea</em></h1>
+      <p class="hero-desc">No somos una escuela de números. Aquí aprendes a tu ritmo, con técnicas pensadas para ti. Tu confianza y seguridad al bailar son nuestra prioridad.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/521XXXXXXXXXX?text=Hola!%20Quiero%20agendar%20mi%20clase%20muestra%20gratuita%20en%20Sandunguea%20🎶" target="_blank" class="btn-primary">
+          ✨ Clase muestra gratis
+        </a>
+        <a href="#horarios" class="btn-outline">Ver horarios</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-title">🎵 Ritmos que aprenderás</div>
+        <div class="rhythm-list">
+          <div class="rhythm-tag"><span class="rhythm-dot gold"></span>Salsa en Línea</div>
+          <div class="rhythm-tag"><span class="rhythm-dot coral"></span>Cumbia</div>
+          <div class="rhythm-tag"><span class="rhythm-dot teal"></span>Salsa Casino</div>
+          <div class="rhythm-tag"><span class="rhythm-dot pink"></span>Bachata</div>
+        </div>
+      </div>
+      <div class="hero-stat-row">
+        <div class="hero-stat">
+          <div class="hero-stat-num">4</div>
+          <div class="hero-stat-label">Ritmos latinos</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">0</div>
+          <div class="hero-stat-label">Costo clase muestra</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">2</div>
+          <div class="hero-stat-label">Profesores expertos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLASE MUESTRA BANNER -->
+<div class="free-class-section">
+  <div class="free-class-inner">
+    <div class="free-class-text">
+      <div class="tag">Sin costo · Sin compromiso</div>
+      <h2>Tu primera clase es completamente gratis</h2>
+      <p>Ven a conocernos, conoce a nuestros profesores, siente el ambiente y descubre el ritmo que más te llama. Sin presión, sin compromisos. Solo ven a bailar.</p>
+    </div>
+    <a href="https://wa.me/521XXXXXXXXXX?text=Hola!%20Quiero%20agendar%20mi%20clase%20muestra%20gratuita%20🎶" target="_blank" class="btn-primary" style="white-space:nowrap; flex-shrink:0;">
+      <svg style="width:18px;height:18px;fill:currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Agendar por WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- HORARIOS -->
+<section class="schedule-section" id="horarios">
+  <div class="section-inner">
+    <span class="section-label reveal">Clases semanales</span>
+    <h2 class="section-title reveal">Horarios y <em>ritmos</em></h2>
+    <p class="section-sub reveal">Clases para principiantes e intermedios. Personas mayores de 25 años bienvenidas. Ven solo o en pareja.</p>
+    <div class="schedule-grid">
+      <!-- LUNES -->
+      <div class="day-card reveal">
+        <div class="day-header">
+          <span class="day-name">Lunes</span>
+          <span class="day-emoji">💃</span>
+        </div>
+        <div class="class-list">
+          <div class="class-item">
+            <div class="class-color" style="background:#F5A623"></div>
+            <div class="class-info">
+              <div class="class-rhythm">Salsa en Línea</div>
+              <div class="class-time">7:00 – 8:00 pm</div>
+            </div>
+            <div class="class-teacher">Profe Max</div>
+          </div>
+          <div class="class-item">
+            <div class="class-color" style="background:#FF6B4A"></div>
+            <div class="class-info">
+              <div class="class-rhythm">Cumbia</div>
+              <div class="class-time">8:00 – 9:00 pm</div>
+            </div>
+            <div class="class-teacher">Profe Silvia</div>
+          </div>
+          <div class="class-item">
+            <div class="class-color" style="background:#4ECDC4"></div>
+            <div class="class-info">
+              <div class="class-rhythm">Salsa Casino</div>
+              <div class="class-time">9:00 – 10:00 pm</div>
+            </div>
+            <div class="class-teacher">Profe Silvia</div>
+          </div>
+        </div>
+      </div>
+      <!-- MIERCOLES -->
+      <div class="day-card reveal reveal-delay-1">
+        <div class="day-header">
+          <span class="day-name">Miércoles</span>
+          <span class="day-emoji">🎶</span>
+        </div>
+        <div class="class-list">
+          <div class="class-item">
+            <div class="class-color" style="background:#FF6B4A"></div>
+            <div class="class-info">
+              <div class="class-rhythm">Cumbia</div>
+              <div class="class-time">8:00 – 9:00 pm</div>
+            </div>
+            <div class="class-teacher">Profe Silvia</div>
+          </div>
+          <div class="class-item">
+            <div class="class-color" style="background:#4ECDC4"></div>
+            <div class="class-info">
+              <div class="class-rhythm">Salsa Casino</div>
+              <div class="class-time">9:00 – 10:00 pm</div>
+            </div>
+            <div class="class-teacher">Profe Silvia</div>
+          </div>
+        </div>
+      </div>
+      <!-- JUEVES -->
+      <div class="day-card reveal reveal-delay-2">
+        <div class="day-header">
+          <span class="day-name">Jueves</span>
+          <span class="day-emoji">🕺</span>
+        </div>
+        <div class="class-list">
+          <div class="class-item">
+            <div class="class-color" style="background:#FF6B9D"></div>
+            <div class="class-info">
+              <div class="class-rhythm">Bachata</div>
+              <div class="class-time">8:00 – 9:00 pm</div>
+            </div>
+            <div class="class-teacher">Profe Max</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TU CAMINO EN SANDUNGUEA -->
+<section class="camino-section" id="camino">
+  <div class="section-inner">
+    <span class="section-label reveal">Tu proceso</span>
+    <h2 class="section-title reveal">Tu camino en <em>Sandunguea</em></h2>
+    <p class="section-sub reveal">Respetamos tu ritmo de aprendizaje. Esto es lo que vives desde que llegas por primera vez hasta que bailas con confianza total.</p>
+    <div class="camino-grid">
+      <div class="camino-step reveal">
+        <div class="step-num">1</div>
+        <span class="step-icon">📲</span>
+        <h3>Agendar tu clase muestra</h3>
+        <p>Escríbenos por WhatsApp, eliges el día y el ritmo que quieres probar. ¡Sin costo y sin compromiso!</p>
+      </div>
+      <div class="camino-step reveal reveal-delay-1">
+        <div class="step-num">2</div>
+        <span class="step-icon">🎶</span>
+        <h3>Tu primera clase</h3>
+        <p>Llegas, te presentamos, conoces a tu profe y sientes la música. Nadie te presiona, nadie te juzga.</p>
+      </div>
+      <div class="camino-step reveal reveal-delay-2">
+        <div class="step-num">3</div>
+        <span class="step-icon">🧠</span>
+        <h3>Técnica a tu medida</h3>
+        <p>Tu profe identifica tu estilo de aprendizaje y adapta las técnicas para que avances con seguridad.</p>
+      </div>
+      <div class="camino-step reveal reveal-delay-3">
+        <div class="step-num">4</div>
+        <span class="step-icon">💃</span>
+        <h3>Bailas con confianza</h3>
+        <p>Cada clase construyes más seguridad en el piso de baile. Tu estilo propio emerge de forma natural.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ASÍ SE VIVE SANDUNGUEA -->
+<section class="ambiente-section" id="ambiente">
+  <div class="section-inner">
+    <div class="ambiente-header">
+      <div>
+        <span class="section-label reveal">Ambiente real</span>
+        <h2 class="section-title reveal">Así se vive <em>Sandunguea</em></h2>
+      </div>
+      <div>
+        <p class="section-sub reveal">No tienes que imaginarlo. Mira cómo son nuestras clases, el ambiente y la energía que vives cada semana en la Casa Cultural Colibrí.</p>
+        <div style="margin-top:1.5rem" class="reveal">
+          <a href="https://wa.me/521XXXXXXXXXX?text=Vi%20sus%20videos%20y%20quiero%20agendar%20mi%20clase%20muestra%20🎶" target="_blank" class="btn-primary" style="display:inline-flex">
+            Quiero vivir esto →
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="video-grid reveal">
+      <div class="video-card tall">
+        <div class="video-placeholder">
+          <div class="play-icon">▶</div>
+          <p>Salsa Casino<br>en vivo</p>
+        </div>
+        <div class="video-label">🎬 Clase de Salsa Casino</div>
+      </div>
+      <div class="video-card">
+        <div class="video-placeholder">
+          <div class="play-icon">▶</div>
+          <p>Cumbia</p>
+        </div>
+        <div class="video-label">💃 Cumbia</div>
+      </div>
+      <div class="video-card">
+        <div class="video-placeholder">
+          <div class="play-icon">▶</div>
+          <p>Bachata</p>
+        </div>
+        <div class="video-label">🕺 Bachata</div>
+      </div>
+      <div class="video-card">
+        <div class="video-placeholder">
+          <div class="play-icon">▶</div>
+          <p>Salsa en Línea</p>
+        </div>
+        <div class="video-label">🎶 Salsa NY</div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:1.2rem;font-size:0.82rem;color:var(--text-light)" class="reveal">📽️ Próximamente videos reales de clases · Síguenos en redes para verlos primero</p>
+  </div>
+</section>
+
+<!-- DIFERENCIAL -->
+<section class="diferencial-section">
+  <div class="section-inner">
+    <div class="dif-grid">
+      <div>
+        <span class="section-label reveal" style="color:rgba(255,255,255,0.5)">Nuestra filosofía</span>
+        <p class="dif-quote reveal">Aquí no eres un número. Respetamos tu proceso, tu identidad y tu estilo de aprendizaje.</p>
+        <p class="dif-author reveal">— Sandunguea, escuela de baile latino</p>
+      </div>
+      <div class="dif-features">
+        <div class="dif-feature reveal">
+          <div class="dif-icon">🎯</div>
+          <div>
+            <h4>Aprendizaje personalizado</h4>
+            <p>Diseñamos técnicas según tu forma de aprender. Lo que funciona para uno no es igual para todos.</p>
+          </div>
+        </div>
+        <div class="dif-feature reveal reveal-delay-1">
+          <div class="dif-icon">🛡️</div>
+          <div>
+            <h4>Tu confianza, primero</h4>
+            <p>Favorecemos tu seguridad al bailar. Sin juicios, sin prisa. Avanzas cuando estás listo.</p>
+          </div>
+        </div>
+        <div class="dif-feature reveal reveal-delay-2">
+          <div class="dif-icon">👤</div>
+          <div>
+            <h4>Respetamos tu identidad</h4>
+            <p>No buscamos que bailes igual a todos. Tu estilo propio es lo que hacemos florecer.</p>
+          </div>
+        </div>
+        <div class="dif-feature reveal reveal-delay-3">
+          <div class="dif-icon">🏡</div>
+          <div>
+            <h4>Ambiente cálido y real</h4>
+            <p>Grupos pequeños, profesores dedicados y un espacio donde te sientes cómodo desde el primer día.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFESORES -->
+<section class="profesores-section" id="profesores">
+  <div class="section-inner">
+    <span class="section-label reveal">Tu equipo</span>
+    <h2 class="section-title reveal">Nuestros <em>profesores</em></h2>
+    <p class="section-sub reveal">Apasionados por el baile y por enseñar. Aquí no importa cuántos alumnos tienen — importa lo que cada uno aprende.</p>
+    <div class="prof-grid">
+      <div class="prof-card reveal">
+        <div class="prof-avatar">🕺</div>
+        <div>
+          <div class="prof-name">Profesor Max</div>
+          <div class="prof-role">Salsa en Línea · Bachata</div>
+          <p class="prof-bio">Max domina la energía del estilo Nueva York y la sensualidad de la Bachata. Tiene el don de enseñar con paciencia y claridad, haciendo que cada alumno encuentre su propio ritmo con total confianza.</p>
+          <div class="prof-tags">
+            <span class="tag-pill">Salsa en Línea</span>
+            <span class="tag-pill">Bachata</span>
+            <span class="tag-pill">Lunes · Jueves</span>
+          </div>
+        </div>
+      </div>
+      <div class="prof-card reveal reveal-delay-1">
+        <div class="prof-avatar">💃</div>
+        <div>
+          <div class="prof-name">Profesora Silvia</div>
+          <div class="prof-role">Cumbia · Salsa Casino</div>
+          <p class="prof-bio">Silvia imprime vida y alegría en cada clase. Su expertise en Cumbia y Salsa Cubana se combina con una pedagogía cálida y precisa que hace que hasta los más tímidos se animen a soltar el cuerpo.</p>
+          <div class="prof-tags">
+            <span class="tag-pill">Cumbia</span>
+            <span class="tag-pill">Salsa Casino</span>
+            <span class="tag-pill">Lunes · Miércoles</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonios-section" id="testimonios">
+  <div class="section-inner">
+    <span class="section-label reveal">Lo que dicen</span>
+    <h2 class="section-title reveal">Experiencias <em>reales</em></h2>
+    <p class="section-sub reveal">Personas como tú que llegaron sin saber bailar y encontraron mucho más que pasos.</p>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Llegué con mucha pena, pensando que era demasiado mayor para aprender. Silvia me hizo sentir que era posible desde el primer día. Ahora bailo cumbia con una seguridad que nunca imaginé tener.</p>
+        <div class="testi-author">
+          <div class="testi-av">MR</div>
+          <div>
+            <div class="testi-name">María R.</div>
+            <div class="testi-class">Alumna de Cumbia</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">Lo que me encantó es que Max nunca me apuró. Entiende que aprendo diferente y adaptó las clases para mí. Llevar más de 4 meses y sigo creciendo. No es solo baile, es confianza en uno mismo.</p>
+        <div class="testi-author">
+          <div class="testi-av">JL</div>
+          <div>
+            <div class="testi-name">Jorge L.</div>
+            <div class="testi-class">Alumno de Salsa en Línea</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal reveal-delay-2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">La clase muestra fue suficiente para saber que este era mi lugar. El ambiente es muy cálido, sin presión. Sandunguea es diferente a todas las escuelas que probé antes.</p>
+        <div class="testi-author">
+          <div class="testi-av">AV</div>
+          <div>
+            <div class="testi-name">Ana V.</div>
+            <div class="testi-class">Alumna de Salsa Casino</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDAR CLASE MUESTRA -->
+<section class="agendar-section" id="agendar">
+  <div class="section-inner">
+    <div class="agendar-inner">
+      <div>
+        <span class="section-label reveal">Primer paso</span>
+        <h2 class="section-title reveal">Agenda tu clase<br><em>muestra gratis</em></h2>
+        <p class="section-sub reveal" style="margin-bottom:2rem">Es muy sencillo. En menos de 2 minutos ya tienes tu lugar reservado.</p>
+        <div class="agendar-steps">
+          <div class="ag-step reveal">
+            <div class="ag-num">1</div>
+            <div>
+              <h4>Escríbenos por WhatsApp</h4>
+              <p>Haz clic en el botón, se abre la app con un mensaje listo.</p>
+            </div>
+          </div>
+          <div class="ag-step reveal reveal-delay-1">
+            <div class="ag-num">2</div>
+            <div>
+              <h4>Elige tu ritmo y día</h4>
+              <p>Cuéntanos qué ritmo te interesa y qué día te viene bien.</p>
+            </div>
+          </div>
+          <div class="ag-step reveal reveal-delay-2">
+            <div class="ag-num">3</div>
+            <div>
+              <h4>¡Listo! Te esperamos</h4>
+              <p>Confirmamos tu lugar y te damos los detalles de llegada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="agendar-card reveal">
+        <span class="emoji-big">🎶</span>
+        <h3>Tu primera clase, gratis</h3>
+        <p>Ven a conocernos sin compromiso. Siente la música, conoce al profe y decide si Sandunguea es para ti.</p>
+        <a href="https://wa.me/521XXXXXXXXXX?text=Hola!%20Me%20interesa%20agendar%20mi%20clase%20muestra%20gratuita%20en%20Sandunguea.%20%C2%BFQu%C3%A9%20horario%20tienen%20disponible%3F%20%F0%9F%8E%B6" target="_blank" class="btn-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Agendar por WhatsApp
+        </a>
+        <p class="agendar-note">Respondemos en menos de 24 horas · Lun a Jue</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACION -->
+<section class="ubicacion-section" id="ubicacion">
+  <div class="section-inner">
+    <span class="section-label reveal">Dónde bailamos</span>
+    <h2 class="section-title reveal">Encuéntranos en <em>Coyoacán</em></h2>
+    <div class="ubicacion-inner" style="margin-top:3rem">
+      <div class="ubicacion-info reveal">
+        <div class="ubi-detail">
+          <div class="ubi-icon">📍</div>
+          <div>
+            <h4>Dirección</h4>
+            <p>Casa Cultural Colibrí<br>Cda. Huitzitzilin 31, Pedregal de Santo Domingo<br>Coyoacán, 04369 Ciudad de México, CDMX</p>
+          </div>
+        </div>
+        <div class="ubi-detail">
+          <div class="ubi-icon">🗓️</div>
+          <div>
+            <h4>Días de clase</h4>
+            <p>Lunes, Miércoles y Jueves<br>De 7:00 pm a 10:00 pm</p>
+          </div>
+        </div>
+        <div class="ubi-detail">
+          <div class="ubi-icon">💬</div>
+          <div>
+            <h4>Informes e inscripciones</h4>
+            <p>Por WhatsApp únicamente<br>Te respondemos rápido</p>
+          </div>
+        </div>
+        <div style="margin-top:2rem">
+          <a href="https://wa.me/521XXXXXXXXXX?text=Hola!%20Me%20pueden%20dar%20informes%20sobre%20Sandunguea%3F%20%F0%9F%8E%B6" target="_blank" class="btn-primary">
+            Solicitar informes por WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="map-embed reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3766.1!2d-99.1506!3d19.3281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDE5JzQxLjIiTiA5OcKwMDknMDIuMiJX!5e0!3m2!1ses!2smx!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación Sandunguea – Casa Cultural Colibrí, Coyoacán">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo">Sandunguea</a>
+        <p>Escuela de baile latino en el corazón de Coyoacán. Aprendemos a tu ritmo, respetamos tu estilo y construimos tu confianza en el piso de baile.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Clases</h4>
+        <ul>
+          <li><a href="#horarios">Salsa en Línea</a></li>
+          <li><a href="#horarios">Cumbia</a></li>
+          <li><a href="#horarios">Salsa Casino</a></li>
+          <li><a href="#horarios">Bachata</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Información</h4>
+        <ul>
+          <li><a href="#horarios">Horarios</a></li>
+          <li><a href="#profesores">Profesores</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#ubicacion">Ubicación</a></li>
+          <li><a href="https://wa.me/521XXXXXXXXXX" target="_blank">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 <span class="footer-logo-sm">Sandunguea</span> · Todos los derechos reservados</span>
+      <span>Casa Cultural Colibrí · Coyoacán, CDMX</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Hamburger menu
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Smooth active link
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      const sectionHeight = section.offsetHeight;
+      const id = section.getAttribute('id');
+      const link = document.querySelector(`.nav-links a[href="#${id}"]`);
+      if (link) {
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          link.style.color = 'var(--gold)';
+        } else {
+          link.style.color = '';
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>

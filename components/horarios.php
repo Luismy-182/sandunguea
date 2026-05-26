@@ -11,7 +11,7 @@
     <p class="section-lead-no-max">Tenemos clases de lunes a jueves en la noche — perfectas para después del trabajo.</p>
 
     <div class="horarios-grid">
-        <div class="dia-card">
+        <div class="dia-card reveal reveal-delay-1">
             <div class="dia">
                 <h3>Lunes</h3>
                 <span>💃</span>
@@ -50,7 +50,7 @@
         </div>
 
 
-        <div class="dia-card">
+        <div class="dia-card reveal reveal-delay-2">
             <div class="dia">
                 <h3>Miercoles</h3>
                 <span>🎶</span>
@@ -79,7 +79,7 @@
             </div>
         </div>
 
-        <div class="dia-card">
+        <div class="dia-card reveal reveal-delay-3">
 
 
             <div class="dia">

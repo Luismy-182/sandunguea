@@ -36,7 +36,7 @@ const whatsAppFloat = () => {
 
         } else {
 
-            btnWhatsApp.style.bottom = `1.8rem`;
+            btnWhatsApp.style.bottom = `2.9rem`;
         }
 
     });

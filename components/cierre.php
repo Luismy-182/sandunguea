@@ -8,18 +8,18 @@
     </div>
     <div class="cierre-contenido">
 
-        <h2 class="cierre-titulo">
+        <h2 class="cierre-titulo reveal">
             Nunca es tarde para empezar a bailar en <br>
         </h2>
-        <div class="sandunguea-letter cierre-logo">
+        <div class="sandunguea-letter cierre-logo reveal reveal-delay-1">
             Sandunguea</div>
 
-        <p class="cierre-parrafo">
+        <p class="cierre-parrafo reveal reveal-delay-2">
             No necesitas experiencia ni venir con pareja.<br>
             Solo ganas de <span class="underline-gold"> disfrutar y aprender.</span>
         </p>
 
-        <a href="#agendar-clase" class="cierre-btn">
+        <a href="#agendar-clase" class="cierre-btn reveal reveal-delay-3">
             Agendar clase muestra gratis
         </a>
 

@@ -1,7 +1,7 @@
 <section class="section testimonios" id="testimonios">
-    <p class="label-section">Testimonios</p>
+    <p class="label-section reveal">Testimonios</p>
 
-    <div class="head-section">
+    <div class="head-section reveal">
         <h2>
             Dar el primer paso
             cambia mucho.
@@ -14,7 +14,7 @@
 
     <div class="testimonios-grid">
 
-        <article class="testimonio-card">
+        <article class="testimonio-card reveal">
             <p class="testimonio-texto">
                 "Para mí, Sandunguea es un espacio donde aprendes a bailar de forma relajada, libre y divertida. Además, siempre encuentras personas increíbles que hacen cada clase todavía más especial 💙"
             </p>
@@ -31,7 +31,7 @@
             </div>
         </article>
 
-        <article class="testimonio-card">
+        <article class="testimonio-card reveal reveal-delay-1">
             <p class="testimonio-texto">
                 "Sandunguea cambió por completo nuestra forma de disfrutar el baile y las fiestas. Como pareja, también nos ayudó a conectar y comunicarnos mejor.
                 Además del baile, encontramos un lugar seguro, lleno de amigos, energía y momentos increíbles ✨”
@@ -48,7 +48,7 @@
             </div>
         </article>
 
-        <article class="testimonio-card">
+        <article class="testimonio-card reveal reveal-delay-2">
             <p class="testimonio-texto">
                 “Sandunguea se ha convertido en mi lugar seguro ✨
                 Es mi escape de lo cotidiano, donde siempre la paso bien, conozco personas con buena vibra y comparto momentos muy agradables.
@@ -71,7 +71,7 @@
 
     <p class="confianza-final">
         A veces solo necesitas una clase para descubrir que bailar también es para ti.
-        <span class="sandunguea-letter">
+        <span class="sandunguea-letter reveal">
             Anímate a dar el primer paso 💃
         </span>
     </p>

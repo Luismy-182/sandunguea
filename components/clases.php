@@ -14,28 +14,28 @@
 
 
     <div class="clases-grid">
-        <div class="clase">
+        <div class="clase reveal">
             <span>🪘</span>
             <h3>Cumbia</h3>
             <p class="clase-tag">Raíz latina · Todos los niveles</p>
             <p>El ritmo más alegre y accesible para empezar a soltarte.</p>
         </div>
 
-        <div class="clase">
+        <div class="clase reveal reveal-delay-1">
             <span>✨</span>
             <h3>Salsa en Línea</h3>
             <p class="clase-tag">Estilo Nueva York</p>
             <p>Elegancia, técnica y pasos que brillan en la pista.</p>
         </div>
 
-        <div class="clase">
+        <div class="clase reveal reveal-delay-2">
             <span>🔥</span>
             <h3>Salsa Cubana</h3>
             <p class="clase-tag">Casino · Rumba</p>
             <p>Movimiento, sabor y energía caribeña en cada vuelta.</p>
         </div>
 
-        <div class="clase">
+        <div class="clase reveal reveal-delay-3">
             <span>💫</span>
             <h3>Bachata</h3>
             <p class="clase-tag">Sensual · Dominicana</p>

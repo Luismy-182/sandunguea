@@ -1,6 +1,6 @@
 <section class="section profesores" id="profesores">
-    <p class="label-section">Profesores</p>
-    <div class="head-section">
+    <p class="label-section reveal">Profesores</p>
+    <div class="head-section reveal">
         <h2>
             Aprende con quienes
             <span class="text-azul-700">aman</span> lo que enseñan.
@@ -9,7 +9,7 @@
     <p class="section-lead-no-max">Cada profesor está para ayudarte a disfrutar el proceso, incluso si nunca has bailado antes.</p>
 
     <div class="profesores-grid">
-        <div class="profesor-card">
+        <div class="profesor-card reveal">
             <p class="profesor-tag">Ideal si vas empezando</p>
             <div class="profesor-foto">
                 <img loading="lazy" src="/assets/img/profesores/silvia1.webp" alt="imagen-silvia">
@@ -24,7 +24,7 @@
                 </p>
             </div>
         </div>
-        <div class="profesor-card">
+        <div class="profesor-card reveal reveal-delay-1">
             <p class="profesor-tag">🔥 Energía y atención personalizada</p>
             <div class="profesor-foto">
                 <img loading="lazy" src="/assets/img/profesores/max.webp" alt="imagen-max">

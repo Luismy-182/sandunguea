@@ -3,26 +3,26 @@
 
     <p class="label-section">Aquí puedes ser tu</p>
 
-    <h2>¿Te da pena empezar a bailar? No eres el único.</h2>
+    <h2 class="">¿Te da pena empezar a bailar? No eres el único.</h2>
     <p class="confianza-text">
         Es más común de lo que crees.
         Aquí nadie llega sabiendo… y eso está bien.
     </p>
     <div class="confianza-grid flex-col-center">
 
-        <div class="confianza-card flex-col-center">
+        <div class="confianza-card flex-col-center reveal reveal-delay-1">
             <span>🤝</span>
             <h3>Sin niveles</h3>
             <p>Todos avanzamos juntos, sin presión ni comparaciones.</p>
         </div>
 
-        <div class="confianza-card flex-col-center">
+        <div class="confianza-card flex-col-center reveal reveal-delay-2">
             <span>🌱</span>
             <h3>Respetamos tu proceso</h3>
             <p>Cada persona aprende a su ritmo, ganando confianza poco a poco.</p>
         </div>
 
-        <div class="confianza-card flex-col-center">
+        <div class="confianza-card flex-col-center reveal reveal-delay-3">
             <span>💃</span>
             <h3>Ambiente seguro</h3>
             <p>Un espacio donde puedes soltarte sin miedo al qué dirán.</p>
@@ -35,7 +35,7 @@
 
     <div class="confianza-grid confianza-grid-extra flex-col-center">
 
-        <div class="confianza-card flex-col-center">
+        <div class="confianza-card flex-col-center reveal reveal-delay-1">
             <span>😌</span>
             <h3>Te empiezas a soltar</h3>
             <p>
@@ -43,7 +43,7 @@
             </p>
         </div>
 
-        <div class="confianza-card flex-col-center">
+        <div class="confianza-card flex-col-center reveal reveal-delay-2">
             <span>✨</span>
             <h3>Ganas confianza</h3>
             <p>
@@ -51,7 +51,7 @@
             </p>
         </div>
 
-        <div class="confianza-card flex-col-center">
+        <div class="confianza-card flex-col-center reveal reveal-delay-3">
             <span>🎶</span>
             <h3>Conectas con otros</h3>
             <p>
