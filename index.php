@@ -47,7 +47,7 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/l10n/es.js"></script>
 
-    <script src="/assets/js/app.js?v=0.5.2" type="module"></script>
+    <script src="/assets/js/app.js?v=0.5.3" type="module"></script>
 </body>
 
 </html>
