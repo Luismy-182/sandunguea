@@ -19,7 +19,7 @@
                 <div class="grid-form">
                     <div class="ritmo">
                         <label for="ritmo">¿Qué clase te interesa?</label>
-                        <select name="clase" id="clase">
+                        <select name="clase" id="clase" class="input-clase">
                             <option value="" selected disabled>Selecciona un clase...</option>
                             <option value="Salsa en línea - Lunes 7:00 PM a 8:00 PM"> Salsa en línea · Lunes 7:00 – 8:00 PM</option>
                             <option value="Cumbia - Lunes y miércoles 8:00 PM a 9:00 PM"> Cumbia · Lunes y miércoles 8:00 – 9:00 PM</option>
