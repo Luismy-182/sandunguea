@@ -56,7 +56,7 @@ html {
 
 
 .sandunguea-letter {
-    font-family: var(--Sandunguea), cursive;
+    font-family: var(--Sandunguea),'Dancing Script', cursive;
     /* font-family: 'Dancing Script', cursive; */
     font-weight: 900;
 
@@ -1323,12 +1323,33 @@ img {
 }
 
 /*ICONO WHATSAPP FLOTANTE */
-
-.wa-float {
+.wa-container {
     position: fixed;
     bottom: 2.24rem;
     right: 2.24rem;
     z-index: 200;
+    /* Dimensiones y forma en el padre para evitar el bug cuadrado */
+    width: 5.4rem;
+    height: 5.4rem;
+    background: #25d366;
+    border-radius: 50%;
+    box-shadow: 0 6px 24px rgba(37, 211, 102, .5);
+
+    /* Suavidad para el tamaño y la sombra */
+    transition: transform .2s ease, box-shadow .2s ease;
+    /* Animaciones aplicadas aquí */
+    animation:
+        waPop 1s 1.5s both,
+        pulse-green 3s infinite 2.5s;
+}
+
+.wa-container:hover {
+    animation-play-state: paused;
+
+}
+
+.wa-float {
+
     width: 5.4rem;
     height: 5.4rem;
     background: #25d366;
@@ -1341,16 +1362,12 @@ img {
     transition:
         transform .2s ease,
         box-shadow .2s ease;
-
-    animation:
-        waPop 1s 1.5s both,
-        pulse-green 3s infinite 2.5s;
 }
 
 .wa-float:hover {
-    transform: scale(1.1);
     box-shadow: 0 10px 32px rgba(37, 211, 102, .6);
-    animation-pĺay-state: paused;
+    transform: scale(1.1);
+
 }
 
 @keyframes pulse-green {
@@ -1390,6 +1407,13 @@ img {
 }
 
 @media(min-width:768px) {
+    .wa-container {
+        width: 6rem;
+        height: 6rem;
+        bottom: 2.88rem;
+        right: 2.88rem;
+    }
+
     .wa-float {
         width: 6rem;
         height: 6rem;
