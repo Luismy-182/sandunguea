@@ -1730,7 +1730,7 @@ img {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 2.4rem;
-        padding: 0 2rem;
+        padding: 0 0rem;
         align-items: stretch;
     }
 
@@ -1762,7 +1762,7 @@ img {
 @media(min-width:1200px) {
     .confianza-grid {
         gap: 3rem;
-        padding: 0 4rem;
+        padding: 0 6.4rem;
     }
 
     .confianza-card {
