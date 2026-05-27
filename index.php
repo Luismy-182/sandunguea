@@ -29,14 +29,15 @@
     <?php require_once __DIR__ . '/components/seccionEmocional.php' ?>
     <?php require_once __DIR__ . '/components/sandunguea.php' ?>
     <?php require_once __DIR__ . '/components/tuCamino.php' ?>
-    <?php require_once __DIR__ . '/components/clases.php' ?>
-    <?php require_once __DIR__ . '/components/horarios.php' ?>
-    <?php require_once __DIR__ . '/components/profesores.php' ?>
-    <?php require_once __DIR__ . '/components/testimonios.php' ?>
-    <?php require_once __DIR__ . '/components/agendarClase.php' ?>
-    <?php require_once __DIR__ . '/components/ubicacion.php' ?>
-    <?php require_once __DIR__ . '/components/cierre.php' ?>
-    
+    <main>
+        <?php require_once __DIR__ . '/components/clases.php' ?>
+        <?php require_once __DIR__ . '/components/horarios.php' ?>
+        <?php require_once __DIR__ . '/components/profesores.php' ?>
+        <?php require_once __DIR__ . '/components/testimonios.php' ?>
+        <?php require_once __DIR__ . '/components/agendarClase.php' ?>
+        <?php require_once __DIR__ . '/components/ubicacion.php' ?>
+        <?php require_once __DIR__ . '/components/cierre.php' ?>
+    </main>
 
 
 
@@ -47,7 +48,7 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/l10n/es.js"></script>
 
-    <script src="/assets/js/app.js?v=0.5.3" type="module"></script>
+    <script src="/assets/js/app.js?v=0.6.0" type="module"></script>
 </body>
 
 </html>

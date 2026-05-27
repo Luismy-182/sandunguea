@@ -4726,3 +4726,32 @@ img {
 .reveal-delay-3 {
     transition-delay: 0.3s;
 }
+
+.video-actions {
+    position: absolute;
+    left: 15%;
+    color: var(--blanco);
+    font-size: 1.2rem;
+    opacity: .87;
+}
+
+.video-muted {
+    display: flex;
+    align-items: center;
+}
+
+.video-volume {
+    display: flex;
+    align-items: center;
+}
+
+@media(min-width:768px) {
+    .principal p {
+        left: 6%;
+    }
+
+    .video-actions {
+        left: 12%;
+    }
+
+}
