@@ -19,12 +19,16 @@
             Solo ganas de <span class="underline-gold"> disfrutar y aprender.</span>
         </p>
 
-        <a href="#agendar-clase" class="cierre-btn reveal reveal-delay-3">
-            Agendar clase muestra gratis
-        </a>
+        <div class="
+         reveal reveal-delay-3
+        ">
+            <a href="#agendar-clase" class="cierre-btn">
+                Agendar clase muestra gratis
+            </a>
+        </div>
 
     </div>
 
-    
+
 
 </section>

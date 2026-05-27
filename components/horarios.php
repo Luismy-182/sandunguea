@@ -11,96 +11,98 @@
     <p class="section-lead-no-max">Tenemos clases de lunes a jueves en la noche — perfectas para después del trabajo.</p>
 
     <div class="horarios-grid">
-        <div class="dia-card reveal reveal-delay-1">
-            <div class="dia">
-                <h3>Lunes</h3>
-                <span>💃</span>
+        <div class="reveal">
+            <div class="dia-card">
+                <div class="dia">
+                    <h3>Lunes</h3>
+                    <span>💃</span>
+                </div>
+                <div class="horario-card">
+
+                    <div class="materia linea">
+                        <div class="baile">
+                            <h4>Salsa en Línea</h4>
+                            <p>7:00 - 8:00pm</p>
+                        </div>
+                        <div class="profesor">
+                            <p>Profe Max</p>
+                        </div>
+                    </div>
+                    <div class="materia cumbia">
+                        <div class="baile">
+                            <h4>Cumbia</h4>
+                            <p>8:00 - 9:00pm</p>
+                        </div>
+                        <div class="profesor">
+                            <p>Profe Silvia</p>
+                        </div>
+                    </div>
+                    <div class="materia casino">
+                        <div class="baile">
+                            <h4>Salsa Cubana</h4>
+                            <p>9:00 - 10:00pm</p>
+                        </div>
+                        <div class="profesor">
+                            <p>Profe Silvia</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="horario-card">
+        </div>
+        <div class="reveal reveal-delay-2">
+            <div class="dia-card">
+                <div class="dia">
+                    <h3>Miercoles</h3>
+                    <span>🎶</span>
+                </div>
+                <div class="horario-card">
 
-                <div class="materia linea">
-                    <div class="baile">
-                        <h4>Salsa en Línea</h4>
-                        <p>7:00 - 8:00pm</p>
+                    <div class="materia cumbia">
+                        <div class="baile">
+                            <h4>Cumbia</h4>
+                            <p>8:00 - 9:00pm</p>
+                        </div>
+                        <div class="profesor">
+                            <p>Profe Silvia</p>
+                        </div>
                     </div>
-                    <div class="profesor">
-                        <p>Profe Max</p>
+                    <div class="materia casino">
+                        <div class="baile">
+                            <h4>Salsa Cubana</h4>
+                            <p>9:00 - 10:00pm</p>
+                        </div>
+                        <div class="profesor">
+                            <p>Profe Silvia</p>
+                        </div>
                     </div>
-                </div>
-                <div class="materia cumbia">
-                    <div class="baile">
-                        <h4>Cumbia</h4>
-                        <p>8:00 - 9:00pm</p>
-                    </div>
-                    <div class="profesor">
-                        <p>Profe Silvia</p>
-                    </div>
-                </div>
-                <div class="materia casino">
-                    <div class="baile">
-                        <h4>Salsa Cubana</h4>
-                        <p>9:00 - 10:00pm</p>
-                    </div>
-                    <div class="profesor">
-                        <p>Profe Silvia</p>
-                    </div>
-                </div>
 
+                </div>
+            </div>
+        </div>
+        <div class="reveal reveal-delay-3">
+            <div class="dia-card">
+
+
+                <div class="dia">
+                    <h3>Jueves</h3>
+                    <span>🕺</span>
+                </div>
+                <div class="horario-card">
+
+                    <div class="materia bachata">
+                        <div class="baile">
+                            <h4>Bachata</h4>
+                            <p>8:00 - 9:00pm</p>
+                        </div>
+                        <div class="profesor">
+                            <p>Profe Max</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-
-        <div class="dia-card reveal reveal-delay-2">
-            <div class="dia">
-                <h3>Miercoles</h3>
-                <span>🎶</span>
-            </div>
-            <div class="horario-card">
-
-                <div class="materia cumbia">
-                    <div class="baile">
-                        <h4>Cumbia</h4>
-                        <p>8:00 - 9:00pm</p>
-                    </div>
-                    <div class="profesor">
-                        <p>Profe Silvia</p>
-                    </div>
-                </div>
-                <div class="materia casino">
-                    <div class="baile">
-                        <h4>Salsa Cubana</h4>
-                        <p>9:00 - 10:00pm</p>
-                    </div>
-                    <div class="profesor">
-                        <p>Profe Silvia</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="dia-card reveal reveal-delay-3">
-
-
-            <div class="dia">
-                <h3>Jueves</h3>
-                <span>🕺</span>
-            </div>
-            <div class="horario-card">
-
-                <div class="materia bachata">
-                    <div class="baile">
-                        <h4>Bachata</h4>
-                        <p>8:00 - 9:00pm</p>
-                    </div>
-                    <div class="profesor">
-                        <p>Profe Max</p>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
     </div>
 
     <p class="">¿Primera vez bailando?
