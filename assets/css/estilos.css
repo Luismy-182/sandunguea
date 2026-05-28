@@ -1339,7 +1339,7 @@ img {
 
     /* Animaciones aplicadas aquí */
     animation:
-        waPop 1s 1s both,
+        waPop 1s 1.5s both,
         pulse-green 3s infinite 2.5s;
 }
 
@@ -4492,7 +4492,7 @@ img {
 
     background-size: cover;
 
-    background-position: 44% 15%;
+    background-position: 46% 15%;
 
 
     background-repeat: no-repeat;
