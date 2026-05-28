@@ -25,7 +25,7 @@ const whatsAppFloat = () => {
 
 
     const btnWhatsApp = document.querySelector(".wa-wrapper");
-    const footer = document.querySelector(".footer");
+    const footer = document.querySelector(".cierre");
     window.addEventListener('scroll', () => {
 
         const footerRect = footer.getBoundingClientRect();
