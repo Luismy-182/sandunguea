@@ -56,7 +56,7 @@ html {
 
 
 .sandunguea-letter {
-    font-family: var(--Sandunguea),'Dancing Script', cursive;
+    font-family: var(--Sandunguea), 'Dancing Script', cursive;
     /* font-family: 'Dancing Script', cursive; */
     font-weight: 900;
 
@@ -1322,11 +1322,10 @@ img {
     color: rgba(255, 255, 255, .25);
 }
 
+
 /*ICONO WHATSAPP FLOTANTE */
 .wa-container {
-    position: fixed;
-    bottom: 2.24rem;
-    right: 2.24rem;
+
     z-index: 200;
     /* Dimensiones y forma en el padre para evitar el bug cuadrado */
     width: 5.4rem;
@@ -1336,15 +1335,17 @@ img {
     box-shadow: 0 6px 24px rgba(37, 211, 102, .5);
 
     /* Suavidad para el tamaño y la sombra */
-    transition: transform .2s ease, box-shadow .2s ease;
+
+
     /* Animaciones aplicadas aquí */
     animation:
-        waPop 1s 1.5s both,
+        waPop 1s 1s both,
         pulse-green 3s infinite 2.5s;
 }
 
 .wa-container:hover {
     animation-play-state: paused;
+    box-shadow: 0 10px 32px rgba(37, 211, 102, .6);
 
 }
 
@@ -1361,11 +1362,12 @@ img {
     text-decoration: none;
     transition:
         transform .2s ease,
-        box-shadow .2s ease;
+        box-shadow .2s ease,
+        scale .2s ease;
 }
 
 .wa-float:hover {
-    box-shadow: 0 10px 32px rgba(37, 211, 102, .6);
+    scale: 1.01;
     transform: scale(1.1);
 
 }
@@ -1389,12 +1391,12 @@ img {
 @keyframes waPop {
     from {
         opacity: 0;
-        transform: scale(0);
+        scale: 0;
     }
 
     to {
         opacity: 1;
-        transform: scale(1);
+        scale: 1;
     }
 }
 
@@ -1427,16 +1429,32 @@ img {
 
     }
 }
+.wa-wrapper {
 
-.wa-float.stop-floating {
+    position: fixed;
 
-    position: absolute;
+    bottom: 2.24rem;
+    right: 2.24rem;
 
-    bottom: 2rem;
+    z-index: 200;
 
-    right: 1.8rem;
+    transition:
+        opacity .45s ease,
+        transform .45s cubic-bezier(.22,.61,.36,1);
 }
+.wa-wrapper.hide {
 
+
+    opacity: 0;
+
+    transform: scale(.8);
+
+    pointer-events: none;
+
+    transition:
+        opacity .45s ease,
+        transform .45s cubic-bezier(.22, .61, .36, 1);
+}
 
 /************SECCIÓN EMOCIONAL***************/
 
@@ -4420,6 +4438,32 @@ img {
 /******************** final-cierre ***************/
 /******************** FINAL CTA ********************/
 
+/*Animaciones*/
+/* Scroll animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.3s;
+}
+
+
 
 .cierre {
 
@@ -4440,15 +4484,15 @@ img {
     background-image:
 
         linear-gradient(to bottom,
-            rgba(8, 15, 55, .40),
-            rgba(8, 15, 55, .72),
+            rgba(8, 15, 55, .25),
+            rgba(8, 15, 55, .55),
             rgba(8, 15, 55, .92)),
 
-        url('/assets/img/cierre-img.webp');
+        url('/assets/img/cierre3.webp');
 
     background-size: cover;
 
-    background-position: 55% center;
+    background-position: 44% 15%;
 
 
     background-repeat: no-repeat;
@@ -4639,6 +4683,9 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 12rem;
+    transform: translateY(6rem);
+    margin-bottom: 8rem;
 }
 
 /**********************************
@@ -4776,30 +4823,4 @@ img {
 
         margin-top: 3.4rem;
     }
-}
-
-
-/*Animaciones*/
-/* Scroll animation */
-.reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.reveal-delay-1 {
-    transition-delay: 0.1s;
-}
-
-.reveal-delay-2 {
-    transition-delay: 0.2s;
-}
-
-.reveal-delay-3 {
-    transition-delay: 0.3s;
 }

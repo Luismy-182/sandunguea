@@ -22,21 +22,21 @@ function whatsApp() {
 
 
 const whatsAppFloat = () => {
-    const btnWhatsApp = document.querySelector(".wa-float");
+
+
+    const btnWhatsApp = document.querySelector(".wa-wrapper");
     const footer = document.querySelector(".footer");
     window.addEventListener('scroll', () => {
 
         const footerRect = footer.getBoundingClientRect();
 
-        const overlap = window.innerHeight - footerRect.top;
+        const trigger = 120; // px antes del footer
 
-        if (overlap > 0) {
 
-            btnWhatsApp.style.bottom = `${overlap + 18}px`;
-
+        if (footerRect.top < window.innerHeight - trigger) {
+            btnWhatsApp.classList.add('hide');
         } else {
-
-            btnWhatsApp.style.bottom = `2.9rem`;
+            btnWhatsApp.classList.remove('hide');
         }
 
     });
