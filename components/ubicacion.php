@@ -63,7 +63,7 @@
 
                     <p>
                         Metro Copilco (L3) · Aproximadamente 10 min en camión dirección Taxqueña.
-                        Servicio de trolebús en la zona (Línea 11).
+                        Servicio de trolebús en la zona (Línea 12).
                     </p>
                 </div>
 
