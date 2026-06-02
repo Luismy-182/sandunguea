@@ -8,7 +8,7 @@
             <em>Sandunguea</em>
         </h2>
     </div>
-    <p class="section-lead-no-max">Tenemos clases de lunes a jueves en la noche — perfectas para después del trabajo.</p>
+    <p class="section-lead-no-max">Tenemos clases de lunes a jueves en la noche, perfectas para después del trabajo.</p>
 
     <div class="horarios-grid">
         <div class="reveal">
