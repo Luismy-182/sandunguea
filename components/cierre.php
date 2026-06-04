@@ -13,7 +13,6 @@
         </h2>
         <div class="sandunguea-letter cierre-logo reveal reveal-delay-1">
             Sandunguea</div>
-
         <p class="cierre-parrafo reveal reveal-delay-2">
             No necesitas experiencia ni venir con pareja.<br>
             Solo ganas de <span class="underline-gold"> disfrutar y aprender.</span>

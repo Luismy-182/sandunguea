@@ -1429,6 +1429,7 @@ img {
 
     }
 }
+
 .wa-wrapper {
 
     position: fixed;
@@ -1440,8 +1441,9 @@ img {
 
     transition:
         opacity .45s ease,
-        transform .45s cubic-bezier(.22,.61,.36,1);
+        transform .45s cubic-bezier(.22, .61, .36, 1);
 }
+
 .wa-wrapper.hide {
 
 
@@ -1958,6 +1960,7 @@ img {
 /* principal tipo cine */
 .video-main video {
     aspect-ratio: 4 / 5;
+    object-position: 80% center;
 
 }
 
@@ -1968,6 +1971,7 @@ img {
 @media(min-width:768px) {
     .video-main video {
         aspect-ratio: 16 / 9;
+        object-position: 80% center;
     }
 }
 
@@ -4488,14 +4492,21 @@ img {
             rgba(8, 15, 55, .55),
             rgba(8, 15, 55, .92)),
 
-        url('/assets/img/cierre3.webp');
+        url('/assets/img/cierre-final.jpg');
 
     background-size: cover;
 
-    background-position: 46% 15%;
+    background-position: 88% 10%;
 
 
     background-repeat: no-repeat;
+
+
+
+    object-position: center;
+
+    filter:
+        brightness(.85) contrast(1.1) saturate(1.1);
 }
 
 /**********************************
@@ -4786,6 +4797,8 @@ img {
         padding: 10rem 4rem;
 
         min-height: 90svh;
+        background-position: right 25%;
+
     }
 
     .cierre-btn {
@@ -4806,7 +4819,7 @@ img {
 
         padding: 12rem 6.4rem;
 
-        background-position: center 25%;
+        background-position: right 23%;
     }
 
     .cierre-titulo {

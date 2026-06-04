@@ -23,7 +23,7 @@
             <div class="video-placeholder">
                 <video autoplay muted loop playsinline preload="metadata" class="video-interactivo primer-video"
                     webkit-playsinline>
-                    <source src="/assets/videos/hero2.mp4" type="video/mp4">
+                    <source src="/assets/videos/asiAprendes.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="vcard-info">
