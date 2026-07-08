@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sandunguea - Escuela de baile</title>
-    <link rel="shortcut icon" href="/assets/img/zapatilla2.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/img/logoIcon.svg" type="image/x-icon">
     <link
         rel="preload"
         href="/assets/fonts/MoonTime-Regular.woff2"
