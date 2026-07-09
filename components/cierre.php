@@ -22,7 +22,7 @@
          reveal reveal-delay-3
         ">
             <a href="#agendar-clase" class="cierre-btn">
-                Agendar clase muestra gratis
+                Agenda tu clase gratis
             </a>
         </div>
 
