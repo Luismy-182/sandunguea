@@ -6,6 +6,7 @@ import { agendarClase } from './whatsApp/agendarClase.js';
 import { restringirCalendario } from './helpers/restringirCalendario.js';
 import { scrollTop } from './nav/scrollTop.js';
 import { scrollReveals } from './animations/scrollReveals.js';
+import { hiddeInVideo, whatsAppFloat } from './whatsApp/ocultarWhatsApp.js';
 document.addEventListener('DOMContentLoaded', () => {
     menuResponsive();
     menuSticky();
@@ -15,4 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     restringirCalendario();
     scrollTop();
     scrollReveals();
+    whatsAppFloat();
+    hiddeInVideo();
 });

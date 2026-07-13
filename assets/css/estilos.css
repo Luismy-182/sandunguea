@@ -1444,10 +1444,10 @@ img {
         transform .45s cubic-bezier(.22, .61, .36, 1);
 }
 
-.wa-wrapper.hide {
+.hide {
 
 
-    opacity: 0;
+    opacity: 0 !important;
 
     transform: scale(.8);
 

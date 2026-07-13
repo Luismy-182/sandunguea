@@ -16,30 +16,7 @@ function whatsApp() {
             window.open(url, '_blank');
         });
     });
-    whatsAppFloat();
-
-}
-
-
-const whatsAppFloat = () => {
-
-
-    const btnWhatsApp = document.querySelector(".wa-wrapper");
-    const footer = document.querySelector(".cierre");
-    window.addEventListener('scroll', () => {
-
-        const footerRect = footer.getBoundingClientRect();
-
-        const trigger = 120; // px antes del footer
-
-
-        if (footerRect.top < window.innerHeight - trigger) {
-            btnWhatsApp.classList.add('hide');
-        } else {
-            btnWhatsApp.classList.remove('hide');
-        }
-
-    });
+    
 
 }
 
