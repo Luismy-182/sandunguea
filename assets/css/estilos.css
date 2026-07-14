@@ -4834,3 +4834,9 @@ img {
         margin-top: 3.4rem;
     }
 }
+
+.wa-wrapper.pause-animation .wa-container{
+
+    animation-play-state: paused;
+
+}

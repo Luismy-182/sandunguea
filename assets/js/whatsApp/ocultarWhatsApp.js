@@ -1,4 +1,4 @@
-const whatsAppFloat = () => {
+const hideWhatsApp = () => {
     //boton flotante
     const btnWhatsApp = document.querySelector(".wa-wrapper");
     const footer = document.querySelector(".cierre");
@@ -24,7 +24,7 @@ const whatsAppFloat = () => {
 }
 
 
-const hiddeInVideo = () => {
+const pauseAnimation = () => {
     const btnWhatsApp = document.querySelector(".wa-wrapper");
     let options = {
         root: null,
@@ -37,13 +37,14 @@ const hiddeInVideo = () => {
 
         entradas.forEach(entrada => {
             if (entrada.isIntersecting) {
-                btnWhatsApp.classList.add('hide');
-                console.log('En la mira');
+                btnWhatsApp.classList.add('pause-animation');
+                console.log('ya lo vi');
+                
 
 
             } else {
 
-                btnWhatsApp.classList.remove('hide');
+                btnWhatsApp.classList.remove('pause-animation');
                 console.log('No lo veo');
 
             };
@@ -55,20 +56,16 @@ const hiddeInVideo = () => {
 
     const observer = new IntersectionObserver(callback, options);
 
-    const sadungueaSection = document.querySelector('.sandunguea');
+    const sadungueaSection = document.querySelector('.vive-sandunguea');
     observer.observe(sadungueaSection);
 
 
-    if (sadungueaSection) {
-        observer.observe(sadungueaSection);
-    } else {
-        console.error("No se encontró la sección '.sandunguea'");
-    }
+
 
 }
 
 
 export {
-    whatsAppFloat,
-    hiddeInVideo
+    hideWhatsApp,
+    pauseAnimation
 }
