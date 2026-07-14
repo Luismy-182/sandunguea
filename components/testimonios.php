@@ -23,7 +23,7 @@
 
                 <div class="info-card">
                     <div class="foto-card">
-                        <img src="/assets/img/testimonios/rox.webp" alt="testimonio-rox">
+                        <img loading="lazy" src="/assets/img/testimonios/rox.webp" alt="testimonio-rox">
                     </div>
 
                     <div class="datos-card">
@@ -43,7 +43,7 @@
                 </p>
                 <div class="info-card">
                     <div class="foto-card">
-                        <img src="/assets/img/testimonios/pilyErnesto.webp" alt="testimonios-pareja">
+                        <img loading="lazy" src="/assets/img/testimonios/pilyErnesto.webp" alt="testimonios-pareja">
                     </div>
 
                     <div class="datos-card">
@@ -65,7 +65,7 @@
 
                 <div class="info-card">
                     <div class="foto-card">
-                        <img src="/assets/img/testimonios/liz.webp" alt="testimonio-liz">
+                        <img loading="lazy" src="/assets/img/testimonios/liz.webp" alt="testimonio-liz">
                     </div>
 
                     <div class="datos-card">
