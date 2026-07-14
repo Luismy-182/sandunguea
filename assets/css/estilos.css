@@ -1,7 +1,24 @@
+/**
+ * @license
+ * Licensed for: sandunguea.com
+ * MyFonts Webfont Build ID 3867246, 2020-12-16T11:57:38-0500
+ * Invoice #7290920
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Moon Time Regular by Supfonts
+ * URL: https://www.myfonts.com/collections/medialabco-foundry
+ 
+ * © 2026 MyFonts Inc. */
+
 /*Variables*/
 @font-face {
-    font-family: 'MoonTime';
-    src: url('/assets/fonts/MoonTime-Regular.woff2') format('woff2');
+  font-family: "MoonTimeRegular";
+  src:url('/assets/webFonts/MoonTimeRegular/font.woff2') format('woff2'),url('/assets/webFonts/MoonTimeRegular/font.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -31,7 +48,7 @@
     --mid: #4b4869;
     --blanco: #fff;
 
-    --Sandunguea: 'MoonTime';
+    --Sandunguea: 'MoonTimeRegular';
 }
 
 /*Border box para manejar medidas correctas*/

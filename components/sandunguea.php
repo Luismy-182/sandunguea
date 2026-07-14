@@ -21,7 +21,7 @@
         <!-- VIDEO PRINCIPAL -->
         <div class="video-card video-main">
             <div class="video-placeholder">
-                <video autoplay muted loop playsinline preload="metadata" class="video-interactivo primer-video"
+                <video  muted loop playsinline preload="metadata" class="video-interactivo primer-video"
                     webkit-playsinline>
                     <source src="/assets/videos/asiAprendes.mp4" type="video/mp4">
                 </video>

@@ -25,13 +25,15 @@ const hideWhatsApp = () => {
 
 
 const pauseAnimation = () => {
+    //seleccionamos el botón
     const btnWhatsApp = document.querySelector(".wa-wrapper");
+    //opciones para insersection
     let options = {
         root: null,
         rootMargin: "0px",
         threshold: 0
     };
-
+    //funcion que ejecuta intersection observer
     const callback = (entradas, observador) => {
 
 
@@ -53,10 +55,11 @@ const pauseAnimation = () => {
 
     }
 
-
+    //instanciar función
     const observer = new IntersectionObserver(callback, options);
 
     const sadungueaSection = document.querySelector('.vive-sandunguea');
+    //a quien observa
     observer.observe(sadungueaSection);
 
 
